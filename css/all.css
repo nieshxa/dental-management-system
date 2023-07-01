@@ -29,7 +29,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 1rem;
+  padding: 1rem 0;
 }
 .sidebar.expanded {
   width: 15rem;
@@ -71,6 +71,43 @@ body {
   width: 10vh;
   height: 10vh;
 }
+.tabs {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 3rem 0;
+}
+.tab {
+  display: flex;
+  align-items: center;
+  color: var(--white);
+  text-decoration: none;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  margin: 0 1rem;
+}
+.tab:hover {
+  color: var(--black);
+}
+.tab.active {
+  background-color: var(--white);
+  color: var(--black);
+  border-radius: 5px;
+  border: var(--black) solid 0.3vh;
+  box-shadow: 0 -4px 6px 0 #00000025 inset;
+}
+.sidebar:not(.sidebar.expanded) .tab .icon {
+  transition: font-size ease-in-out 0.3s;
+  font-size: 4vh;
+}
+.sidebar:not(.sidebar.expanded) .page-title {
+  display: none;
+  transition: display ease-in-out 0.3s;
+}
+.logout {
+  align-self: start;
+}
 @media screen and (max-width: 600px) {
   .sidebar {
     display: none;
@@ -88,5 +125,8 @@ body {
     right: 1rem;
     top: 1rem;
     color: var(--black);
+  }
+  .sidebar.expanded .logout {
+    align-self: center;
   }
 }
