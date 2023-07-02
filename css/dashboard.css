@@ -3,11 +3,11 @@
   padding: 1rem;
 }
 .left {
-  width: 70%;
+  width: 50%;
   padding-right: 0.5rem;
 }
 .right {
-  width: 30%;
+  width: 50%;
   overflow-y: auto;
   padding-left: 0.5rem;
   padding-bottom: 1.5rem;
