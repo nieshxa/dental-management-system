@@ -1,7 +1,4 @@
-.left,
-.right {
-  padding: 1rem;
-}
+
 .left {
   width: 50%;
   padding-right: 0.5rem;
@@ -9,8 +6,9 @@
 .right {
   width: 50%;
   overflow-y: auto;
-  padding-left: 0.5rem;
-  padding-bottom: 1.5rem;
+  padding: 0 0.5rem;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 .tab-content {
   display: flex;
