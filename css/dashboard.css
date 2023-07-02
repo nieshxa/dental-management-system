@@ -96,6 +96,7 @@
   .right {
     height: fit-content;
     width: inherit;
+    padding: 0;
   }
   .welcome {
     height: 25vh;
@@ -103,13 +104,6 @@
   .goto-appt {
     height: 60%;
     gap: 1rem;
-  }
-  .left {
-    padding-bottom: 0;
-    padding-right: 1rem;
-  }
-  .right {
-    padding: 0 1rem 1rem 1rem;
   }
 
   .fc .fc-toolbar > * > :first-child,
