@@ -81,6 +81,11 @@
   height: 25%;
   margin-bottom: 1rem;
 }
+.event-details-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
 .fc button {
   height: fit-content;
 }
