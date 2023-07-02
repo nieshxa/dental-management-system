@@ -1,15 +1,16 @@
 .left,
 .right {
-  margin: 1rem;
+  padding: 1rem;
 }
 .left {
   width: 70%;
+  padding-right: 0.5rem;
 }
 .right {
   width: 30%;
   overflow-y: auto;
-  padding-bottom: 1rem;
-  margin-left: 0;
+  padding-left: 0.5rem;
+  padding-bottom: 1.5rem;
 }
 .tab-content {
   display: flex;
@@ -80,10 +81,6 @@
   height: 25%;
   margin-bottom: 1rem;
 }
-.fc .fc-toolbar > * > :first-child,
-.fc-icon {
-  font-size: 1.5vh;
-}
 .fc button {
   height: fit-content;
 }
@@ -102,9 +99,14 @@
   }
   .goto-appt {
     height: 60%;
+    gap: 1rem;
+  }
+  .left {
+    padding-bottom: 0;
+    padding-right: 1rem;
   }
   .right {
-    padding-left: 1rem;
+    padding: 0 1rem 1rem 1rem;
   }
 
   .fc .fc-toolbar > * > :first-child,
