@@ -35,8 +35,9 @@
 .card .title {
   font-weight: 700;
   padding: 0 1rem;
-  font-size: 2.3vh;
+  font-size: 2.5vh;
   word-wrap: break-word;
+  width: 88%;
 }
 .modal {
   display: none;
@@ -53,6 +54,7 @@
   max-height: 90%;
   overflow: auto;
   border-radius: 0.5rem;
+  box-shadow: #00000025 2px 4px 4px 4px;
 }
 
 .modal-title {
