@@ -31,7 +31,7 @@ body {
   flex-direction: column;
   align-items: center;
   padding: 1rem 0;
-  overflow-y: hidden;
+  overflow: hidden;
   z-index: 2;
 }
 .sidebar.expanded {
