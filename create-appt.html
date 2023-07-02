@@ -3,16 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css"
-    />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
     <title>DMS</title>
     <link rel="stylesheet" href="./css/all.css" />
-    <link rel="stylesheet" href="./css/dashboard.css" />
   </head>
   <body>
     <div class="view">
@@ -25,7 +17,7 @@
           />
         </div>
         <div class="tabs">
-          <a href="./dashboard.html" class="tab active">
+          <a href="./dashboard.html" class="tab">
             <iconify-icon icon="ic:round-dashboard" class="icon"></iconify-icon>
             <span class="page-title">Dashboard</span></a
           >
@@ -43,7 +35,7 @@
             ></iconify-icon>
             <span class="page-title">Staffs</span></a
           >
-          <a href="./appointments.html" class="tab">
+          <a href="./appointments.html" class="tab active">
             <iconify-icon
               icon="pepicons-pop:calendar"
               class="icon"
@@ -97,52 +89,9 @@
             />
           </div>
         </div>
-        <div class="tab-content">
-          <div class="left">
-            <div class="welcome">
-              <div class="motto">Making you smile.</div>
-            </div>
-            <div class="goto-appt">
-              <div class="my-appt">
-                <div>
-                  <iconify-icon
-                    icon="ant-design:schedule-filled"
-                    class="icon"
-                  ></iconify-icon>
-                </div>
-                <div>
-                  <h3>My Appointments</h3>
-                  <small><i>View appointment history</i></small>
-                </div>
-              </div>
-              <div class="book-appt">
-                <div>
-                  <iconify-icon
-                    icon="material-symbols:auto-schedule-rounded"
-                    class="icon"
-                  ></iconify-icon>
-                </div>
-                <div>
-                  <h3>Book my appointments</h3>
-                  <small><i>Book an appointment</i></small>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="right">
-            <div class="event-details">
-              <div id="event-details"></div>
-            </div>
-            <div class="calendar">
-              <div id="calendar"></div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </body>
   <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
   <script src="./js/sidebar.js"></script>
-  <script src="./js/eventCalendar.js"></script>
-  <script src="./js/go-to-appt.js"></script>
 </html>

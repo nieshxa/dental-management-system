@@ -3,6 +3,7 @@
   --blue: #64b7f4;
   --black: #2d2d2d;
   --white: #fff;
+  --light-blue: #e7edf1;
 }
 * {
   box-sizing: border-box;
@@ -30,6 +31,7 @@ body {
   flex-direction: column;
   align-items: center;
   padding: 1rem 0;
+  z-index: 2;
 }
 .sidebar.expanded {
   width: 15rem;
@@ -38,10 +40,14 @@ body {
 .content {
   height: 100%;
   background-color: #fff;
-  width: 100%;
+  width: calc(100% - 5rem);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  overflow: hidden;
+}
+.sidebar.expanded .content {
+  width: calc(100% - 15rem);
 }
 .header,
 .greet {
@@ -53,7 +59,7 @@ body {
 .header {
   display: flex;
   justify-content: space-between;
-  height: 10%;
+  height: 3.5rem;
   padding: 0 1rem;
   box-shadow: 0 4px 4px 0 #00000025;
 }
@@ -98,7 +104,7 @@ body {
   color: var(--black);
   border-radius: 5px;
   border: var(--black) solid 0.3vh;
-  box-shadow: 0 -4px 6px 0 #00000025 inset;
+  box-shadow: 0 -4px 4px 0 #00000025 inset;
 }
 .sidebar:not(.sidebar.expanded) .tab .icon {
   transition: font-size ease-in-out 0.3s;
@@ -112,25 +118,32 @@ body {
   align-self: start;
 }
 .tab-content {
-  height: 95%;
+  height: calc(100vh - 3.5rem);
   margin: 1rem;
+  background-color: var(--light-blue);
 }
 @media screen and (max-width: 600px) {
   .sidebar {
-    display: none;
-    transition: display 0.3s ease;
+    /* display: none; */
+    margin-left: -5rem;
+    transition: margin-left 0.3s ease;
+  }
+  .content {
+    width: 100%;
   }
   .sidebar.expanded {
     display: flex;
     position: absolute;
     width: 100%;
     padding-top: 2.5rem;
+    margin-left: 0;
   }
   .sidebar.expanded ~ .content .header .hamburger .icon {
     position: absolute;
     z-index: 2;
     right: 1rem;
     top: 1rem;
+    transition: position 0.9s ease;
     color: var(--black);
   }
   .sidebar.expanded .logout {
