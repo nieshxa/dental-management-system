@@ -33,24 +33,18 @@
   padding: 0 1rem;
   font-size: 2.3vh;
 }
-
 .modal {
-  position: fixed;
-  top: 0;
-  width: calc(100% - 5rem);
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: none;
+  display: flex;
   justify-content: center;
-  margin-top: 3.5rem;
   align-items: center;
+  position: absolute;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 .modal-content {
   background-color: #fff;
   padding: 20px;
-  max-width: calc(100% - 20rem);
-  min-width: 400px;
+  max-width: 70%;
   max-height: 90%;
   overflow: auto;
   border-radius: 0.5rem;
@@ -64,19 +58,12 @@
 .modal-description {
   font-size: 16px;
 }
-
-/* Card Styles */
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
-.sidebar.expanded + .modal {
-  width: calc(100% - 15rem);
-}
 @media screen and (max-width: 850px) {
   .card {
     width: 45%;
+  }
+  .modal-content {
+    max-width: 95%;
   }
 }
 
