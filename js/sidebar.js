@@ -6,3 +6,9 @@ document.addEventListener("DOMContentLoaded", function () {
     sidebar.classList.toggle("expanded");
   });
 });
+var sidebar = document.querySelector(".sidebar");
+var windowWidth = window.innerWidth;
+
+if (window.innerWidth <= 600 && sidebar.classList.contains("expanded")) {
+  sidebar.classList.remove("expanded");
+}
