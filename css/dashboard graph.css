@@ -1,0 +1,143 @@
+.left {
+  width: 50%;
+  padding-right: 0.5rem;
+}
+.right {
+  width: 50%;
+  overflow-y: auto;
+  padding: 0 0.5rem;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+.tab-content {
+  display: flex;
+  margin: 0;
+  /* padding-bottom: 2.5%; */
+}
+.welcome {
+  height: 20%;
+  background-image: url(https://scontent.fmnl3-1.fna.fbcdn.net/v/t39.30808-6/330343533_526313882821466_6364426917095585023_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=8bfeb9&_nc_eui2=AeEXgknt9a4EjaOpKOQ2efvoW19FOTXFo4BbX0U5NcWjgJlTBzvtIavbEd4H5GssJoZlxOLSwP3HMloQng7dWgWz&_nc_ohc=lraJ3FUe1foAX-kYO_R&_nc_ht=scontent.fmnl3-1.fna&oh=00_AfB_Bb5m4bXkezcbjMjVpbVMwCofn-27a14I3mHiyIgqqg&oe=64A57B7B);
+  background-position-x: left;
+  background-position-y: 23%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 1vh;
+  margin-bottom: 0.5rem;
+}
+.motto {
+  height: 100%;
+  display: flex;
+  align-items: end;
+  padding: 1rem;
+  background-image: linear-gradient(#00000000, var(--black));
+  color: var(--white);
+  border-radius: 1vh;
+  box-shadow: 0 0.6vh 0.6vh 0 #00000025;
+}
+.goto-appt {
+  height: 35%;
+  /* display: flex; */
+  /* gap: 0.5rem; */
+  margin: 0.5rem 0;
+}
+.my-appt,
+.book-appt {
+  box-shadow: 0 0.6vh 0.6vh 0 #00000025;
+  background-color: var(--white);
+  border-radius: 1vh;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  height: 40%;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+  border: 0.2vh solid #00000015;
+}
+.goto-appt small i {
+  font-size: 2vh;
+}
+.goto-appt .icon {
+  font-size: 5vh;
+}
+.calendar {
+  padding: 1rem;
+  box-shadow: 0 0.6vh 0.6vh 0 #00000025;
+  background-color: var(--white);
+  border: 0.2vh solid #00000015;
+  border-radius: 1vh;
+}
+.fc-day-header span,
+.fc-title {
+  font-size: 1.5vh;
+}
+.event-details {
+  padding: 1rem;
+  box-shadow: 0 0.6vh 0.6vh 0 #00000025;
+  background-color: var(--white);
+  border: 0.2vh solid #00000015;
+  border-radius: 1vh;
+  height: 25%;
+  margin-bottom: 1rem;
+}
+.event-details-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
+.fc button {
+  height: fit-content;
+}
+.graph {
+  background-color: var(--white);
+  height: 45%;
+  padding: 1rem;
+  box-shadow: 0 0.6vh 0.6vh 0 #00000025;
+  border: 0.2vh solid #00000015;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1vh;
+}
+canvas {
+  max-height: 90%;
+  width: 100%;
+}
+@media screen and (max-width: 1200px) {
+  .tab-content {
+    display: block;
+    overflow-y: auto;
+  }
+  .left,
+  .right {
+    height: fit-content;
+    width: inherit;
+    padding: 0;
+  }
+  .welcome {
+    height: 25vh;
+  }
+  .goto-appt {
+    height: 60%;
+    gap: 1rem;
+  }
+  .event-details {
+    margin-bottom: 0.5rem;
+  }
+
+  .fc .fc-toolbar > * > :first-child,
+  .fc-icon,
+  .fc-title {
+    font-size: 2.5vh;
+  }
+}
+@media screen and (max-width: 850px) {
+  .goto-appt {
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+  .my-appt,
+  .book-appt {
+    width: 100%;
+  }
+}
