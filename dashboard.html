@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css"
@@ -10,6 +14,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
+
     <title>DMS</title>
     <link rel="stylesheet" href="./css/all.css" />
     <link rel="stylesheet" href="./css/dashboard.css" />
@@ -102,6 +107,16 @@
             <div class="welcome">
               <div class="motto">Making you smile.</div>
             </div>
+
+            <!-- <div class="graph">
+              <div class="canvas"><canvas id="appt-chart"></canvas></div>
+              <div class="canvas"><canvas id="services-chart"></canvas></div>
+            </div> -->
+            <div class="graph">
+              <div class="canvas"><canvas id="appt-chart"></canvas></div>
+              <div class="canvas"><canvas id="services-chart"></canvas></div>
+            </div>
+
             <div class="goto-appt">
               <div class="my-appt">
                 <div>
@@ -145,4 +160,5 @@
   <script src="./js/sidebar.js"></script>
   <script src="./js/eventCalendar.js"></script>
   <script src="./js/go-to-appt.js"></script>
+  <script src="./js/chart.js"></script>
 </html>

@@ -1,23 +1,55 @@
-var xValues = ["All", "Confirmed", "Previous", "Cancelled", "Pending"];
-var yValues = [23, 8, 7, 5, 3];
-var barColors = ["red", "green", "blue", "orange", "brown"];
+const bar = document.getElementById("appt-chart");
 
-new Chart("myChart", {
+new Chart(bar, {
   type: "bar",
   data: {
-    labels: xValues,
+    labels: ["All", "Confirmed", "Pending", "Cancelled", "Previous"],
     datasets: [
       {
-        backgroundColor: barColors,
-        data: yValues,
+        label: "Appointments Chart",
+        data: [20, 5, 9, 7, 4, 3],
+        borderWidth: 1,
+        backgroundColor: [
+          "rgb(54, 162, 235)",
+          // "rgb(255, 99, 132)",
+          // "rgb(75,192,192)",
+          // "rgb(255, 205, 86)",
+          // "rgb(153,102,255)",
+          // "rgb(255,159,64)",
+        ],
       },
     ],
   },
   options: {
-    legend: { display: false },
-    title: {
-      display: true,
-      text: "Appointments Graph",
+    indexAxis: "y",
+    scales: {
+      y: {
+        beginAtZero: true,
+      },
+    },
+  },
+});
+
+const pie = document.getElementById("services-chart");
+
+new Chart(pie, {
+  type: "pie",
+  data: {
+    labels: ["All", "Confirmed", "Pending", "Cancelled", "Previous"],
+    datasets: [
+      {
+        label: "Appointments Chart",
+        data: [20, 5, 9, 7, 4, 3],
+        borderWidth: 1,
+      },
+    ],
+  },
+  options: {
+    indexAxis: "y",
+    scales: {
+      y: {
+        beginAtZero: true,
+      },
     },
   },
 });

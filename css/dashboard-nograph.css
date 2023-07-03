@@ -1,3 +1,4 @@
+
 .left {
   width: 50%;
   padding-right: 0.5rem;
@@ -15,14 +16,13 @@
   /* padding-bottom: 2.5%; */
 }
 .welcome {
-  height: 20%;
+  height: 75%;
   background-image: url(https://scontent.fmnl3-1.fna.fbcdn.net/v/t39.30808-6/330343533_526313882821466_6364426917095585023_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=8bfeb9&_nc_eui2=AeEXgknt9a4EjaOpKOQ2efvoW19FOTXFo4BbX0U5NcWjgJlTBzvtIavbEd4H5GssJoZlxOLSwP3HMloQng7dWgWz&_nc_ohc=lraJ3FUe1foAX-kYO_R&_nc_ht=scontent.fmnl3-1.fna&oh=00_AfB_Bb5m4bXkezcbjMjVpbVMwCofn-27a14I3mHiyIgqqg&oe=64A57B7B);
   background-position-x: left;
   background-position-y: 23%;
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 1vh;
-  margin-bottom: 0.5rem;
 }
 .motto {
   height: 100%;
@@ -35,23 +35,22 @@
   box-shadow: 0 0.6vh 0.6vh 0 #00000025;
 }
 .goto-appt {
-  height: 35%;
-  /* display: flex; */
-  /* gap: 0.5rem; */
-  margin: 0.5rem 0;
+  height: 20%;
+  display: flex;
+  gap: 0.5rem;
+  margin: 2.5% 0;
 }
 .my-appt,
 .book-appt {
   box-shadow: 0 0.6vh 0.6vh 0 #00000025;
   background-color: var(--white);
   border-radius: 1vh;
-  padding: 1.5rem;
+  padding: 3vh;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  height: 40%;
+  gap: 1rem;
+  width: 50%;
   cursor: pointer;
-  margin-bottom: 0.5rem;
   border: 0.2vh solid #00000015;
 }
 .goto-appt small i {
@@ -88,21 +87,6 @@
 .fc button {
   height: fit-content;
 }
-.graph {
-  background-color: var(--white);
-  height: 45%;
-  padding: 1rem;
-  box-shadow: 0 0.6vh 0.6vh 0 #00000025;
-  border: 0.2vh solid #00000015;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 1vh;
-}
-canvas {
-  max-height: 90%;
-  width: 100%;
-}
 @media screen and (max-width: 1200px) {
   .tab-content {
     display: block;
@@ -120,9 +104,6 @@ canvas {
   .goto-appt {
     height: 60%;
     gap: 1rem;
-  }
-  .event-details {
-    margin-bottom: 0.5rem;
   }
 
   .fc .fc-toolbar > * > :first-child,
