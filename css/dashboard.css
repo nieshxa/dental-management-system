@@ -141,6 +141,9 @@
   .graph {
     height: 30vh;
   }
+  .header {
+    height: auto;
+  }
 }
 @media screen and (max-width: 865px) {
   .goto-appt {
