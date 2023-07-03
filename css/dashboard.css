@@ -115,6 +115,7 @@
 @media screen and (max-width: 850px) {
   .goto-appt {
     flex-direction: column;
+    margin-bottom: 1rem;
   }
   .my-appt,
   .book-appt {
