@@ -68,10 +68,10 @@ body {
   box-shadow: 0 4px 4px 0 #00000025;
 }
 .my-img {
-  width: 7vh;
-  height: 7vh;
+  width: 6vh;
+  height: 6vh;
   border-radius: 50%;
-  border: var(--white) solid 0.5vh;
+  border: var(--white) solid 0.4vh;
   margin-left: 1rem;
 }
 .icon {
