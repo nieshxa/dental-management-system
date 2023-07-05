@@ -156,3 +156,45 @@ table tbody td:nth-last-of-type(1) {
     font-size: 2vh;
   }
 } */
+.dropdown-toggle::after {
+  display: none;
+}
+.dropdown iconify-icon {
+  font-size: 3.5vh;
+}
+.dropdown {
+  display: flex;
+  justify-content: center;
+}
+.dropdown .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  border: none;
+  color: var(--black);
+}
+.dropdown-menu {
+  background-color: var(--white);
+  box-shadow: 0 0.6vh 0.6vh 0 #00000025;
+  border: 0.2vh solid #00000015;
+  border-radius: 1vh;
+  font-size: 2vh;
+  padding: 0.5rem 1.5rem;
+  text-align: center;
+  padding: 0;
+  transform: translate(-70px, 40px);
+  min-width: 7rem;
+}
+.dropdown-item {
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  color: var(--black);
+}
+
+.dropdown-item iconify-icon {
+  font-size: 2.5vh;
+}

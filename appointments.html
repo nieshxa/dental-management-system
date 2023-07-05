@@ -11,6 +11,12 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
     <title>DMS</title>
     <link rel="stylesheet" href="./css/all.css" />
     <link rel="stylesheet" href="./css/appointment.css" />
@@ -142,9 +148,29 @@
                     <div class="service-time">09:00 AM</div>
                   </td>
                   <td>
-                    <div class="more">
-                      <iconify-icon icon="ic:round-more-horiz"></iconify-icon>
-                      <div class="actions"><a href="#">View</a></div>
+                    <div class="dropdown">
+                      <button
+                        class="btn btn-secondary dropdown-toggle"
+                        type="button"
+                        id="dropdownMenuButton1"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        <iconify-icon icon="ic:round-more-horiz"></iconify-icon>
+                      </button>
+                      <ul
+                        class="dropdown-menu"
+                        aria-labelledby="dropdownMenuButton1"
+                      >
+                        <li>
+                          <a class="dropdown-item" href="#"
+                            ><iconify-icon
+                              icon="carbon:view-filled"
+                            ></iconify-icon
+                            >View</a
+                          >
+                        </li>
+                      </ul>
                     </div>
                   </td>
                 </tr>
@@ -159,8 +185,29 @@
                     <div class="service-time">09:00 AM</div>
                   </td>
                   <td>
-                    <div class="more">
-                      <iconify-icon icon="ic:round-more-horiz"></iconify-icon>
+                    <div class="dropdown">
+                      <button
+                        class="btn btn-secondary dropdown-toggle"
+                        type="button"
+                        id="dropdownMenuButton1"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        <iconify-icon icon="ic:round-more-horiz"></iconify-icon>
+                      </button>
+                      <ul
+                        class="dropdown-menu"
+                        aria-labelledby="dropdownMenuButton1"
+                      >
+                        <li>
+                          <a class="dropdown-item" href="#"
+                            ><iconify-icon
+                              icon="carbon:view-filled"
+                            ></iconify-icon
+                            >View</a
+                          >
+                        </li>
+                      </ul>
                     </div>
                   </td>
                 </tr>
