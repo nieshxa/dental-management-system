@@ -26,7 +26,7 @@ document.getElementById("search-appt").addEventListener("keyup", function () {
 
       if (txtValue.toUpperCase().indexOf(filter) > -1) {
         tr[i].style.display = "";
-        displayed = true; // Set the flag to true if a row is displayed
+        displayed = true;
       } else {
         tr[i].style.display = "none";
       }
@@ -51,8 +51,14 @@ document.getElementById("search-appt").addEventListener("keyup", function () {
   }
 });
 
-document.querySelector(".clear-search").addEventListener("click", function() {
+document.querySelector(".clear-search").addEventListener("click", function () {
   var input = document.getElementById("search-appt");
-  input.value = ""; // Clear the search input
-  input.dispatchEvent(new Event("keyup")); // Trigger the keyup event to update the table
+  input.value = "";
+  input.dispatchEvent(new Event("keyup"));
+});
+
+document.getElementById("divSelector").addEventListener("change", function () {
+  var input = document.getElementById("search-appt");
+  input.value = "";
+  input.dispatchEvent(new Event("keyup"));
 });
