@@ -65,10 +65,13 @@
 .modal-description {
   font-size: 2vh;
 }
-.close iconify-icon {
-  font-size: 4.5vh;
+.close {
   display: flex;
   justify-content: end;
+}
+.close iconify-icon {
+  font-size: 4.5vh;
+  width: fit-content;
   cursor: pointer;
   color: #d63c3c;
 }
