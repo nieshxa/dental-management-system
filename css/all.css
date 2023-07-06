@@ -35,7 +35,7 @@ body {
   align-items: center;
   padding: 1rem 0;
   overflow: hidden;
-  z-index: 2;
+  z-index: 5;
 }
 .sidebar.expanded {
   width: 15rem;
@@ -147,7 +147,7 @@ body {
   }
   .sidebar.expanded ~ .content .header .hamburger .icon {
     position: absolute;
-    z-index: 2;
+    z-index: 6;
     right: 1rem;
     top: 1rem;
     transition: position 0.9s ease;

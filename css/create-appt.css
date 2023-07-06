@@ -42,6 +42,7 @@ form input {
   border: #0000000e solid 1px;
   width: 100%;
   color: var(--black);
+  margin-bottom: 1rem;
 }
 form .service-dropdown iconify-icon {
   font-size: 3.5vh;
@@ -51,7 +52,6 @@ form .service-dropdown iconify-icon {
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin-bottom: 1rem;
   flex-wrap: wrap;
 }
 .form-body label {
@@ -115,7 +115,7 @@ select option:disabled {
   align-self: end;
   margin-bottom: 1rem;
 }
-.buttons button,
+.buttons div,
 .buttons a {
   background-color: var(--white);
   border: 0.2vh solid #00000015;
@@ -131,7 +131,7 @@ select option:disabled {
   align-items: center;
   gap: 0.25rem;
 }
-.buttons button iconify-icon {
+.buttons iconify-icon {
   font-size: 2.5vh;
 }
 .buttons a {
@@ -140,8 +140,60 @@ select option:disabled {
 .buttons a:hover {
   color: var(--red);
 }
-.buttons button:hover {
+.buttons div:hover {
   color: var(--blue);
+}
+.sidebar.expanded ~ .content .modal {
+  width: calc(100% - 12.5rem);
+}
+.modal {
+  display: none;
+
+  justify-content: center;
+  align-items: center;
+  width: calc(100% - 12.5rem);
+  position: fixed;
+  width: calc(100% - 5rem);
+  height: inherit;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+.modal p {
+  text-align: center;
+}
+.modal p:nth-of-type(1) {
+  color: var(--red);
+  font-weight: 600;
+}
+.modal-content {
+  background-color: #fff;
+  padding: 1.5rem 2rem;
+  max-height: 90%;
+  width: 300px;
+  overflow: auto;
+  border-radius: 0.5rem;
+  box-shadow: #00000025 2px 4px 4px 4px;
+}
+.modal #modalMessage {
+  font-size: 2vh;
+}
+.modal .close {
+  font-size: 2vh;
+  text-align: center;
+  width: 100%;
+  color: var(--blue);
+  padding: 0.5rem;
+  margin-top: 1rem;
+  border-radius: 1vh;
+  background-color: var(--white);
+  cursor: pointer;
+  border: 0.2vh solid #00000015;
+  box-shadow: 0 0.6vh 0.6vh 0 #00000025;
+}
+.modal .close:hover {
+  color: var(--white);
+  background-color: var(--blue);
+  transition: all ease 0.3s;
 }
 @media screen and (max-width: 1000px) {
   .form-body {
@@ -154,5 +206,8 @@ select option:disabled {
   }
 }
 
-/* @media screen and (max-width: 600px) {
-} */
+@media screen and (max-width: 600px) {
+  .modal {
+    width: 100%;
+  }
+}

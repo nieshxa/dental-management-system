@@ -100,6 +100,13 @@
             />
           </div>
         </div>
+        <div id="myModal" class="modal">
+          <div class="modal-content">
+            <p>Empty Fields</p>
+            <p id="modalMessage"></p>
+            <p class="close">I understand.</p>
+          </div>
+        </div>
         <div class="tab-content">
           <div class="form-container">
             <form action="">
@@ -144,8 +151,10 @@
                   </div>
                   <div class="another-service">
                     <label for="service-2"
-                      >Choose another service <br /><small>This field is optional.</small> </label
-                    >
+                      >Choose another service <br /><small
+                        >This field is optional.</small
+                      >
+                    </label>
                     <div class="service-dropdown">
                       <select id="service-2">
                         <option
@@ -188,16 +197,28 @@
                     </div>
                   </div>
 
+                  <label
+                    >Choose time<select id="time">
+                      <option selected="selected" disabled="disabled"></option>
+                      <option value="08:00">8:00 AM</option>
+                      <option value="09:00">9:00 AM</option>
+                      <option value="10:00">10:00 AM</option>
+                      <option value="11:00">11:00 AM</option>
+                      <option value="12:00">12:00 PM</option>
+                      <option value="13:00">1:00 PM</option>
+                      <option value="14:00">2:00 PM</option>
+                      <option value="15:00">3:00 PM</option>
+                      <option value="16:00">4:00 PM</option>
+                      <option value="17:00">5:00 PM</option>
+                    </select></label
+                  >
+
                   <!-- date picker -->
                   <label
-                    >Choose date <br>
+                    >Choose date <br />
                     <small>Please pick a date from the calendar.</small>
                     <div class="eventdetails-modal">
-                      <input
-                        type="text"
-                        id="eventdetails-modal"
-                        disabled
-                      />
+                      <input type="text" id="eventdetails-modal" disabled />
                     </div>
                   </label>
                 </div>
@@ -206,22 +227,26 @@
                     <div id="calendar"></div>
                   </div>
                 </div>
-                
               </div>
-                  <div class="form-footer">
-                    <div class="buttons">
-                      <a href="./appointments.html">
-                          <iconify-icon
-                            icon="material-symbols:cancel-outline-rounded"
-                          ></iconify-icon
-                          >Cancel</a
-                      >
-                      <button class="submit">
-                        <iconify-icon icon="basil:save-outline"></iconify-icon
-                        >Submit
-                      </button>
-                    </div>
+              <div class="form-footer">
+                <div class="buttons">
+                  <a href="./appointments.html">
+                    <iconify-icon
+                      icon="material-symbols:cancel-outline-rounded"
+                    ></iconify-icon
+                    >Cancel</a
+                  >
+                  <!-- <button class="submit">
+                    <iconify-icon icon="basil:save-outline"></iconify-icon
+                    >Submit
+                  </button> -->
+
+                  <div class="submit">
+                    <iconify-icon icon="basil:save-outline"></iconify-icon
+                    >Submit
                   </div>
+                </div>
+              </div>
             </form>
           </div>
         </div>
@@ -232,4 +257,5 @@
   <script src="./js/sidebar.js"></script>
   <script src="./js/chooseService.js"></script>
   <script src="./js/chooseDate.js"></script>
+  <script src="./js/submitAppt.js"></script>
 </html>
