@@ -40,7 +40,7 @@ form .service-dropdown iconify-icon {
   font-size: 3.5vh;
   cursor: pointer;
 }
-.service-dropdown{
+.service-dropdown {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -56,4 +56,9 @@ select option:disabled {
 }
 .another-service {
   display: none;
+}
+@media screen and (max-width: 600px) {
+  .form-container {
+    max-width: 80%;
+  }
 }
