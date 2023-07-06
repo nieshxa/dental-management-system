@@ -1,0 +1,59 @@
+.tab-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  font-size: 2.3vh;
+}
+.form-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 1vh;
+}
+form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form-header img {
+  /* height: 100%; */
+  height: 15vh;
+  width: auto;
+}
+/* .form-header,
+.form-footer {
+  height: 15%;
+} */
+form select {
+  font-size: 2vh;
+  cursor: pointer;
+  border-radius: 1vh;
+  box-shadow: 0 0.6vh 0.6vh 0 #00000025;
+  background-color: var(--white);
+  border: none;
+  padding: 0.5rem 1.5rem;
+  border: #0000000e solid 1px;
+}
+form .service-dropdown iconify-icon {
+  font-size: 3.5vh;
+  cursor: pointer;
+}
+.service-dropdown{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+.form-body label {
+  font-weight: 600;
+}
+select option:disabled {
+  font-style: italic;
+}
+.another-service {
+  display: none;
+}

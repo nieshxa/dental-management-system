@@ -3,8 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>DMS</title>
     <link rel="stylesheet" href="./css/all.css" />
+    <link rel="stylesheet" href="./css/create-appt.css" />
   </head>
   <body>
     <div class="view">
@@ -89,9 +91,94 @@
             />
           </div>
         </div>
+        <div class="tab-content">
+          <div class="form-container">
+            <form action="">
+              <div class="form-header">
+                <img src="./images/appt.svg" alt="" />
+              </div>
+              <div class="form-body">
+                <label for="service-1">Choose service </label><br />
+                <div class="service-dropdown">
+                  <select id="service-1">
+                    <option disabled="disabled" selected="selected"></option>
+                    <option value="dental_consultation">
+                      Dental Consultation
+                    </option>
+                    <option value="orthodontic_treatment">
+                      Orthodontic Treatment/Braces
+                    </option>
+                    <option value="removable_partial_denture">
+                      Removable Partial Denture
+                    </option>
+                    <option value="full_denture">
+                      Full Denture/Complete Denture
+                    </option>
+                    <option value="oral_prophylaxis">Oral Prophylaxis</option>
+                    <option value="tooth_bleaching">
+                      Tooth Bleaching/Whitening
+                    </option>
+                    <option value="odontectomy">
+                      Odontectomy (Wisdom Tooth Surgery)
+                    </option>
+                    <option value="tooth_extraction">Tooth Extraction</option>
+                    <option value="jacket_crown">
+                      Jacket Crown/Fixed Bridge
+                    </option>
+                    <option value="veneers">Veneers</option>
+                    <option value="rct">RCT (Root Canal Treatment)</option>
+                    <option value="tmj_ortho">TMJ-Ortho</option>
+                    <option value="tmj_disorder">TMJ Disorder</option>
+                    <option value="retainers">Retainers</option>
+                  </select>
+                </div>
+                <div class="another-service">
+                  <label for="service-2"
+                    >Choose another service <small>(OPTIONAL)</small> </label
+                  ><br />
+                  <div class="service-dropdown">
+                    <select id="service-2">
+                      <option disabled="disabled" selected="selected"></option>
+                      <option value="dental_consultation">
+                        Dental Consultation
+                      </option>
+                      <option value="orthodontic_treatment">
+                        Orthodontic Treatment/Braces
+                      </option>
+                      <option value="removable_partial_denture">
+                        Removable Partial Denture
+                      </option>
+                      <option value="full_denture">
+                        Full Denture/Complete Denture
+                      </option>
+                      <option value="oral_prophylaxis">Oral Prophylaxis</option>
+                      <option value="tooth_bleaching">
+                        Tooth Bleaching/Whitening
+                      </option>
+                      <option value="odontectomy">
+                        Odontectomy (Wisdom Tooth Surgery)
+                      </option>
+                      <option value="tooth_extraction">Tooth Extraction</option>
+                      <option value="jacket_crown">
+                        Jacket Crown/Fixed Bridge
+                      </option>
+                      <option value="veneers">Veneers</option>
+                      <option value="rct">RCT (Root Canal Treatment)</option>
+                      <option value="tmj_ortho">TMJ-Ortho</option>
+                      <option value="tmj_disorder">TMJ Disorder</option>
+                      <option value="retainers">Retainers</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="form-footer">footer</div>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
   </body>
   <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
   <script src="./js/sidebar.js"></script>
+  <script src="./js/chooseService.js"></script>
 </html>
