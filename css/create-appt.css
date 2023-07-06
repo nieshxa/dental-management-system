@@ -2,31 +2,36 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #fff;
+  /* background-color: #fff; */
   font-size: 2.3vh;
+  overflow-y: auto;
 }
 .form-container {
   width: 100%;
   height: 100%;
   border-radius: 1vh;
+  max-width: 95%;
+  display: flex;
+  align-items: center;
 }
 form {
   width: 100%;
-  height: 100%;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .form-header img {
   /* height: 100%; */
-  height: 15vh;
+  height: 20vh;
   width: auto;
+  margin-bottom: 1rem;
 }
-/* .form-header,
-.form-footer {
-  height: 15%;
-} */
-form select {
+.form-header {
+  text-align: center;
+}
+form select,
+form input {
   font-size: 2vh;
   cursor: pointer;
   border-radius: 1vh;
@@ -36,6 +41,7 @@ form select {
   padding: 0.5rem 1.5rem;
   border: #0000000e solid 1px;
   width: 100%;
+  color: var(--black);
 }
 form .service-dropdown iconify-icon {
   font-size: 3.5vh;
@@ -44,7 +50,6 @@ form .service-dropdown iconify-icon {
 .service-dropdown {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 1rem;
   margin-bottom: 1rem;
   flex-wrap: wrap;
@@ -52,14 +57,102 @@ form .service-dropdown iconify-icon {
 .form-body label {
   font-weight: 600;
 }
+form small {
+  font-weight: normal;
+}
 select option:disabled {
   font-style: italic;
 }
 .another-service {
   display: none;
 }
-@media screen and (max-width: 600px) {
+.calendar {
+  padding: 1rem 0;
+}
+.fc-unthemed td.fc-today {
+  background: none;
+}
+.fc-future {
+  cursor: pointer;
+}
+.fc-past,
+.fc-today {
+  opacity: 0.3;
+}
+.fc-day.active {
+  background-color: var(--blue);
+}
+.fc-day-header {
+  font-size: 2vh;
+}
+.fc-today-button {
+  display: none;
+}
+.form-body {
+  display: flex;
+  gap: 4rem;
+  padding-bottom: 1.5rem;
+  margin-bottom: 1rem;
+
+  background-color: var(--white);
+  border-radius: 1vh;
+  border: 0.2vh solid #00000015;
+  box-shadow: 0 0.6vh 0.6vh 0 #00000025;
+  padding: 1% 5%;
+}
+.form-body .half {
+  width: 100%;
+}
+.form-body .half:nth-of-type(1) {
+  padding-top: 1.5rem;
+}
+.buttons {
+  padding-right: 1rem;
+  display: flex;
+  justify-content: end;
+}
+.form-footer {
+  align-self: end;
+  margin-bottom: 1rem;
+}
+.buttons button,
+.buttons a {
+  background-color: var(--white);
+  border: 0.2vh solid #00000015;
+  box-shadow: 0 0.6vh 0.6vh 0 #00000025;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: var(--black);
+  border-radius: 1vh;
+  font-size: 2.1vh;
+  cursor: pointer;
+  margin-left: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+.buttons button iconify-icon {
+  font-size: 2.5vh;
+}
+.buttons a {
+  text-decoration: none;
+}
+.buttons a:hover {
+  color: var(--red);
+}
+.buttons button:hover {
+  color: var(--blue);
+}
+@media screen and (max-width: 1000px) {
+  .form-body {
+    display: block;
+  }
   .form-container {
-    max-width: 80%;
+    display: block;
+    width: 500px;
+    max-width: 90%;
   }
 }
+
+/* @media screen and (max-width: 600px) {
+} */
