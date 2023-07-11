@@ -235,34 +235,3 @@ input[type="checkbox"] {
     font-size: 2vw;
   }
 }
-@media screen and (max-width: 1000px) {
-  .header {
-    height: auto;
-  }
-  .sidebar {
-    /* display: none; */
-    margin-left: -5rem;
-    transition: margin-left 0.3s ease;
-  }
-  .content {
-    width: 100%;
-  }
-  .sidebar.expanded {
-    display: flex;
-    position: absolute;
-    width: 100%;
-    padding-top: 2.5rem;
-    margin-left: 0;
-  }
-  .sidebar.expanded ~ .content .header .hamburger .icon {
-    position: absolute;
-    z-index: 6;
-    right: 1rem;
-    top: 1rem;
-    transition: position 0.9s ease;
-    color: var(--black);
-  }
-  .sidebar.expanded .logout {
-    align-self: center;
-  }
-}
