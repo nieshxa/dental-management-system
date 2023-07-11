@@ -6,7 +6,7 @@
   padding: 2rem;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
   gap: 2rem;
   overflow-y: auto;
 }
@@ -16,6 +16,7 @@
   height: 20vw;
   min-height: 200px;
   object-fit: cover;
+  box-shadow: 5px 5px 10px #bebebe, -5px -5px 10px #ffffff;
 }
 .card {
   background-color: var(--white);
@@ -82,11 +83,12 @@
   text-align: center;
   color: var(--grey);
 }
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 700px) {
   .card {
     flex-direction: row;
   }
-  .name, .position {
+  .name,
+  .position {
     text-align-last: left;
     margin-left: 2rem;
   }
