@@ -1,0 +1,268 @@
+.tab-content {
+  overflow-y: auto;
+  font-size: 2vh;
+  display: flex;
+  justify-content: center;
+  overflow-x: hidden;
+  padding: 0.5rem;
+}
+.dental-condition {
+  /* box-shadow: #00000025 0 4px 4px 0; */
+  padding: 20px 40px;
+  background-color: var(--white);
+  box-shadow: 5px 5px 10px #bebebe, -5px -5px 10px #ffffff;
+  width: fit-content;
+  height: fit-content;
+}
+.dental-condition .patient {
+  display: flex;
+  gap: 1rem;
+}
+.dental-condition .patient .name {
+  width: 40%;
+}
+.dental-condition .patient .sex {
+  width: 30%;
+}
+.dental-condition .patient .bdate {
+  width: 30%;
+}
+.patient-details {
+  display: flex;
+  gap: 5px;
+}
+.patient-details .label {
+  font-weight: 700;
+}
+.patient-details .text {
+  border-bottom: 1px #202020 solid;
+  flex-grow: 1;
+  text-align: center;
+}
+.form-boxes-1 {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+.right-form {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  border-right: 0.5vw solid #202020;
+}
+.temporary {
+  display: flex;
+  align-items: center;
+}
+.temporary .label {
+  text-align: center;
+  margin-right: 1vw;
+}
+.status,
+.right,
+.left,
+.first-row-circles-1,
+.temp-teeth-1,
+.second-row-circles-1 {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.temp-teeth-1 {
+  margin-top: 1rem;
+}
+.form-boxes-1 .label {
+  font-weight: 600;
+}
+.form-boxes-1 input {
+  text-align: center;
+  width: 3vw;
+  height: 3vw;
+}
+.input-box {
+  display: flex;
+}
+.numbers {
+  display: flex;
+}
+.number {
+  width: 3vw;
+  text-align: center;
+}
+.circle {
+  width: 2.5vw;
+  height: 2.5vw;
+  border: #202020 solid 1px;
+  border-radius: 50%;
+}
+.first-row-circles-1 .input-box,
+.second-row-circles-1 .input-box,
+.third-row-circles-1 .input-box,
+.fourth-row-circles-1 .input-box {
+  gap: 0.5vw;
+  margin-right: 0.25vw;
+}
+.first-row-circles-2 .input-box,
+.second-row-circles-2 .input-box,
+.third-row-circles-2 .input-box,
+.fourth-row-circles-2 .input-box {
+  gap: 0.5vw;
+  margin-left: 0.25vw;
+}
+.third-row-circles-1 .input-box,
+.third-row-circles-2 .input-box,
+.fourth-row-circles-1 .input-box,
+.fourth-row-circles-2 .input-box {
+  margin-top: 1rem;
+}
+
+.third-row-circles-1,
+.third-row-circles-2 {
+  border-top: 0.5vw solid #202020;
+}
+.first-row-circles-1,
+.first-row-circles-2,
+.second-row-circles-1,
+.second-row-circles-2 {
+  margin-bottom: 1rem;
+}
+.no-border-right {
+  border-right-color: none;
+}
+.no-border-left {
+  border-left-color: none;
+}
+.flex {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.flex:nth-of-type(2) .permanent {
+  display: none;
+}
+.flex .permanent {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-weight: 700;
+  text-align: center;
+}
+
+.form-boxes-1 .label,
+.permanent,
+.numbers,
+.upper-part-form,
+.lower-part-form {
+  font-size: 2vh;
+}
+.legend-condition,
+.restorations {
+  display: flex;
+  gap: 0.5rem;
+}
+.legend-condition .icons,
+.restorations .icons {
+  text-align: end;
+  font-weight: 800;
+}
+.category {
+  font-weight: 800;
+  margin-top: 1rem;
+}
+input[type="text"]:not(.form-boxes-1 input[type="text"]) {
+  border: none;
+  border-bottom: 1px solid #000;
+  width: 15vw;
+}
+p {
+  margin: 0;
+}
+input[type="checkbox"] {
+  margin-right: 0.5rem;
+}
+.hidden {
+  visibility: hidden;
+}
+.upper-part-form,
+.lower-part-form {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+@media screen and (max-width: 1120px) {
+  .dental-condition .patient {
+    flex-direction: column;
+  }
+  .patient-details .label {
+    width: 150px;
+    margin-right: 1rem;
+    text-align: right;
+  }
+  .dental-condition .patient .name {
+    width: 100%;
+  }
+  .dental-condition .patient .sex {
+    width: 100%;
+  }
+  .dental-condition .patient .bdate {
+    width: 100%;
+  }
+  .patient-details .text {
+    text-align: left;
+  }
+}
+@media screen and (max-width: 900px) {
+  .form-boxes-1 .label,
+  .permanent,
+  .numbers {
+    font-size: 2vw;
+  }
+  .form-boxes-1 input,
+  .number {
+    width: 3.5vw;
+    height: 3.5vw;
+  }
+  .circle {
+    width: 3vw;
+    height: 3vw;
+  }
+}
+@media screen and (max-width: 700px) {
+  .form-boxes-1 .label,
+  .permanent,
+  .numbers,
+  .upper-part-form,
+  .lower-part-form {
+    font-size: 2vw;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .header {
+    height: auto;
+  }
+  .sidebar {
+    /* display: none; */
+    margin-left: -5rem;
+    transition: margin-left 0.3s ease;
+  }
+  .content {
+    width: 100%;
+  }
+  .sidebar.expanded {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    padding-top: 2.5rem;
+    margin-left: 0;
+  }
+  .sidebar.expanded ~ .content .header .hamburger .icon {
+    position: absolute;
+    z-index: 6;
+    right: 1rem;
+    top: 1rem;
+    transition: position 0.9s ease;
+    color: var(--black);
+  }
+  .sidebar.expanded .logout {
+    align-self: center;
+  }
+}
