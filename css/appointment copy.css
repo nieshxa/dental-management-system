@@ -118,7 +118,7 @@ table tbody .service-name {
 }
 table tbody .service-id,
 .service-time,
-.service-type {
+.service-status {
   font-size: 2vh;
   text-transform: uppercase;
 }
@@ -145,10 +145,22 @@ table tbody td:nth-last-of-type(1) {
   text-decoration: none;
   color: var(--black);
 }
-.service-type {
+.service-status {
   border-left: var(--blue) 0.3rem solid;
   font-weight: 500;
   padding-left: 0.25rem;
+}
+.service-status[value="previous"] {
+  border-left-color: var(--dark-greyish-blue);
+}
+.service-status[value="confirmed"] {
+  border-left-color: var(--green);
+}
+.service-status[value="pending"] {
+  border-left-color: var(--blue);
+}
+.service-status[value="cancelled"] {
+  border-left-color: var(--red);
 }
 /* @media screen and (max-width: 850px) {
   .view-appt,
@@ -193,6 +205,7 @@ table tbody td:nth-last-of-type(1) {
   justify-content: center;
   padding: 0.5rem 1rem;
   color: var(--black);
+  border-radius: 1vh;
 }
 
 .dropdown-item iconify-icon {
@@ -200,4 +213,88 @@ table tbody td:nth-last-of-type(1) {
 }
 .dropdown-item {
   cursor: pointer;
+}
+
+.sidebar.expanded ~ .content .myModal {
+  width: calc(100% - 12.5rem);
+}
+.myModal {
+  display: none;
+
+  justify-content: center;
+  align-items: center;
+  width: calc(100% - 12.5rem);
+  position: fixed;
+  width: calc(100% - 5rem);
+  height: inherit;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+.myModal p {
+  text-align: center;
+}
+.myModal p:nth-of-type(1) {
+  color: var(--red);
+  font-weight: 600;
+}
+.modal-content {
+  background-color: #fff;
+  padding: 1.5rem 2rem;
+  max-height: 90%;
+  width: 50vw;
+  overflow: auto;
+  border-radius: 0.5rem;
+  box-shadow: #00000025 2px 4px 4px 4px;
+}
+.myModal #modalMessage {
+  font-size: 2vh;
+}
+.myModal .close {
+  font-size: 2vh;
+  text-align: center;
+  width: 100%;
+  color: var(--blue);
+  padding: 0.5rem;
+  margin-top: 1rem;
+  border-radius: 1vh;
+  background-color: var(--white);
+  cursor: pointer;
+  border: 0.2vh solid #00000015;
+  box-shadow: 0 0.6vh 0.6vh 0 #00000025;
+}
+.myModal .close:hover {
+  color: var(--white);
+  background-color: var(--blue);
+  transition: all ease 0.3s;
+}
+.myModal .note {
+  font-weight: 600;
+}
+.modal-content .dr-note {
+  margin: 1rem;
+}
+.myModal .service-name {
+  font-weight: 600;
+}
+.myModal .service-id {
+  font-weight: 500;
+}
+.myModal .service-id,
+.myModal .dr-msg {
+  font-size: 2vh;
+}
+.modal-content table {
+  width: 100%;
+}
+.modal-content table tr:nth-of-type(2) {
+  text-align: right;
+}
+
+@media screen and (max-width: 600px) {
+  .myModal {
+    width: 100%;
+  }
+  .modal-content {
+    width: 80vw;
+  }
 }
