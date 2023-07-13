@@ -89,6 +89,23 @@
         </div>
       </div>
       <div class="content">
+        <!-- Add the necessary HTML code for the modal -->
+        <div id="myModal" class="myModal">
+          <div class="modal-content">
+            <!-- Content will be displayed here -->
+            <div id="modal-content"></div>
+            <div class="dr-note">
+              <div class="note">Doctor's Note</div>
+              <div class="dr-msg">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Tenetur, sed sunt enim adipisci doloremque deleniti non autem
+                sapiente aliquam alias! Quibusdam numquam a voluptatem pariatur
+                natus consequatur ipsa sint dignissimos.
+              </div>
+            </div>
+            <span class="close">OK</span>
+          </div>
+        </div>
         <div class="header">
           <div class="hamburger">
             <iconify-icon
@@ -139,7 +156,7 @@
               <tbody>
                 <tr>
                   <td>
-                    <div class="service-type">New</div>
+                    <div class="service-status" value="previous">previous</div>
                     <div class="service-name">Dental Examination</div>
                     <div class="service-id">ID: 20230601-01</div>
                   </td>
@@ -163,11 +180,16 @@
                         aria-labelledby="dropdownMenuButton1"
                       >
                         <li>
-                          <a class="dropdown-item" href="#"
+                          <a class="dropdown-item view-modal-appt" href="#"
                             ><iconify-icon
                               icon="carbon:view-filled"
                             ></iconify-icon
                             >View</a
+                          ><a class="dropdown-item" href="#"
+                            ><iconify-icon
+                              icon="basil:cancel-solid"
+                            ></iconify-icon
+                            >Cancel</a
                           >
                         </li>
                       </ul>
@@ -176,59 +198,8 @@
                 </tr>
                 <tr>
                   <td>
-                    <div class="service-type">follow-up</div>
-                    <div class="service-name">Dental Cleanings</div>
-                    <div class="service-id">ID: 20230601-02</div>
-                  </td>
-                  <td>
-                    <div class="service-date">2023-06-01</div>
-                    <div class="service-time">09:00 AM</div>
-                  </td>
-                  <td>
-                    <div class="dropdown">
-                      <button
-                        class="btn btn-secondary dropdown-toggle"
-                        type="button"
-                        id="dropdownMenuButton1"
-                        data-bs-toggle="dropdown"
-                        aria-expanded="false"
-                      >
-                        <iconify-icon icon="ic:round-more-horiz"></iconify-icon>
-                      </button>
-                      <ul
-                        class="dropdown-menu"
-                        aria-labelledby="dropdownMenuButton1"
-                      >
-                        <li>
-                          <a class="dropdown-item" href="#"
-                            ><iconify-icon
-                              icon="carbon:view-filled"
-                            ></iconify-icon
-                            >View</a
-                          >
-                        </li>
-                      </ul>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <!-- confirmed scheds -->
-          <div class="appt-sched" id="div2">
-            <table id="table1" class="table">
-              <thead class="table-dark">
-                <tr>
-                  <th>Service</th>
-                  <th>Date & Time</th>
-                  <th>Actions</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    <div class="service-type">New</div>
-                    <div class="service-name">Xray</div>
+                    <div class="service-status" value="confirmed">Confirmed</div>
+                    <div class="service-name">Dental Examination</div>
                     <div class="service-id">ID: 20230601-01</div>
                   </td>
                   <td>
@@ -251,11 +222,16 @@
                         aria-labelledby="dropdownMenuButton1"
                       >
                         <li>
-                          <a class="dropdown-item" href="#"
+                          <a class="dropdown-item view-modal-appt" href="#"
                             ><iconify-icon
                               icon="carbon:view-filled"
                             ></iconify-icon
                             >View</a
+                          ><a class="dropdown-item" href="#"
+                            ><iconify-icon
+                              icon="basil:cancel-solid"
+                            ></iconify-icon
+                            >Cancel</a
                           >
                         </li>
                       </ul>
@@ -264,7 +240,49 @@
                 </tr>
                 <tr>
                   <td>
-                    <div class="service-type">follow-up</div>
+                    <div class="service-status" value="cancelled">cancelled</div>
+                    <div class="service-name">Dental Examination</div>
+                    <div class="service-id">ID: 20230601-01</div>
+                  </td>
+                  <td>
+                    <div class="service-date">2023-09-01</div>
+                    <div class="service-time">09:00 AM</div>
+                  </td>
+                  <td>
+                    <div class="dropdown">
+                      <button
+                        class="btn btn-secondary dropdown-toggle"
+                        type="button"
+                        id="dropdownMenuButton1"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        <iconify-icon icon="ic:round-more-horiz"></iconify-icon>
+                      </button>
+                      <ul
+                        class="dropdown-menu"
+                        aria-labelledby="dropdownMenuButton1"
+                      >
+                        <li>
+                          <a class="dropdown-item view-modal-appt" href="#"
+                            ><iconify-icon
+                              icon="carbon:view-filled"
+                            ></iconify-icon
+                            >View</a
+                          ><a class="dropdown-item" href="#"
+                            ><iconify-icon
+                              icon="basil:cancel-solid"
+                            ></iconify-icon
+                            >Cancel</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="service-status" value="pending">pending</div>
                     <div class="service-name">Dental Cleanings</div>
                     <div class="service-id">ID: 20230601-02</div>
                   </td>
@@ -288,11 +306,72 @@
                         aria-labelledby="dropdownMenuButton1"
                       >
                         <li>
-                          <a class="dropdown-item" href="#"
+                          <a class="dropdown-item view-modal-appt" href="#"
                             ><iconify-icon
                               icon="carbon:view-filled"
                             ></iconify-icon
                             >View</a
+                          ><a class="dropdown-item" href="#"
+                            ><iconify-icon
+                              icon="basil:cancel-solid"
+                            ></iconify-icon
+                            >Cancel</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- confirmed scheds -->
+          <div class="appt-sched" id="div2">
+            <table id="table1" class="table">
+              <thead class="table-dark">
+                <tr>
+                  <th>Service</th>
+                  <th>Date & Time</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="service-status" value="confirmed">Confirmed</div>
+                    <div class="service-name">Dental Examination</div>
+                    <div class="service-id">ID: 20230601-01</div>
+                  </td>
+                  <td>
+                    <div class="service-date">2023-09-01</div>
+                    <div class="service-time">09:00 AM</div>
+                  </td>
+                  <td>
+                    <div class="dropdown">
+                      <button
+                        class="btn btn-secondary dropdown-toggle"
+                        type="button"
+                        id="dropdownMenuButton1"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        <iconify-icon icon="ic:round-more-horiz"></iconify-icon>
+                      </button>
+                      <ul
+                        class="dropdown-menu"
+                        aria-labelledby="dropdownMenuButton1"
+                      >
+                        <li>
+                          <a class="dropdown-item view-modal-appt" href="#"
+                            ><iconify-icon
+                              icon="carbon:view-filled"
+                            ></iconify-icon
+                            >View</a
+                          ><a class="dropdown-item" href="#"
+                            ><iconify-icon
+                              icon="basil:cancel-solid"
+                            ></iconify-icon
+                            >Cancel</a
                           >
                         </li>
                       </ul>
@@ -316,44 +395,7 @@
               <tbody>
                 <tr>
                   <td>
-                    <div class="service-type">New</div>
-                    <div class="service-name">Oral Prophylaxis</div>
-                    <div class="service-id">ID: 20230601-01</div>
-                  </td>
-                  <td>
-                    <div class="service-date">2023-09-01</div>
-                    <div class="service-time">09:00 AM</div>
-                  </td>
-                  <td>
-                    <div class="dropdown">
-                      <button
-                        class="btn btn-secondary dropdown-toggle"
-                        type="button"
-                        id="dropdownMenuButton1"
-                        data-bs-toggle="dropdown"
-                        aria-expanded="false"
-                      >
-                        <iconify-icon icon="ic:round-more-horiz"></iconify-icon>
-                      </button>
-                      <ul
-                        class="dropdown-menu"
-                        aria-labelledby="dropdownMenuButton1"
-                      >
-                        <li>
-                          <a class="dropdown-item" href="#"
-                            ><iconify-icon
-                              icon="carbon:view-filled"
-                            ></iconify-icon
-                            >View</a
-                          >
-                        </li>
-                      </ul>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="service-type">follow-up</div>
+                    <div class="service-status" value="pending">pending</div>
                     <div class="service-name">Dental Cleanings</div>
                     <div class="service-id">ID: 20230601-02</div>
                   </td>
@@ -377,11 +419,16 @@
                         aria-labelledby="dropdownMenuButton1"
                       >
                         <li>
-                          <a class="dropdown-item" href="#"
+                          <a class="dropdown-item view-modal-appt" href="#"
                             ><iconify-icon
                               icon="carbon:view-filled"
                             ></iconify-icon
                             >View</a
+                          ><a class="dropdown-item" href="#"
+                            ><iconify-icon
+                              icon="basil:cancel-solid"
+                            ></iconify-icon
+                            >Cancel</a
                           >
                         </li>
                       </ul>
@@ -405,7 +452,7 @@
               <tbody>
                 <tr>
                   <td>
-                    <div class="service-type">New</div>
+                    <div class="service-status" value="previous">previous</div>
                     <div class="service-name">Dental Examination</div>
                     <div class="service-id">ID: 20230601-01</div>
                   </td>
@@ -429,48 +476,16 @@
                         aria-labelledby="dropdownMenuButton1"
                       >
                         <li>
-                          <a class="dropdown-item" href="#"
+                          <a class="dropdown-item view-modal-appt" href="#"
                             ><iconify-icon
                               icon="carbon:view-filled"
                             ></iconify-icon
                             >View</a
-                          >
-                        </li>
-                      </ul>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="service-type">follow-up</div>
-                    <div class="service-name">Dental Cleanings</div>
-                    <div class="service-id">ID: 20230601-02</div>
-                  </td>
-                  <td>
-                    <div class="service-date">2023-06-01</div>
-                    <div class="service-time">09:00 AM</div>
-                  </td>
-                  <td>
-                    <div class="dropdown">
-                      <button
-                        class="btn btn-secondary dropdown-toggle"
-                        type="button"
-                        id="dropdownMenuButton1"
-                        data-bs-toggle="dropdown"
-                        aria-expanded="false"
-                      >
-                        <iconify-icon icon="ic:round-more-horiz"></iconify-icon>
-                      </button>
-                      <ul
-                        class="dropdown-menu"
-                        aria-labelledby="dropdownMenuButton1"
-                      >
-                        <li>
-                          <a class="dropdown-item" href="#"
+                          ><a class="dropdown-item" href="#"
                             ><iconify-icon
-                              icon="carbon:view-filled"
+                              icon="basil:cancel-solid"
                             ></iconify-icon
-                            >View</a
+                            >Cancel</a
                           >
                         </li>
                       </ul>
@@ -494,7 +509,7 @@
               <tbody>
                 <tr>
                   <td>
-                    <div class="service-type">New</div>
+                    <div class="service-status" value="cancelled">cancelled</div>
                     <div class="service-name">Dental Examination</div>
                     <div class="service-id">ID: 20230601-01</div>
                   </td>
@@ -518,48 +533,16 @@
                         aria-labelledby="dropdownMenuButton1"
                       >
                         <li>
-                          <a class="dropdown-item" href="#"
+                          <a class="dropdown-item view-modal-appt" href="#"
                             ><iconify-icon
                               icon="carbon:view-filled"
                             ></iconify-icon
                             >View</a
-                          >
-                        </li>
-                      </ul>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="service-type">follow-up</div>
-                    <div class="service-name">Dental Cleanings</div>
-                    <div class="service-id">ID: 20230601-02</div>
-                  </td>
-                  <td>
-                    <div class="service-date">2023-06-01</div>
-                    <div class="service-time">09:00 AM</div>
-                  </td>
-                  <td>
-                    <div class="dropdown">
-                      <button
-                        class="btn btn-secondary dropdown-toggle"
-                        type="button"
-                        id="dropdownMenuButton1"
-                        data-bs-toggle="dropdown"
-                        aria-expanded="false"
-                      >
-                        <iconify-icon icon="ic:round-more-horiz"></iconify-icon>
-                      </button>
-                      <ul
-                        class="dropdown-menu"
-                        aria-labelledby="dropdownMenuButton1"
-                      >
-                        <li>
-                          <a class="dropdown-item" href="#"
+                          ><a class="dropdown-item" href="#"
                             ><iconify-icon
-                              icon="carbon:view-filled"
+                              icon="basil:cancel-solid"
                             ></iconify-icon
-                            >View</a
+                            >Cancel</a
                           >
                         </li>
                       </ul>
@@ -572,9 +555,13 @@
         </div>
       </div>
     </div>
+
+    <!-- Add the necessary JavaScript code -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   </body>
   <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
   <script src="./js/sidebar.js"></script>
   <script src="./js/chooseTab-appointments.js"></script>
   <script src="./js/searchTable-appointments.js"></script>
+  <script src="./js/viewAppt-appointments.js"></script>
 </html>
