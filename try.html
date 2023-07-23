@@ -1,182 +1,111 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8" />
-    <title>Table with Dropdown and Modal</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://code.iconify.design/2/2.0.4/iconify.min.js"></script>
-  </head>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        padding: 1rem;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
 
+      th,
+      td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+      }
+
+      @media only screen and (max-width: 600px) {
+        table {
+          font-size: 14px;
+        }
+        thead {
+          display: none;
+        }
+
+        th,
+        td {
+          display: block;
+          width: 100%;
+          padding: 5px;
+          display: flex;
+        }
+
+        th:nth-child(1),
+        td:nth-child(1) {
+          background-color: lightgray;
+          font-weight: bold;
+          margin-top: 1rem;
+        }
+
+        td:before {
+          content: attr(data-title);
+          font-weight: bold;
+          display: block;
+          width: 50%;
+        }
+      }
+    </style>
+  </head>
   <body>
-    <table class="table">
+    <table>
       <thead>
         <tr>
-          <th>Action</th>
-          <th>Service</th>
-          <th>Date & Time</th>
+          <th>Date</th>
+          <th>Tooth Count</th>
+          <th>Procedure</th>
+          <th>Result</th>
+          <th>Amount Charged</th>
+          <th>Amount Paid</th>
+          <th>Remaining Balance</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>
-            <div class="service-type">New</div>
-            <div class="service-name">Dental Examination</div>
-            <div class="service-id">ID: 20230601-01</div>
-          </td>
-          <td>
-            <div class="service-date">2023-09-01</div>
-            <div class="service-time">09:00 AM</div>
-          </td>
-          <td>
-            <div class="dropdown">
-              <button
-                class="btn btn-secondary dropdown-toggle"
-                type="button"
-                id="dropdownMenuButton1"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                <iconify-icon icon="ic:round-more-horiz"></iconify-icon>
-              </button>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li>
-                  <a
-                    class="dropdown-item view-details"
-                    href="#"
-                    data-toggle="modal"
-                    data-target="#detailsModal"
-                  >
-                    <iconify-icon icon="carbon:view-filled"></iconify-icon> View
-                  </a>
-                  <div class="dropdown-item">
-                    <iconify-icon icon="basil:cancel-solid"></iconify-icon>
-                    Cancel
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </td>
+          <td data-title="Date">2023-07-01</td>
+          <td data-title="Tooth Count">28</td>
+          <td data-title="Procedure">Regular Cleaning</td>
+          <td data-title="Result">Successful</td>
+          <td data-title="Amount Charged">PHP 100</td>
+          <td data-title="Amount Paid">PHP 100</td>
+          <td data-title="Remaining Balance">PHP 0</td>
         </tr>
         <tr>
-          <td>
-            <div class="service-type">New</div>
-            <div class="service-name">Dental Examination</div>
-            <div class="service-id">ID: 20230601-01</div>
-          </td>
-          <td>
-            <div class="service-date">2023-09-01</div>
-            <div class="service-time">10:00 AM</div>
-          </td>
-          <td>
-            <div class="dropdown">
-              <button
-                class="btn btn-secondary dropdown-toggle"
-                type="button"
-                id="dropdownMenuButton1"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                <iconify-icon icon="ic:round-more-horiz"></iconify-icon>
-              </button>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li>
-                  <a
-                    class="dropdown-item view-details"
-                    href="#"
-                    data-toggle="modal"
-                    data-target="#detailsModal"
-                    ><iconify-icon icon="carbon:view-filled"></iconify-icon>
-                    View
-                  </a>
-                  <div class="dropdown-item">
-                    <iconify-icon icon="basil:cancel-solid"></iconify-icon>
-                    Cancel
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </td>
+          <td data-title="Date">2023-07-08</td>
+          <td data-title="Tooth Count">32</td>
+          <td data-title="Procedure">Fillings</td>
+          <td data-title="Result">Successful</td>
+          <td data-title="Amount Charged">PHP 200</td>
+          <td data-title="Amount Paid">PHP 150</td>
+          <td data-title="Remaining Balance">PHP 50</td>
         </tr>
-        <!-- Add more rows here -->
+        <tr>
+          <td data-title="Date">2023-07-15</td>
+          <td data-title="Tooth Count">24</td>
+          <td data-title="Procedure">Extraction</td>
+          <td data-title="Result">Successful</td>
+          <td data-title="Amount Charged">PHP 500</td>
+          <td data-title="Amount Paid">PHP 300</td>
+          <td data-title="Remaining Balance">PHP 200</td>
+        </tr>
+        <tr>
+          <td data-title="Date">2023-07-22</td>
+          <td data-title="Tooth Count">28</td>
+          <td data-title="Procedure">Root Canal</td>
+          <td data-title="Result">Successful</td>
+          <td data-title="Amount Charged">PHP 1000</td>
+          <td data-title="Amount Paid">PHP 800</td>
+          <td data-title="Remaining Balance">PHP 200</td>
+        </tr>
+        <!-- Add more dummy rows here -->
       </tbody>
     </table>
-
-    <!-- Details Modal -->
-    <div
-      class="modal fade"
-      id="detailsModal"
-      tabindex="-1"
-      aria-labelledby="detailsModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="detailsModalLabel">Service Details</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <!-- Add the row's details here -->
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Close
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const viewDetailsLinks = document.querySelectorAll(".view-details");
-
-        viewDetailsLinks.forEach(function (link) {
-          link.addEventListener("click", function (event) {
-            event.preventDefault();
-
-            const modalBody = document.querySelector(
-              "#detailsModal .modal-body"
-            );
-            const row = event.target.closest("tr");
-
-            // Retrieve the relevant data from the row
-            const serviceType = row.querySelector(".service-type").textContent;
-            const serviceName = row.querySelector(".service-name").textContent;
-            const serviceID = row.querySelector(".service-id").textContent;
-            const serviceDate = row.querySelector(".service-date").textContent;
-            const serviceTime = row.querySelector(".service-time").textContent;
-
-            // Populate the modal with the data
-            modalBody.innerHTML = `
-            <p><strong>Service Type:</strong> ${serviceType}</p>
-            <p><strong>Service Name:</strong> ${serviceName}</p>
-            <p><strong>Service ID:</strong> ${serviceID}</p>
-            <p><strong>Service Date:</strong> ${serviceDate}</p>
-            <p><strong>Service Time:</strong> ${serviceTime}</p>
-          `;
-
-            // Open the modal
-            const modal = new bootstrap.Modal(
-              document.querySelector("#detailsModal")
-            );
-            modal.show();
-          });
-        });
-      });
-    </script>
   </body>
 </html>

@@ -50,8 +50,9 @@ body {
   justify-content: space-between;
   overflow: hidden;
 }
-.sidebar.expanded .content {
+.sidebar.expanded ~ .content {
   width: calc(100% - 15rem);
+  transition: width 0.3s ease;
 }
 .header,
 .greet {

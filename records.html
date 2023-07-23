@@ -3,6 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+
     <title>DMS</title>
     <link rel="stylesheet" href="./css/all.css" />
     <link rel="stylesheet" href="./css/records.css" />
@@ -91,7 +99,14 @@
           </div>
         </div>
         <div class="tab-content">
-          <div class="dental-condition">
+          <div class="ddown">
+            Choose Record
+            <select id="tab-selector" onchange="showTab()">
+              <option value="dental-condition">Dental Condition</option>
+              <option value="treatment-plan">Treatment Plan</option>
+            </select>
+          </div>
+          <div id="dental-condition" class="dental-condition tabContent">
             <div class="patient">
               <div class="name patient-details">
                 <div class="label">NAME:</div>
@@ -500,7 +515,7 @@
                   <div class="x-ray">
                     <p>
                       <label
-                        ><input type="checkbox" />Preriapical <br>(Tth No.:
+                        ><input type="checkbox" />Preriapical <br />(Tth No.:
                         <input type="text" /> )</label
                       >
                     </p>
@@ -661,10 +676,65 @@
               </div>
             </div>
           </div>
+          <div id="treatment-plan" class="treatment-plan tabContent">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Tooth Count</th>
+                  <th>Procedure</th>
+                  <th>Result</th>
+                  <th>Amount Charged</th>
+                  <th>Amount Paid</th>
+                  <th>Remaining Balance</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-title="Date">2023-07-01</td>
+                  <td data-title="Tooth Count">28</td>
+                  <td data-title="Procedure">Regular Cleaning</td>
+                  <td data-title="Result">Successful</td>
+                  <td data-title="Amount Charged">PHP 100</td>
+                  <td data-title="Amount Paid">PHP 100</td>
+                  <td data-title="Remaining Balance">PHP 0</td>
+                </tr>
+                <tr>
+                  <td data-title="Date">2023-07-08</td>
+                  <td data-title="Tooth Count">32</td>
+                  <td data-title="Procedure">Fillings</td>
+                  <td data-title="Result">Successful</td>
+                  <td data-title="Amount Charged">PHP 200</td>
+                  <td data-title="Amount Paid">PHP 150</td>
+                  <td data-title="Remaining Balance">PHP 50</td>
+                </tr>
+                <tr>
+                  <td data-title="Date">2023-07-15</td>
+                  <td data-title="Tooth Count">24</td>
+                  <td data-title="Procedure">Extraction</td>
+                  <td data-title="Result">Successful</td>
+                  <td data-title="Amount Charged">PHP 500</td>
+                  <td data-title="Amount Paid">PHP 300</td>
+                  <td data-title="Remaining Balance">PHP 200</td>
+                </tr>
+                <tr>
+                  <td data-title="Date">2023-07-22</td>
+                  <td data-title="Tooth Count">28</td>
+                  <td data-title="Procedure">Root Canal</td>
+                  <td data-title="Result">Successful</td>
+                  <td data-title="Amount Charged">PHP 1000</td>
+                  <td data-title="Amount Paid">PHP 800</td>
+                  <td data-title="Remaining Balance">PHP 200</td>
+                </tr>
+                <!-- Add more dummy rows here -->
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
   </body>
   <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
   <script src="./js/sidebar.js"></script>
+  <script src="./js/recordsTabSelector.js"></script>
 </html>
