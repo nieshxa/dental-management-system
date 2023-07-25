@@ -1,111 +1,220 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <style>
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-      body {
-        padding: 1rem;
-      }
-      table {
-        border-collapse: collapse;
-        width: 100%;
-      }
-
-      th,
-      td {
-        border: 1px solid black;
-        padding: 8px;
-        text-align: left;
-      }
-
-      @media only screen and (max-width: 600px) {
-        table {
-          font-size: 14px;
-        }
-        thead {
-          display: none;
-        }
-
-        th,
-        td {
-          display: block;
-          width: 100%;
-          padding: 5px;
-          display: flex;
-        }
-
-        th:nth-child(1),
-        td:nth-child(1) {
-          background-color: lightgray;
-          font-weight: bold;
-          margin-top: 1rem;
-        }
-
-        td:before {
-          content: attr(data-title);
-          font-weight: bold;
-          display: block;
-          width: 50%;
-        }
-      }
-    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DMS</title>
+    <link rel="stylesheet" href="./css/all.css" />
+    <link rel="stylesheet" href="./css/try.css" />
   </head>
   <body>
-    <table>
-      <thead>
-        <tr>
-          <th>Date</th>
-          <th>Tooth Count</th>
-          <th>Procedure</th>
-          <th>Result</th>
-          <th>Amount Charged</th>
-          <th>Amount Paid</th>
-          <th>Remaining Balance</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td data-title="Date">2023-07-01</td>
-          <td data-title="Tooth Count">28</td>
-          <td data-title="Procedure">Regular Cleaning</td>
-          <td data-title="Result">Successful</td>
-          <td data-title="Amount Charged">PHP 100</td>
-          <td data-title="Amount Paid">PHP 100</td>
-          <td data-title="Remaining Balance">PHP 0</td>
-        </tr>
-        <tr>
-          <td data-title="Date">2023-07-08</td>
-          <td data-title="Tooth Count">32</td>
-          <td data-title="Procedure">Fillings</td>
-          <td data-title="Result">Successful</td>
-          <td data-title="Amount Charged">PHP 200</td>
-          <td data-title="Amount Paid">PHP 150</td>
-          <td data-title="Remaining Balance">PHP 50</td>
-        </tr>
-        <tr>
-          <td data-title="Date">2023-07-15</td>
-          <td data-title="Tooth Count">24</td>
-          <td data-title="Procedure">Extraction</td>
-          <td data-title="Result">Successful</td>
-          <td data-title="Amount Charged">PHP 500</td>
-          <td data-title="Amount Paid">PHP 300</td>
-          <td data-title="Remaining Balance">PHP 200</td>
-        </tr>
-        <tr>
-          <td data-title="Date">2023-07-22</td>
-          <td data-title="Tooth Count">28</td>
-          <td data-title="Procedure">Root Canal</td>
-          <td data-title="Result">Successful</td>
-          <td data-title="Amount Charged">PHP 1000</td>
-          <td data-title="Amount Paid">PHP 800</td>
-          <td data-title="Remaining Balance">PHP 200</td>
-        </tr>
-        <!-- Add more dummy rows here -->
-      </tbody>
-    </table>
+    <div class="view">
+      <div class="sidebar expanded">
+        <div class="logo">
+          <img
+            src="https://scontent.fmnl3-4.fna.fbcdn.net/v/t1.15752-9/356968080_1586551681832416_5818240129651473002_n.png?_nc_cat=102&ccb=1-7&_nc_sid=ae9488&_nc_eui2=AeET-EyG0xD-MclU8iZJUS3mqhFb3_elH8-qEVvf96Ufz-IzvaMlj0t7ZZ-5ODXrF609BI7tLPZWTrg3ro8WfUv9&_nc_ohc=5atmUCeQmjkAX-TGZ0W&_nc_ht=scontent.fmnl3-4.fna&oh=03_AdQH0p60kR4OpCdl_T8TmbpYu42MUF57z1QZyjhN6C1B1A&oe=64C77594"
+            alt="logo"
+            class="clinic-logo"
+          />
+        </div>
+        <div class="tabs">
+          <a href="./dashboard.html" class="tab">
+            <iconify-icon icon="ic:round-dashboard" class="icon"></iconify-icon>
+            <span class="page-title">Dashboard</span></a
+          >
+          <a href="./services.html" class="tab">
+            <iconify-icon
+              icon="material-symbols:featured-play-list-outline-rounded"
+              class="icon"
+            ></iconify-icon>
+            <span class="page-title">Services</span></a
+          >
+          <a href="./staffs.html" class="tab">
+            <iconify-icon
+              icon="medical-icon:i-care-staff-area"
+              class="icon"
+            ></iconify-icon>
+            <span class="page-title">Staffs</span></a
+          >
+          <a href="./appointments.html" class="tab">
+            <iconify-icon
+              icon="pepicons-pop:calendar"
+              class="icon"
+            ></iconify-icon>
+            <span class="page-title">Appointments</span></a
+          >
+          <a href="./records.html" class="tab">
+            <iconify-icon
+              icon="ic:round-folder-open"
+              class="icon"
+            ></iconify-icon>
+            <span class="page-title">Records</span></a
+          >
+          <a href="./prescription.html" class="tab">
+            <iconify-icon
+              icon="material-symbols:medical-information-outline-rounded"
+              class="icon"
+            ></iconify-icon>
+            <span class="page-title">Prescription History</span></a
+          >
+          <a href="./settings.html" class="tab active">
+            <iconify-icon
+              icon="material-symbols:settings-suggest-rounded"
+              class="icon"
+            ></iconify-icon>
+            <span class="page-title">Profile Settings</span></a
+          >
+        </div>
+        <div class="logout">
+          <a href="" class="tab">
+            <!-- logout.php -->
+            <iconify-icon icon="solar:logout-2-bold" class="icon">
+            </iconify-icon>
+            <span class="page-title">Logout</span></a
+          >
+        </div>
+      </div>
+      <div class="content">
+        <div class="header">
+          <div class="hamburger">
+            <iconify-icon
+              icon="charm:menu-hamburger"
+              class="icon"
+            ></iconify-icon>
+          </div>
+          <div class="greet">
+            <div>Hi there, <b>Nicole</b>!</div>
+            <img
+              src="https://pbs.twimg.com/profile_images/911751183361908736/TBFLG79h_400x400.jpg"
+              class="my-img"
+            />
+          </div>
+        </div>
+        <div class="tab-content">
+          <div class="list">
+            <div class="item">
+              <div class="col">
+                <div class="row med">MEDICATION <span>Aspirin</span></div>
+                <div class="row instrux">
+                  INSTRUCTIONS <span>Take after meal twice a day</span>
+                </div>
+              </div>
+              <div class="col">
+                <div class="row dose">DOSE <span>20mg</span></div>
+                <div class="row qty">QTY <span>60 tablets</span></div>
+              </div>
+              <div class="col actions">
+                <iconify-icon
+                  icon="ic:round-print"
+                  class="print"
+                ></iconify-icon>
+              </div>
+            </div>
+            <div class="item">
+              <div class="col">
+                <div class="row med">MEDICATION <span>Aspirin</span></div>
+                <div class="row instrux">
+                  INSTRUCTIONS <span>Take after meal twice a day</span>
+                </div>
+              </div>
+              <div class="col">
+                <div class="row dose">DOSE <span>20mg</span></div>
+                <div class="row qty">QTY <span>60 tablets</span></div>
+              </div>
+              <div class="col actions">
+                <iconify-icon onclick="printItems()"
+                  icon="ic:round-print"
+                  class="print"
+                ></iconify-icon>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- tab-content -->
+          <div id="printable-view" style="display: none">
+            <!-- Doctor information in the printable view -->
+            <div class="p-header">
+              <div class="p-header-clinicName">
+                <img src="./images/logo.png" />
+                <h2>
+                  Pablo de Jesus <br />
+                  <span>Dental Clinic</span>
+                </h2>
+              </div>
+              <div class="p-header-clinicDetails">
+                <div class="left">
+                  <div class="p-doctor">Dr/a. Pablo de Jesus</div>
+                  <div class="p-position">Dentist</div>
+                </div>
+                <div class="right">
+                  <div class="p-location">d2 lng s mlpit</div>
+                  <div>+(63) 9123123123</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-patient">
+              <div class="left">
+                <div class="p-name">
+                  Patient's Name:
+                  <div class="input">Nicole S. Santos</div>
+                </div>
+                <div class="p-address">
+                  Address:
+                  <div class="input">
+                    123 Main Street, City, Countryyyyyyyyyy
+                  </div>
+                </div>
+              </div>
+              <div class="right">
+                <div class="p-age">
+                  Age:
+                  <div class="input">35</div>
+                </div>
+                <div class="p-date">
+                  Date:
+                  <div class="input">2023-07-24</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-body">
+              <div class="p-body-icon">
+                <img src="./images/prescription.svg" alt="" />
+              </div>
+              <div class="printable-row">
+                <div class="prescription">
+                  <span class="med-name"></span>
+                  <span class="dosage"></span>
+                  (<span class="quantity"></span>)
+                  <div class="instructions"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-footer">Doctor's Signature:</div>
+          </div>
+      </div>
+    </div>
   </body>
+  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
+  <script src="./js/sidebar.js"></script>
+
+  <script>
+    function printItems() {
+      const items = document.querySelectorAll(".item");
+      let printContent = "";
+
+      // Extract the content of each .item element
+      items.forEach((item) => {
+        printContent += item.outerHTML;
+      });
+
+      // Create a new window and print the content
+      const printWindow = window.open("", "_blank");
+      printWindow.document.write(printContent);
+      printWindow.document.close();
+      printWindow.print();
+    }
+  </script>
 </html>

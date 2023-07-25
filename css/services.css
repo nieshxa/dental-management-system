@@ -45,6 +45,13 @@
   position: absolute;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
+  width: calc(100% - 5rem);
+  position: absolute;
+  right: 0;
+}
+.sidebar.expanded ~ .modal {
+  width: calc(100% - 15rem);
+
 }
 .modal-content {
   background-color: #fff;

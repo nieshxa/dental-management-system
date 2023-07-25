@@ -9,6 +9,9 @@
   padding-bottom: 0.5rem;
   margin-bottom: 1rem;
 }
+.right::-webkit-scrollbar {
+  display: none;
+}
 .tab-content {
   display: flex;
   margin: 0;
