@@ -3,8 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.tutorialjinni.com/intl-tel-input/17.0.19/css/intlTelInput.css"
+    />
+    <script src="https://cdn.tutorialjinni.com/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
+
     <title>DMS</title>
     <link rel="stylesheet" href="./css/all.css" />
+    <link rel="stylesheet" href="./css/settings.css" />
   </head>
   <body>
     <div class="view">
@@ -89,9 +97,165 @@
             />
           </div>
         </div>
+        <div class="tab-content">
+          <!-- <select id="form-selector">
+            <option value="account-info">My Profile</option>
+            <option value="account-secu">Security</option>
+          </select> -->
+          <form action="" id="account-info">
+            <div class="change-pic">
+              <img
+                src="https://scontent.fmnl3-3.fna.fbcdn.net/v/t39.30808-6/339447930_135159019351903_1046511947275515845_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeE_Cuc5kJqGzncP3WgjcL_74fjG2UBT1EDh-MbZQFPUQNfbhHF9hJsVqpYROJ0hDzCW19tM9U_e16dqYsjc-FIL&_nc_ohc=yJQSxJHZKusAX-5cfLz&_nc_ht=scontent.fmnl3-3.fna&oh=00_AfCefgumrvb0k2_mJXX3fhoI8QvVpGnGOxfHmMJG909BkQ&oe=64C50A77"
+                alt=""
+                id="userImg"
+              />
+              <div class="choose-img">
+                <h3>Change Profile</h3>
+                <label class="upload-profile">
+                  <input type="file" name="pic" id="pic" accept="image/*" />
+                  <iconify-icon
+                    icon="fluent:image-sparkle-16-regular"
+                  ></iconify-icon
+                  >Upload picture</label
+                >
+                <!-- <div id="fileNameDisplay" style="display: none"></div> -->
+              </div>
+            </div>
+            <div class="personal-info">
+              <h3>personal information</h3>
+              <div class="patient-name">
+                <div class="group lastname">
+                  <label>Last name <input type="text" name="" id="" /> </label>
+                </div>
+                <div class="group firstname">
+                  <label>First name <input type="text" name="" id="" /> </label>
+                </div>
+                <div class="group middleinit">
+                  <label
+                    >Middle initial <input type="text" name="" id="" />
+                  </label>
+                </div>
+              </div>
+              <div class="contact">
+                <div class="group">
+                  <label>Email address<input type="email" /></label>
+                </div>
+                <div class="group">
+                  <label>Phone number<input type="phone" id="phone" /></label>
+                </div>
+              </div>
+            </div>
+            <div class="address">
+              <h3>address</h3>
+              <div class="full-address">
+                <div class="group address-1">
+                  <label>House # <input type="text" name="" id="" /></label>
+                  <label>Street <input type="text" /></label>
+                  <label>Barangay <input type="text" /></label>
+                </div>
+                <div class="group address-2">
+                  <label>City/Municipality <input type="text" /></label>
+                  <label>Province <input type="text" /></label>
+                </div>
+              </div>
+            </div>
+            <div class="change-pass">
+              <h3>CHANGE PASSWORD</h3>
+              <div class="pass-fields">
+                <div class="group current-pass">
+                  <label
+                    >Current password <input type="password" name="" id=""
+                  /></label>
+                </div>
+                <div class="group new-pass">
+                  <label
+                    >New password <input type="password" name="" id=""
+                  /></label>
+                </div>
+                <div class="group confirm-pass">
+                  <label
+                    >Confirm password <input type="password" name="" id=""
+                  /></label>
+                </div>
+              </div>
+            </div>
+            <div class="my-profile-title">
+              <!-- <h2>My Profile</h2> -->
+              <div>
+                <button class="save">
+                  <iconify-icon icon="basil:save-outline"></iconify-icon>Save
+                </button>
+              </div>
+            </div>
+          </form>
+          <!-- <form action="" id="account-secu" class="hidden">
+            <div class="change-pass">
+              <h3>CHANGE PASSWORD</h3>
+              <div class="pass-fields">
+                <div class="group current-pass">
+                  <label
+                    >Current password <input type="password" name="" id=""
+                  /></label>
+                </div>
+                <div class="group new-pass">
+                  <label
+                    >New password <input type="password" name="" id=""
+                  /></label>
+                </div>
+                <div class="group confirm-pass">
+                  <label
+                    >Confirm password <input type="password" name="" id=""
+                  /></label>
+                </div>
+              </div>
+            </div>
+            <div class="my-profile-title">
+              <h2>Security</h2>
+              <div>
+                <button class="save">
+                  <iconify-icon icon="basil:save-outline"></iconify-icon>Save
+                </button>
+              </div>
+            </div>
+          </form> -->
+        </div>
       </div>
     </div>
   </body>
   <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
   <script src="./js/sidebar.js"></script>
+  <script src="./js/changeProfilePicture.js"></script>
+  <script>
+    var input = document.querySelector("#phone");
+    window.intlTelInput(input, {
+      separateDialCode: true,
+      preferredCountries: ["ph"],
+      initialCountry: "ph",
+      // onlyCountries: ["ru", "cn","pk", "sg", "my", "bd"],
+      excludeCountries: ["in", "il"],
+    });
+  </script>
+
+  <!-- <script>
+    // JavaScript code to handle the form selection
+    const formSelector = document.getElementById("form-selector");
+    const accountInfoForm = document.getElementById("account-info");
+    const accountSecuForm = document.getElementById("account-secu");
+
+    // Show the "Account Information" form by default
+    accountInfoForm.style.display = "block";
+    accountSecuForm.style.display = "none";
+
+    formSelector.addEventListener("change", function () {
+      const selectedForm = formSelector.value;
+
+      if (selectedForm === "account-info") {
+        accountInfoForm.style.display = "block";
+        accountSecuForm.style.display = "none";
+      } else if (selectedForm === "account-secu") {
+        accountInfoForm.style.display = "none";
+        accountSecuForm.style.display = "flex";
+      }
+    });
+  </script> -->
 </html>

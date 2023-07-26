@@ -15,7 +15,7 @@
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
-    ></script>           
+    ></script>
 
     <title>DMS</title>
     <link rel="stylesheet" href="./css/all.css" />
@@ -198,7 +198,9 @@
                 </tr>
                 <tr>
                   <td>
-                    <div class="service-status" value="confirmed">Confirmed</div>
+                    <div class="service-status" value="confirmed">
+                      Confirmed
+                    </div>
                     <div class="service-name">Dental Examination</div>
                     <div class="service-id">ID: 20230601-01</div>
                   </td>
@@ -240,7 +242,9 @@
                 </tr>
                 <tr>
                   <td>
-                    <div class="service-status" value="cancelled">cancelled</div>
+                    <div class="service-status" value="cancelled">
+                      cancelled
+                    </div>
                     <div class="service-name">Dental Examination</div>
                     <div class="service-id">ID: 20230601-01</div>
                   </td>
@@ -324,10 +328,14 @@
                 </tr>
               </tbody>
             </table>
+            
+            <nav>
+              <ul id="pagination1" class="pagination"></ul>
+            </nav>
           </div>
           <!-- confirmed scheds -->
           <div class="appt-sched" id="div2">
-            <table id="table1" class="table">
+            <table id="table2" class="table">
               <thead class="table-dark">
                 <tr>
                   <th>Service</th>
@@ -338,7 +346,9 @@
               <tbody>
                 <tr>
                   <td>
-                    <div class="service-status" value="confirmed">Confirmed</div>
+                    <div class="service-status" value="confirmed">
+                      Confirmed
+                    </div>
                     <div class="service-name">Dental Examination</div>
                     <div class="service-id">ID: 20230601-01</div>
                   </td>
@@ -380,11 +390,15 @@
                 </tr>
               </tbody>
             </table>
+
+            <nav>
+              <ul id="pagination2" class="pagination"></ul>
+            </nav>
           </div>
 
           <!-- pending scheds -->
           <div class="appt-sched" id="div3">
-            <table id="table1" class="table">
+            <table id="table3" class="table">
               <thead class="table-dark">
                 <tr>
                   <th>Service</th>
@@ -437,11 +451,15 @@
                 </tr>
               </tbody>
             </table>
+
+            <nav>
+              <ul id="pagination3" class="pagination"></ul>
+            </nav>
           </div>
 
           <!-- previous scheds -->
           <div class="appt-sched" id="div4">
-            <table id="table1" class="table">
+            <table id="table4" class="table">
               <thead class="table-dark">
                 <tr>
                   <th>Service</th>
@@ -494,11 +512,15 @@
                 </tr>
               </tbody>
             </table>
+
+            <nav>
+              <ul id="pagination4" class="pagination"></ul>
+            </nav>
           </div>
 
           <!-- cancelled scheds -->
           <div class="appt-sched" id="div5">
-            <table id="table1" class="table">
+            <table id="table5" class="table">
               <thead class="table-dark">
                 <tr>
                   <th>Service</th>
@@ -509,7 +531,9 @@
               <tbody>
                 <tr>
                   <td>
-                    <div class="service-status" value="cancelled">cancelled</div>
+                    <div class="service-status" value="cancelled">
+                      cancelled
+                    </div>
                     <div class="service-name">Dental Examination</div>
                     <div class="service-id">ID: 20230601-01</div>
                   </td>
@@ -551,6 +575,10 @@
                 </tr>
               </tbody>
             </table>
+
+            <nav>
+              <ul id="pagination5" class="pagination"></ul>
+            </nav>
           </div>
         </div>
       </div>
@@ -564,4 +592,5 @@
   <script src="./js/chooseTab-appointments.js"></script>
   <script src="./js/searchTable-appointments.js"></script>
   <script src="./js/viewAppt-appointments.js"></script>
+  <script src="./js/pagination.js"></script>
 </html>

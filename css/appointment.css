@@ -289,6 +289,31 @@ table tbody td:nth-last-of-type(1) {
 .modal-content table tr:nth-of-type(2) {
   text-align: right;
 }
+.page-link:focus {
+  box-shadow: none;
+}
+.pagination {
+  display: flex;
+  justify-content: end;
+  margin-right: 1vh;
+}
+.page-item {
+  width: 5vh;
+  text-align: center;
+  z-index: 0;
+}
+.page-link {
+  color: var(--dark-greyish-blue);
+}
+.page-item .page-link:hover {
+  transition: 0.3s ease;
+  /* color: var(--blue); */
+}
+.page-item.active .page-link {
+  background-color: var(--blue);
+  border-color: var(--blue);
+  transition: 0.3s ease;
+}
 
 @media screen and (max-width: 600px) {
   .myModal {

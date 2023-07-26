@@ -1,0 +1,207 @@
+#form-selector {
+  background-color: var(--white);
+  padding: 1vh 2vh;
+  font-size: 2.3vh;
+  border-radius: 1vh;
+  border: 0.2vh solid #00000015;
+  box-shadow: 0 0.6vh 0.6vh 0 #00000025;
+  margin-bottom: 2vh;cursor: pointer;
+}
+#form-selector:focus {
+  outline: none;
+}
+.tab-content {
+  overflow-y: auto;
+}
+.change-pic,
+.personal-info,
+.address,
+.change-pass {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2vh;
+
+  background-color: var(--white);
+  border: 0.2vh solid #00000015;
+  box-shadow: 0 0.6vh 0.6vh 0 #00000025;
+  padding: 2vh 4vh;
+  border-radius: 1.5vh;
+
+  margin-bottom: 1vh;
+}
+.personal-info,
+.address,
+.change-pass {
+  display: block;
+  padding: 2vh 4vh;
+}
+.patient-name,
+.contact,
+.address-1,
+.address-2,
+.change-pass .group,
+.pass-fields {
+  display: flex;
+  gap: 2.5%;
+  margin-top: 1vh;
+}
+.lastname,
+.firstname {
+  width: 35%;
+}
+.middleinit {
+  width: 25%;
+}
+.change-pass .group {
+  width: 32%;
+}
+.contact .group {
+  width: 50%;
+}
+.group label {
+  display: flex;
+  flex-direction: column;
+  font-size: 2vh;
+  font-weight: 600;
+  width: 100%;
+}
+.personal-info input,
+.address input,
+.change-pass input {
+  background-color: var(--light-blue);
+  border: 0.2vh solid #00000015;
+  padding: 1vh 2vh;
+  color: var(--black);
+  border-radius: 0.5vh;
+  font-size: 2.3vh;
+  width: 100%;
+}
+.iti--separate-dial-code .iti__selected-flag,
+.iti--allow-dropdown .iti__flag-container:hover .iti__selected-flag {
+  background-color: var(--white);
+  border-radius: 0;
+}
+.personal-info input:focus,
+.change-pass input:focus,
+.address input {
+  outline: none;
+}
+.choose-img h3,
+.personal-info h3,
+.address h3,
+.change-pass h3 {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 2.3vh;
+}
+.change-pic img {
+  width: 15vh;
+  height: 15vh;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: var(--white);
+  padding: 0.8vh;
+  border: 0.3vh solid var(--light-blue);
+  /* box-shadow: 0 0.6vh 0.6vh 0 #00000025; */
+}
+.upload-profile {
+  display: flex;
+  align-items: center;
+  background-color: var(--light-blue);
+  border: 0.2vh solid #00000015;
+  /* box-shadow: 0 0.6vh 0.6vh 0 #00000025; */
+  padding: 1vh 3vh;
+  text-decoration: none;
+  color: var(--black);
+  border-radius: 1vh;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  gap: 0.5vh;
+
+  width: fit-content;
+
+  transition: ease 0.9s;
+  margin-top: 0.5vh;
+  font-size: 2vh;
+}
+.upload-profile:hover,
+.save:hover {
+  color: var(--blue);
+  background-color: var(--white);
+  transition: ease 0.3s;
+}
+.upload-profile input[type="file"] {
+  display: none;
+}
+#fileNameDisplay {
+  margin-top: 1.5vh;
+  font-size: 2vh;
+}
+.save {
+  background-color: var(--white);
+  border: 0.2vh solid #00000015;
+  font-size: 2.5vh;
+  border-radius: 1vh;
+  cursor: pointer;
+  padding: 1vh 3vh;
+  border: 0.2vh solid #00000015;
+  box-shadow: 0 0.6vh 0.6vh 0 #00000025;
+
+  display: flex;
+  align-items: center;
+  gap: 0.5vh;
+
+  transition: ease 0.9s;
+}
+.my-profile-title {
+  display: flex;
+  justify-content: end;
+  margin-bottom: 2vh;
+  margin-top: 2vh;
+}
+.hidden {
+  display: none;
+}
+@media screen and (max-width: 900px) {
+  .pass-fields {
+    display: block;
+  }
+  .change-pass .group {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 750px) {
+  .patient-name,
+  .contact,
+  .address-1,
+  .address-2 {
+    flex-direction: column;
+    margin-top: 0;
+  }
+  .patient-name .group,
+  .contact .group,
+  .full-address label {
+    width: 100%;
+    margin-top: 0.5vh;
+  }
+}
+@media screen and (max-width: 650px) {
+  .change-pic {
+    flex-direction: column;
+    align-items: start;
+  }
+  #userImg {
+    align-self: center;
+  }
+  .choose-img,
+  .upload-profile {
+    width: 100%;
+  }
+  .change-pic label {
+    display: flex;
+    justify-content: center;
+  }
+}

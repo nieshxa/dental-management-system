@@ -187,6 +187,7 @@ tr td:nth-last-of-type(1) {
     width: 100%;
     padding: 5px;
     display: flex;
+    gap: 1vh;
     align-items: center;
     text-align: left;
   }
@@ -194,7 +195,7 @@ tr td:nth-last-of-type(1) {
     content: attr(data-title);
     font-weight: bold;
     display: block;
-    width: 50%;
+    width:30%;
     text-align: left;
     margin-right: 0.5rem;
     margin-left: 0.5rem;

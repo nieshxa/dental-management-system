@@ -4,6 +4,6 @@ $(document).ready(function () {
     $(".appt-sched").removeClass("active").hide();
     $("#div" + selectedDiv)
       .addClass("active")
-      .show();
+      .show();  
   });
 });
