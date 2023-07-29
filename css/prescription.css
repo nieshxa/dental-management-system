@@ -73,17 +73,26 @@ tr td:nth-last-of-type(1) {
   text-align: center;
 }
 #printable-view {
-  height: 100vh;
+  /* width: 850px;
+  height: 1100px; */
+  width: 576px;
+  height: 720px;
   overflow-y: hidden;
   display: flex;
   flex-direction: column;
-  width: fit-content;
+  /* justify-content: space-between; */
+  background-color: var(--white);
+  padding: 0 2.5rem;
+  color: #000;
+
+  /* position: absolute;
+  left: -1000px; */
+  display: none;
 }
 .p-header,
 .p-patient,
 .p-footer {
   font-family: "Poppins", sans-serif;
-  color: var(--black);
 }
 .p-header-clinicName {
   display: flex;
@@ -91,13 +100,13 @@ tr td:nth-last-of-type(1) {
   font-family: "Poppins", sans-serif;
 }
 .p-header-clinicName img {
-  width: 150px;
-  height: 150px;
+  width: 10vh;
+  height: 10vh;
 }
 .p-header-clinicName h2 {
   font-weight: 600;
   color: var(--bright-blue);
-  font-size: 3.5vh;
+  font-size: 3vh;
 }
 .p-header-clinicName h2 span {
   font-weight: 400;
@@ -106,9 +115,10 @@ tr td:nth-last-of-type(1) {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 2.3vh;
+  font-size: 2vh;
   border-bottom: var(--bright-blue) solid 0.25vh;
   padding-bottom: 1rem;
+  margin-top: 1rem;
 }
 .p-header-clinicDetails {
   width: 100%;
@@ -119,9 +129,8 @@ tr td:nth-last-of-type(1) {
 .p-header-clinicDetails .right {
   text-align: right;
 }
-
 .p-patient {
-  font-size: 2.3vh;
+  font-size: 2vh;
   display: flex;
   justify-content: space-between;
   padding-top: 1rem;
@@ -166,18 +175,33 @@ tr td:nth-last-of-type(1) {
   padding: 0 3rem 1rem 3rem;
   font-family: "Poppins", sans-serif;
   color: var(--black);
-  font-size: 2.5vh;
+  font-size: 2.3vh;
 }
 .p-footer {
   border-top: var(--bright-blue) solid 0.25vh;
-  font-size: 2.3vh;
-  height: 4rem;
+  font-size: 2vh;
   display: flex;
   align-items: center;
-  position: fixed;
-  width: 100%;
-  bottom: 0;
   background-color: var(--white);
+  padding: 1rem 0;
+  margin-bottom: 1rem;
+}
+.p-body {
+  flex-grow: 1;
+}
+.close {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  display: none;
+}
+.print {
+  display: none;
+  /* position: absolute;
+  justify-content: center;
+  width: calc(100vw - 15rem);
+  height: 100vh;
+  align-items: center; */
 }
 @media screen and (max-width: 900px) {
   th {
@@ -195,7 +219,7 @@ tr td:nth-last-of-type(1) {
     content: attr(data-title);
     font-weight: bold;
     display: block;
-    width:30%;
+    width: 30%;
     text-align: left;
     margin-right: 0.5rem;
     margin-left: 0.5rem;

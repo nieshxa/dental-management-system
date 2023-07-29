@@ -83,6 +83,72 @@
         </div>
       </div>
       <div class="content">
+        <div class="print">
+          <button class="close">close</button>
+          <div id="printable-view">
+            <!-- Doctor information in the printable view -->
+            <div class="p-header">
+              <div class="p-header-clinicName">
+                <img src="./images/logo.png" />
+                <h2>
+                  Pablo de Jesus <br />
+                  <span>Dental Clinic</span>
+                </h2>
+              </div>
+              <div class="p-header-clinicDetails">
+                <div class="left">
+                  <div class="p-doctor">Dr/a. Pablo de Jesus</div>
+                  <div class="p-position">Dentist</div>
+                </div>
+                <div class="right">
+                  <div class="p-location">Baliwag, Bulacan</div>
+                  <div>0945 217 5685</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-patient">
+              <div class="left">
+                <div class="p-name">
+                  Patient's Name:
+                  <div class="input">Nicole S. Santos</div>
+                </div>
+                <div class="p-address">
+                  Address:
+                  <div class="input">
+                    368 Malumot na Munti, San Isidro 1st, Paombong, Bulacan
+                  </div>
+                </div>
+              </div>
+              <div class="right">
+                <div class="p-age">
+                  Age:
+                  <div class="input">20</div>
+                </div>
+                <div class="p-date">
+                  Date:
+                  <div class="input">2023-07-24</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-body">
+              <div class="p-body-icon">
+                <img src="./images/prescription.svg" alt="" />
+              </div>
+              <div class="printable-row">
+                <div class="prescription">
+                  <span class="med-name"></span>
+                  <span class="dosage"></span>
+                  (<span class="type"></span>) -
+                  <span class="quantity"></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-footer">Doctor's Signature:</div>
+          </div>
+        </div>
         <div class="header">
           <div class="hamburger">
             <iconify-icon
@@ -196,69 +262,6 @@
               </tbody>
             </table>
           </div>
-
-          <div id="printable-view" style="display: none">
-            <!-- Doctor information in the printable view -->
-            <div class="p-header">
-              <div class="p-header-clinicName">
-                <img src="./images/logo.png" />
-                <h2>
-                  Pablo de Jesus <br />
-                  <span>Dental Clinic</span>
-                </h2>
-              </div>
-              <div class="p-header-clinicDetails">
-                <div class="left">
-                  <div class="p-doctor">Dr/a. Pablo de Jesus</div>
-                  <div class="p-position">Dentist</div>
-                </div>
-                <div class="right">
-                  <div class="p-location">d2 lng s mlpit</div>
-                  <div>+(63) 9123123123</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="p-patient">
-              <div class="left">
-                <div class="p-name">
-                  Patient's Name:
-                  <div class="input">Nicole S. Santos</div>
-                </div>
-                <div class="p-address">
-                  Address:
-                  <div class="input">
-                    123 Main Street, City, Countryyyyyyyyyy
-                  </div>
-                </div>
-              </div>
-              <div class="right">
-                <div class="p-age">
-                  Age:
-                  <div class="input">35</div>
-                </div>
-                <div class="p-date">
-                  Date:
-                  <div class="input">2023-07-24</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="p-body">
-              <div class="p-body-icon">
-                <img src="./images/prescription.svg" alt="" />
-              </div>
-              <div class="printable-row">
-                <div class="prescription">
-                  <span class="med-name"></span>
-                  <span class="dosage"></span>
-                  (<span class="type"></span>) - <span class="quantity"></span>
-                </div>
-              </div>
-            </div>
-
-            <div class="p-footer">Doctor's Signature:</div>
-          </div>
         </div>
       </div>
     </div>
@@ -266,4 +269,5 @@
   <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
   <script src="./js/sidebar.js"></script>
   <script src="./js/printPrescription.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </html>
