@@ -82,8 +82,9 @@ body {
 .clinic-logo {
   border-radius: 50%;
   border: solid var(--black) 0.5vh;
-  width: 10vh;
-  height: 10vh;
+  width: 9vh;
+  height: 9vh;
+  background-color: var(--white);
 }
 .tabs {
   height: 100%;
@@ -100,9 +101,11 @@ body {
   gap: 0.5rem;
   padding: 0.5rem;
   margin: 0 1rem;
+  transition: ease 0.3s;
 }
 .tab:hover {
   color: var(--black);
+  transition: ease 0.3s;
 }
 .tab.active {
   background-color: var(--white);
@@ -127,8 +130,8 @@ body {
   padding: 1rem;
   background-color: var(--light-blue);
 }
-.tab-content::-webkit-scrollbar{
-    display: none;
+.tab-content::-webkit-scrollbar {
+  display: none;
 }
 
 @media screen and (max-width: 600px) {

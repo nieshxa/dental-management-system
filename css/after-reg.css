@@ -1,3 +1,16 @@
+body {
+  display: flex;
+  justify-content: center;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+form {
+  padding-bottom: 5vh;
+  width: 80%;
+  max-width: 800px;
+  margin: 5vh 0;
+}
 #form-selector {
   background-color: var(--white);
   padding: 1vh 2vh;
@@ -29,7 +42,7 @@
   padding: 2vh 4vh;
   border-radius: 1.5vh;
 
-  margin-bottom: 1vh;
+  margin-bottom: 2vh;
 }
 .personal-info,
 .address,
@@ -161,7 +174,7 @@ select {
 .my-profile-title {
   display: flex;
   justify-content: end;
-  margin-bottom: 2vh;
+  padding-bottom: 5vh;
   margin-top: 2vh;
 }
 .hidden {
@@ -208,6 +221,10 @@ select {
   .change-pic label {
     display: flex;
     justify-content: center;
+  }
+  form {
+    width: none;
+    max-width: 350px;
   }
 }
 

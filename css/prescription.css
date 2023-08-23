@@ -189,12 +189,12 @@ tr td:nth-last-of-type(1) {
 .p-body {
   flex-grow: 1;
 }
-.close {
+/* .close {
   position: absolute;
   right: 1rem;
   top: 1rem;
   display: none;
-}
+} */
 .print {
   display: none;
   /* position: absolute;

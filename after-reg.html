@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.tutorialjinni.com/intl-tel-input/17.0.19/css/intlTelInput.css"
+    />
+
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.js"
+    ></script>
+
+    <script src="https://f001.backblazeb2.com/file/buonzz-assets/jquery.ph-locations-v1.0.0.js"></script>
+
+    <script src="https://cdn.tutorialjinni.com/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
+
+    <title>DMS</title>
+    <link rel="stylesheet" href="./css/all.css" />
+    <link rel="stylesheet" href="./css/after-reg.css" />
+  </head>
+  <body>
+    <form action="" id="account-info">
+      <div class="change-pic">
+        <img src="./images/unnamed.jpg" id="userImg" />
+        <div class="choose-img">
+          <h3>Change Profile</h3>
+          <label class="upload-profile">
+            <input type="file" name="pic" id="pic" accept="image/*" />
+            <iconify-icon icon="fluent:image-sparkle-16-regular"></iconify-icon
+            >Upload picture</label
+          >
+          <!-- <div id="fileNameDisplay" style="display: none"></div> -->
+        </div>
+      </div>
+      <div class="personal-info">
+        <h3>personal information</h3>
+        <div class="patient-name">
+          <div class="group lastname">
+            <label>Last name <input type="text" name="" id="" /> </label>
+          </div>
+          <div class="group firstname">
+            <label>First name <input type="text" name="" id="" /> </label>
+          </div>
+          <div class="group middleinit">
+            <label>Middle initial <input type="text" name="" id="" /> </label>
+          </div>
+        </div>
+        <div class="contact">
+          <div class="group">
+            <label>Email address<input type="email" /></label>
+          </div>
+          <div class="group">
+            <label>Phone number<input type="phone" id="phone" /></label>
+          </div>
+          <div class="group bday">
+            <label>Birthday<input type="date" /></label>
+          </div>
+        </div>
+      </div>
+      <div class="address">
+        <h3>address</h3>
+        <div class="full-address">
+          <div class="group address-1">
+            <!-- <label
+                    >Region
+                    <select name="region" id="region"></select
+                  ></label> -->
+            <label
+              >Province
+              <select name="province" id="province"></select
+            ></label>
+            <label
+              >City/Municipality
+              <select name="city" id="city"></select
+            ></label>
+          </div>
+          <div class="group address-2">
+            <label
+              >Barangay
+              <select name="barangay" id="barangay"></select
+            ></label>
+            <label>Street <input type="text" /></label>
+            <label>House # <input type="text" /></label>
+          </div>
+        </div>
+      </div>
+      <div class="change-pass">
+        <h3>CHANGE PASSWORD</h3>
+        <div class="pass-fields">
+          <div class="group current-pass">
+            <label
+              >Current password <input type="password" name="" id=""
+            /></label>
+          </div>
+          <div class="group new-pass">
+            <label>New password <input type="password" name="" id="" /></label>
+          </div>
+          <div class="group confirm-pass">
+            <label
+              >Confirm password <input type="password" name="" id=""
+            /></label>
+          </div>
+        </div>
+      </div>
+      <div class="my-profile-title">
+        <!-- <h2>My Profile</h2> -->
+        <div>
+          <button class="save">
+            <iconify-icon icon="basil:save-outline"></iconify-icon>Save
+          </button>
+        </div>
+      </div>
+    </form>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
+  <script src="./js/sidebar.js"></script>
+  <script src="./js/changeProfilePicture.js"></script>
+  <script src="./js/addressDropdown.js"></script>
+  <script>
+    var input = document.querySelector("#phone");
+    window.intlTelInput(input, {
+      separateDialCode: true,
+      preferredCountries: ["ph"],
+      initialCountry: "ph",
+      // onlyCountries: ["ru", "cn","pk", "sg", "my", "bd"],
+      excludeCountries: ["in", "il"],
+    });
+  </script>
+</html>

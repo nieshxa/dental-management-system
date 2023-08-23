@@ -8,6 +8,14 @@
       rel="stylesheet"
       href="https://cdn.tutorialjinni.com/intl-tel-input/17.0.19/css/intlTelInput.css"
     />
+
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.js"
+    ></script>
+
+    <script src="https://f001.backblazeb2.com/file/buonzz-assets/jquery.ph-locations-v1.0.0.js"></script>
+
     <script src="https://cdn.tutorialjinni.com/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
 
     <title>DMS</title>
@@ -18,11 +26,7 @@
     <div class="view">
       <div class="sidebar expanded">
         <div class="logo">
-          <img
-            src="https://scontent.fmnl3-4.fna.fbcdn.net/v/t1.15752-9/356968080_1586551681832416_5818240129651473002_n.png?_nc_cat=102&ccb=1-7&_nc_sid=ae9488&_nc_eui2=AeET-EyG0xD-MclU8iZJUS3mqhFb3_elH8-qEVvf96Ufz-IzvaMlj0t7ZZ-5ODXrF609BI7tLPZWTrg3ro8WfUv9&_nc_ohc=5atmUCeQmjkAX-TGZ0W&_nc_ht=scontent.fmnl3-4.fna&oh=03_AdQH0p60kR4OpCdl_T8TmbpYu42MUF57z1QZyjhN6C1B1A&oe=64C77594"
-            alt="logo"
-            class="clinic-logo"
-          />
+          <img src="./images/pdj logo.png" alt="logo" class="clinic-logo" />
         </div>
         <div class="tabs">
           <a href="./dashboard.html" class="tab">
@@ -104,11 +108,7 @@
           </select> -->
           <form action="" id="account-info">
             <div class="change-pic">
-              <img
-                src="https://scontent.fmnl3-3.fna.fbcdn.net/v/t39.30808-6/339447930_135159019351903_1046511947275515845_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeE_Cuc5kJqGzncP3WgjcL_74fjG2UBT1EDh-MbZQFPUQNfbhHF9hJsVqpYROJ0hDzCW19tM9U_e16dqYsjc-FIL&_nc_ohc=yJQSxJHZKusAX-5cfLz&_nc_ht=scontent.fmnl3-3.fna&oh=00_AfCefgumrvb0k2_mJXX3fhoI8QvVpGnGOxfHmMJG909BkQ&oe=64C50A77"
-                alt=""
-                id="userImg"
-              />
+              <img src="./images/unnamed.jpg" id="userImg" />
               <div class="choose-img">
                 <h3>Change Profile</h3>
                 <label class="upload-profile">
@@ -143,19 +143,35 @@
                 <div class="group">
                   <label>Phone number<input type="phone" id="phone" /></label>
                 </div>
+                <div class="group bday">
+                  <label>Birthday<input type="date" /></label>
+                </div>
               </div>
             </div>
             <div class="address">
               <h3>address</h3>
               <div class="full-address">
                 <div class="group address-1">
-                  <label>House # <input type="text" name="" id="" /></label>
-                  <label>Street <input type="text" /></label>
-                  <label>Barangay <input type="text" /></label>
+                  <!-- <label
+                    >Region
+                    <select name="region" id="region"></select
+                  ></label> -->
+                  <label
+                    >Province
+                    <select name="province" id="province"></select
+                  ></label>
+                  <label
+                    >City/Municipality
+                    <select name="city" id="city"></select
+                  ></label>
                 </div>
                 <div class="group address-2">
-                  <label>City/Municipality <input type="text" /></label>
-                  <label>Province <input type="text" /></label>
+                  <label
+                    >Barangay
+                    <select name="barangay" id="barangay"></select
+                  ></label>
+                  <label>Street <input type="text" /></label>
+                  <label>House # <input type="text" /></label>
                 </div>
               </div>
             </div>
@@ -225,6 +241,7 @@
   <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
   <script src="./js/sidebar.js"></script>
   <script src="./js/changeProfilePicture.js"></script>
+  <script src="./js/addressDropdown.js"></script>
   <script>
     var input = document.querySelector("#phone");
     window.intlTelInput(input, {
@@ -235,27 +252,4 @@
       excludeCountries: ["in", "il"],
     });
   </script>
-
-  <!-- <script>
-    // JavaScript code to handle the form selection
-    const formSelector = document.getElementById("form-selector");
-    const accountInfoForm = document.getElementById("account-info");
-    const accountSecuForm = document.getElementById("account-secu");
-
-    // Show the "Account Information" form by default
-    accountInfoForm.style.display = "block";
-    accountSecuForm.style.display = "none";
-
-    formSelector.addEventListener("change", function () {
-      const selectedForm = formSelector.value;
-
-      if (selectedForm === "account-info") {
-        accountInfoForm.style.display = "block";
-        accountSecuForm.style.display = "none";
-      } else if (selectedForm === "account-secu") {
-        accountInfoForm.style.display = "none";
-        accountSecuForm.style.display = "flex";
-      }
-    });
-  </script> -->
 </html>
