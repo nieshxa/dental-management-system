@@ -414,7 +414,7 @@ tr td:nth-last-of-type(1) button:hover {
     content: attr(data-title);
     font-weight: bold;
     display: block;
-    width: 30%;
+    width: 40%;
     text-align: left;
     margin-right: 0.5rem;
   }
@@ -433,10 +433,10 @@ tr td:nth-last-of-type(1) button:hover {
     width: 100%;
   }
   .labels {
-    width: 30%;
+    width: 40%;
   }
   .inputs {
-    width: 50%;
+    width: 60%;
   }
   .date,
   .time {
