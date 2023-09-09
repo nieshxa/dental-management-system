@@ -18,7 +18,7 @@
   margin-bottom: 1rem;
   margin-top: 0.5rem;
   /* font-weight: 600; */
-  text-align: right;
+  /* text-align: right; */
   width: 90%;
 }
 .ddown select {
@@ -517,5 +517,11 @@ tr td:nth-last-of-type(1) button:hover {
 @media screen and (max-width: 600px) {
   tr {
     width: 90vw;
+  }
+  .dataTables_info {
+    margin-left: 3vh;
+  }
+  .dataTables_paginate {
+    margin-right: 3vh;
   }
 }
