@@ -4,12 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
-      crossorigin="anonymous"
-    />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script
+      type="text/javascript"
+      charset="utf8"
+      src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"
+    ></script>
 
     <title>DMS</title>
     <link rel="stylesheet" href="./css/all.css" />
@@ -673,56 +673,240 @@
             </div>
           </div>
           <div id="treatment-plan" class="treatment-plan tabContent">
-            <table class="table">
+            <table class="table" id="treatment-plan-table">
               <thead>
                 <tr>
-                  <th>Date</th>
-                  <th>Tooth Count</th>
                   <th>Procedure</th>
-                  <th>Result</th>
-                  <th>Amount Charged</th>
-                  <th>Amount Paid</th>
-                  <th>Remaining Balance</th>
+                  <th>Tooth Count</th>
+                  <th>Date & Time</th>
+                  <th>Payment Details</th>
+                  <th>Actions</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td data-title="Date">2023-07-01</td>
+                  <td data-title="Procedure">
+                    <div class="procedure">
+                      <div class="result">SUCCESSFUL</div>
+                      <div class="serviceName">Regular Cleaning</div>
+                    </div>
+                  </td>
                   <td data-title="Tooth Count">28</td>
-                  <td data-title="Procedure">Regular Cleaning</td>
-                  <td data-title="Result">Successful</td>
-                  <td data-title="Amount Charged">PHP 100</td>
-                  <td data-title="Amount Paid">PHP 100</td>
-                  <td data-title="Remaining Balance">PHP 0</td>
+                  <td data-title="Date & Time">
+                    <div class="dateNTime">
+                      <div class="date">September 02, 2023</div>
+                      <div class="time">10:00 am</div>
+                    </div>
+                  </td>
+                  <td data-title="Payment Details">
+                    <div class="payment">
+                      <div class="labels">
+                        <div class="cost">TOTAL</div>
+                        <div class="deposit">PAYMENT</div>
+                        <div class="bal">BALANCE</div>
+                      </div>
+                      <div class="input">
+                        <div class="cost">P 30,000</div>
+                        <div class="deposit">P 10,000</div>
+                        <div class="bal">P 20,000</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <a href="view-plan.html"
+                      ><button>
+                        <iconify-icon icon="carbon:view-filled"></iconify-icon
+                        >View Plan
+                      </button></a
+                    >
+                  </td>
                 </tr>
                 <tr>
-                  <td data-title="Date">2023-07-08</td>
+                  <td data-title="Procedure">
+                    <div class="procedure">
+                      <div class="result">SUCCESSFUL</div>
+                      <div class="serviceName">Tooth Extraction</div>
+                    </div>
+                  </td>
+                  <td data-title="Tooth Count">1</td>
+                  <td data-title="Date & Time">
+                    <div class="dateNTime">
+                      <div class="date">September 05, 2023</div>
+                      <div class="time">02:30 pm</div>
+                    </div>
+                  </td>
+                  <td data-title="Payment Details">
+                    <div class="payment">
+                      <div class="labels">
+                        <div class="cost">TOTAL</div>
+                        <div class="deposit">PAYMENT</div>
+                        <div class="bal">BALANCE</div>
+                      </div>
+                      <div class="input">
+                        <div class="cost">P 5,000</div>
+                        <div class="deposit">P 2,000</div>
+                        <div class="bal">P 3,000</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <a href="view-plan.html"
+                      ><button>
+                        <iconify-icon icon="carbon:view-filled"></iconify-icon
+                        >View Plan
+                      </button></a
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td data-title="Procedure">
+                    <div class="procedure">
+                      <div class="result">SUCCESSFUL</div>
+                      <div class="serviceName">Dental Checkup</div>
+                    </div>
+                  </td>
                   <td data-title="Tooth Count">32</td>
-                  <td data-title="Procedure">Fillings</td>
-                  <td data-title="Result">Successful</td>
-                  <td data-title="Amount Charged">PHP 200</td>
-                  <td data-title="Amount Paid">PHP 150</td>
-                  <td data-title="Remaining Balance">PHP 50</td>
+                  <td data-title="Date & Time">
+                    <div class="dateNTime">
+                      <div class="date">September 10, 2023</div>
+                      <div class="time">11:15 am</div>
+                    </div>
+                  </td>
+                  <td data-title="Payment Details">
+                    <div class="payment">
+                      <div class="labels">
+                        <div class="cost">TOTAL</div>
+                        <div class="deposit">PAYMENT</div>
+                        <div class="bal">BALANCE</div>
+                      </div>
+                      <div class="input">
+                        <div class="cost">P 2,500</div>
+                        <div class="deposit">P 2,500</div>
+                        <div class="bal">P 0</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <a href="view-plan.html"
+                      ><button>
+                        <iconify-icon icon="carbon:view-filled"></iconify-icon
+                        >View Plan
+                      </button></a
+                    >
+                  </td>
                 </tr>
+
                 <tr>
-                  <td data-title="Date">2023-07-15</td>
-                  <td data-title="Tooth Count">24</td>
-                  <td data-title="Procedure">Extraction</td>
-                  <td data-title="Result">Successful</td>
-                  <td data-title="Amount Charged">PHP 500</td>
-                  <td data-title="Amount Paid">PHP 300</td>
-                  <td data-title="Remaining Balance">PHP 200</td>
-                </tr>
-                <tr>
-                  <td data-title="Date">2023-07-22</td>
+                  <td data-title="Procedure">
+                    <div class="procedure">
+                      <div class="result">SUCCESSFUL</div>
+                      <div class="serviceName">Teeth Whitening</div>
+                    </div>
+                  </td>
                   <td data-title="Tooth Count">28</td>
-                  <td data-title="Procedure">Root Canal</td>
-                  <td data-title="Result">Successful</td>
-                  <td data-title="Amount Charged">PHP 1000</td>
-                  <td data-title="Amount Paid">PHP 800</td>
-                  <td data-title="Remaining Balance">PHP 200</td>
+                  <td data-title="Date & Time">
+                    <div class="dateNTime">
+                      <div class="date">September 15, 2023</div>
+                      <div class="time">03:45 pm</div>
+                    </div>
+                  </td>
+                  <td data-title="Payment Details">
+                    <div class="payment">
+                      <div class="labels">
+                        <div class="cost">TOTAL</div>
+                        <div class="deposit">PAYMENT</div>
+                        <div class="bal">BALANCE</div>
+                      </div>
+                      <div class="input">
+                        <div class="cost">P 8,000</div>
+                        <div class="deposit">P 4,000</div>
+                        <div class="bal">P 4,000</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <a href="view-plan.html"
+                      ><button>
+                        <iconify-icon icon="carbon:view-filled"></iconify-icon
+                        >View Plan
+                      </button></a
+                    >
+                  </td>
                 </tr>
-                <!-- Add more dummy rows here -->
+                <tr>
+                  <td data-title="Procedure">
+                    <div class="procedure">
+                      <div class="result">SUCCESSFUL</div>
+                      <div class="serviceName">Cavity Filling</div>
+                    </div>
+                  </td>
+                  <td data-title="Tooth Count">4</td>
+                  <td data-title="Date & Time">
+                    <div class="dateNTime">
+                      <div class="date">September 20, 2023</div>
+                      <div class="time">09:30 am</div>
+                    </div>
+                  </td>
+                  <td data-title="Payment Details">
+                    <div class="payment">
+                      <div class="labels">
+                        <div class="cost">TOTAL</div>
+                        <div class="deposit">PAYMENT</div>
+                        <div class="bal">BALANCE</div>
+                      </div>
+                      <div class="input">
+                        <div class="cost">P 2,200</div>
+                        <div class="deposit">P 2,200</div>
+                        <div class="bal">P 0</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <a href="view-plan.html"
+                      ><button>
+                        <iconify-icon icon="carbon:view-filled"></iconify-icon
+                        >View Plan
+                      </button></a
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td data-title="Procedure">
+                    <div class="procedure">
+                      <div class="result">SUCCESSFUL</div>
+                      <div class="serviceName">Root Canal Treatment</div>
+                    </div>
+                  </td>
+                  <td data-title="Tooth Count">6</td>
+                  <td data-title="Date & Time">
+                    <div class="dateNTime">
+                      <div class="date">September 25, 2023</div>
+                      <div class="time">01:00 pm</div>
+                    </div>
+                  </td>
+                  <td data-title="Payment Details">
+                    <div class="payment">
+                      <div class="labels">
+                        <div class="cost">TOTAL</div>
+                        <div class="deposit">PAYMENT</div>
+                        <div class="bal">BALANCE</div>
+                      </div>
+                      <div class="input">
+                        <div class="cost">P 15,500</div>
+                        <div class="deposit">P 5,500</div>
+                        <div class="bal">P 10,000</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <a href="view-plan.html"
+                      ><button>
+                        <iconify-icon icon="carbon:view-filled"></iconify-icon
+                        >View Plan
+                      </button></a
+                    >
+                  </td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -733,4 +917,5 @@
   <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
   <script src="./js/sidebar.js"></script>
   <script src="./js/recordsTabSelector.js"></script>
+  <script src="./js/dataTables.js"></script>
 </html>
