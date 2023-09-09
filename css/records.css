@@ -386,18 +386,18 @@ tr td:nth-last-of-type(1) button:hover {
     flex-wrap: wrap;
   }
   tr {
-    width: 500px;
+    width: calc(calc(95vw - 15rem) / 2);
     box-shadow: 0 0.6vh 0.6vh 0 #00000025;
     background-color: var(--white);
     border: 0.2vh solid #00000015;
     border-radius: 1vh;
     padding: 1rem;
-    transition: 0.3s ease scale;
+    /* transition: 0.3s ease scale; */
   }
-  tr:hover {
+  /* tr:hover {
     scale: 1.05;
     transition: 0.3s ease scale;
-  }
+  } */
   td {
     width: 100%;
     padding: 5px;
@@ -444,6 +444,11 @@ tr td:nth-last-of-type(1) button:hover {
     display: flex;
     justify-content: center;
   }
+  .serviceName {
+    white-space: nowrap; /* Prevent text from wrapping to the next line */
+    overflow: hidden; /* Hide any overflowing text */
+    text-overflow: ellipsis;
+  }
 }
 @media screen and (max-width: 1120px) {
   .dental-condition .patient {
@@ -486,7 +491,7 @@ tr td:nth-last-of-type(1) button:hover {
 
 @media screen and (max-width: 800px) {
   tr {
-    width: 400px;
+    width: calc(95vw - 15rem);
   }
   td,
   td div {
@@ -501,10 +506,13 @@ tr td:nth-last-of-type(1) button:hover {
   .lower-part-form {
     font-size: 2vh;
   }
-  tr {
-    width: 300px;
-  }
   /* table {
     font-size: 1.5vh;
   } */
+}
+
+@media screen and (max-width: 600px) {
+  tr {
+    width: 95vw;
+  }
 }
