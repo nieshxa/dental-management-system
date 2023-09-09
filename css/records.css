@@ -414,7 +414,7 @@ tr td:nth-last-of-type(1) button:hover {
     content: attr(data-title);
     font-weight: bold;
     display: block;
-    width: 50%;
+    width: 30%;
     text-align: left;
     margin-right: 0.5rem;
   }
@@ -432,7 +432,9 @@ tr td:nth-last-of-type(1) button:hover {
   .payment {
     width: 100%;
   }
-  .labels,
+  .labels {
+    width: 30%;
+  }
   .inputs {
     width: 50%;
   }
