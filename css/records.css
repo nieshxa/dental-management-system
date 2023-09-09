@@ -423,7 +423,8 @@ tr td:nth-last-of-type(1) button:hover {
     justify-content: center;
   }
   .dataTables_filter input {
-    width: 80vw;
+    width: 95vw;
+    font-size: 2vh;
   }
   .dataTables_empty,
   tr td:nth-last-of-type(1) {
