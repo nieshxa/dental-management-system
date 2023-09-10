@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script
+      type="text/javascript"
+      charset="utf8"
+      src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"
+    ></script>
+
+    <title>DMS</title>
+    <link rel="stylesheet" href="./css/all.css" />
+    <link rel="stylesheet" href="./css/records copy.css" />
+  </head>
+  <body>
+    <div class="view">
+      <div class="sidebar expanded">
+        <div class="logo">
+          <img src="./images/pdj logo.png" alt="logo" class="clinic-logo" />
+        </div>
+        <div class="tabs">
+          <a href="./index.html" class="tab">
+            <iconify-icon icon="ic:round-dashboard" class="icon"></iconify-icon>
+            <span class="page-title">Dashboard</span></a
+          >
+          <a href="./services.html" class="tab">
+            <iconify-icon
+              icon="material-symbols:featured-play-list-outline-rounded"
+              class="icon"
+            ></iconify-icon>
+            <span class="page-title">Services</span></a
+          >
+          <a href="./staffs.html" class="tab">
+            <iconify-icon
+              icon="medical-icon:i-care-staff-area"
+              class="icon"
+            ></iconify-icon>
+            <span class="page-title">Staffs</span></a
+          >
+          <a href="./appointments.html" class="tab">
+            <iconify-icon
+              icon="pepicons-pop:calendar"
+              class="icon"
+            ></iconify-icon>
+            <span class="page-title">Appointments</span></a
+          >
+          <a href="./records.html" class="tab active">
+            <iconify-icon
+              icon="ic:round-folder-open"
+              class="icon"
+            ></iconify-icon>
+            <span class="page-title">Records</span></a
+          >
+          <a href="./prescription.html" class="tab">
+            <iconify-icon
+              icon="material-symbols:medical-information-outline-rounded"
+              class="icon"
+            ></iconify-icon>
+            <span class="page-title">Prescription History</span></a
+          >
+          <a href="./settings.html" class="tab">
+            <iconify-icon
+              icon="material-symbols:settings-suggest-rounded"
+              class="icon"
+            ></iconify-icon>
+            <span class="page-title">Profile Settings</span></a
+          >
+        </div>
+        <div class="logout">
+          <a href="" class="tab">
+            <!-- logout.php -->
+            <iconify-icon icon="solar:logout-2-bold" class="icon">
+            </iconify-icon>
+            <span class="page-title">Logout</span></a
+          >
+        </div>
+      </div>
+      <div class="content">
+        <div class="header">
+          <div class="hamburger">
+            <iconify-icon
+              icon="charm:menu-hamburger"
+              class="icon"
+            ></iconify-icon>
+          </div>
+          <div class="greet">
+            <div>Hi there, <b>Nicole</b>!</div>
+            <img
+              src="https://pbs.twimg.com/profile_images/911751183361908736/TBFLG79h_400x400.jpg"
+              class="my-img"
+            />
+          </div>
+        </div>
+        <div class="tab-content">
+          <div class="ddown">
+            Choose Record
+            <select id="tab-selector" onchange="showTab()">
+              <option value="dental-condition">Dental Chart</option>
+              <option value="treatment-plan">Treatment Plan</option>
+            </select>
+          </div>
+          <div id="dental-condition" class="dental-condition tabContent">
+            <div class="patient-details">
+              <div class="name">
+                <label>Name: </label><span>Nicole S. Santos</span>
+              </div>
+              <div class="sex"><label>Sex: </label><span>Female</span></div>
+              <div class="b-date">
+                <label> Date of Birth: </label><span>September 26, 2002</span>
+              </div>
+            </div>
+
+            <div class="dental-chart">
+              <div class="permanent">PERMANENT<br />TEETH</div>
+              <div>
+                <div class="teeth">
+                  <div class="upper">
+                    <div class="left">
+                      <div class="row">
+                        <label>STATUS</label>
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                      </div>
+                      <div class="row">
+                        <label>RIGHT</label>
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                      </div>
+                      <div class="row">
+                        <div class="number">55</div>
+                        <div class="number">54</div>
+                        <div class="number">53</div>
+                        <div class="number">52</div>
+                        <div class="number">51</div>
+                      </div>
+                      <div class="row temp">
+                        <label
+                          >TEMPORARY <br />
+                          TEETH</label
+                        >
+                      </div>
+                      <div class="row">
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                      </div>
+                      <div class="row">
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                      </div>
+                      <div class="row">
+                        <div class="number">18</div>
+                        <div class="number">17</div>
+                        <div class="number">16</div>
+                        <div class="number">15</div>
+                        <div class="number">14</div>
+                        <div class="number">13</div>
+                        <div class="number">12</div>
+                        <div class="number">11</div>
+                      </div>
+                    </div>
+                    <div class="right">
+                      <div class="row">
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                      </div>
+                      <div class="row">
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                        <label>LEFT</label>
+                      </div>
+                      <div class="row">
+                        <div class="number">61</div>
+                        <div class="number">62</div>
+                        <div class="number">63</div>
+                        <div class="number">64</div>
+                        <div class="number">65</div>
+                      </div>
+                      <div class="row temp">
+                        <label
+                          >TEMPORARY <br />
+                          TEETH</label
+                        >
+                      </div>
+                      <div class="row">
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                      </div>
+                      <div class="row">
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                      </div>
+                      <div class="row">
+                        <div class="number">21</div>
+                        <div class="number">22</div>
+                        <div class="number">23</div>
+                        <div class="number">24</div>
+                        <div class="number">25</div>
+                        <div class="number">26</div>
+                        <div class="number">27</div>
+                        <div class="number">28</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="lower">
+                    <div class="left">
+                      <div class="row">
+                        <div class="number">48</div>
+                        <div class="number">47</div>
+                        <div class="number">46</div>
+                        <div class="number">45</div>
+                        <div class="number">44</div>
+                        <div class="number">43</div>
+                        <div class="number">42</div>
+                        <div class="number">41</div>
+                      </div>
+                      <div class="row">
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                      </div>
+                      <div class="row">
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                      </div>
+                      <div class="row temp">
+                        <label
+                          >TEMPORARY <br />
+                          TEETH</label
+                        >
+                      </div>
+                      <div class="row">
+                        <div class="number">85</div>
+                        <div class="number">84</div>
+                        <div class="number">83</div>
+                        <div class="number">82</div>
+                        <div class="number">81</div>
+                      </div>
+                      <div class="row">
+                        <label>STATUS</label>
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                      </div>
+                      <div class="row">
+                        <label>RIGHT</label>
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                      </div>
+                    </div>
+                    <div class="right">
+                      <div class="row">
+                        <div class="number">31</div>
+                        <div class="number">32</div>
+                        <div class="number">33</div>
+                        <div class="number">34</div>
+                        <div class="number">35</div>
+                        <div class="number">36</div>
+                        <div class="number">37</div>
+                        <div class="number">38</div>
+                      </div>
+                      <div class="row">
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                      </div>
+                      <div class="row">
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                      </div>
+                      <div class="row temp">
+                        <label
+                          >TEMPORARY <br />
+                          TEETH</label
+                        >
+                      </div>
+                      <div class="row">
+                        <div class="number">71</div>
+                        <div class="number">72</div>
+                        <div class="number">73</div>
+                        <div class="number">74</div>
+                        <div class="number">75</div>
+                      </div>
+                      <div class="row">
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                      </div>
+                      <div class="row">
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                        <label>LEFT</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="marks">
+              <div class="left">
+                <div class="mark">
+                  <div class="category">Legend:Condition</div>
+                  <div class="legend-condition group">
+                    <div class="icons">
+                      <div>✓</div>
+                      <div>D</div>
+                      <div>M</div>
+                      <div>MO</div>
+                      <div>Im</div>
+                      <div>Sp</div>
+                      <div>Rf</div>
+                      <div>Un</div>
+                    </div>
+                    <div class="dashes">
+                      <div>-</div>
+                      <div>-</div>
+                      <div>-</div>
+                      <div>-</div>
+                      <div>-</div>
+                      <div>-</div>
+                      <div>-</div>
+                      <div>-</div>
+                    </div>
+                    <div class="term">
+                      <div>Present Teeth</div>
+                      <div>Decayed (Caries Indicated for Filling)</div>
+                      <div>Missing due to Caries</div>
+                      <div>Missing due to Other Causes</div>
+                      <div>Impacted Tooth</div>
+                      <div>Supernumerary Tooth</div>
+                      <div>Root Fragment</div>
+                      <div>Unerupted</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="mark">
+                  <div class="category">X-ray Taken:</div>
+                  <div class="x-ray">
+                    <p class="preriapical">
+                      <label
+                        ><input type="checkbox" />Preriapical (Tth No.: <br />
+                        <input class="preap" type="text" /> )</label
+                      >
+                    </p>
+                    <p>
+                      <label><input type="checkbox" />Panoramic</label>
+                    </p>
+                    <p>
+                      <label><input type="checkbox" />Cephalometric</label>
+                    </p>
+                    <p>
+                      <label
+                        ><input type="checkbox" />Occlusal (Upper/Lower)</label
+                      >
+                    </p>
+                    <p class="others">
+                      <label><input type="checkbox" />Others: </label>
+                      <span><input type="text" /><input type="text" /></span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="right">
+                <div class="mark">
+                  <div class="category">Restorations & Prosthetics Surgery</div>
+                  <div class="restorations group">
+                    <div class="icons">
+                      <div>Am</div>
+                      <div>Co</div>
+                      <div></div>
+                      <div>JC</div>
+                      <div>Ab</div>
+                      <div>Att</div>
+                      <div>P</div>
+                      <div>In</div>
+                      <div>Imp</div>
+                      <div>S</div>
+                      <div>Rm</div>
+                      <div>XC</div>
+                      <div>XO</div>
+                    </div>
+                    <div class="dashes">
+                      <div>-</div>
+                      <div>-</div>
+                      <div>-</div>
+                      <div>-</div>
+                      <div>-</div>
+                      <div>-</div>
+                      <div>-</div>
+                      <div>-</div>
+                      <div>-</div>
+                      <div>-</div>
+                      <div>-</div>
+                      <div>-</div>
+                    </div>
+                    <div class="term">
+                      <div>Amaigam Filling</div>
+                      <div>Composite Filling</div>
+                      <div>Jacket Crown</div>
+                      <div>Abutment</div>
+                      <div>Attachment</div>
+                      <div>Pontic</div>
+                      <div>Inlay</div>
+                      <div>Implant</div>
+                      <div>Sealants</div>
+                      <div>Removable Denture</div>
+                      <div>Extraction due to Caries (Extensive)</div>
+                      <div>Extraction due to Other Causes</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="mark">
+                  <div class="category">Periodontal Screening:</div>
+                  <div class="periodontal">
+                    <p>
+                      <label><input type="checkbox" />Gingivitis</label>
+                    </p>
+                    <p>
+                      <label
+                        ><input type="checkbox" />Early Periodontitis</label
+                      >
+                    </p>
+                    <p>
+                      <label
+                        ><input type="checkbox" />Moderate Periodontitis</label
+                      >
+                    </p>
+                    <p>
+                      <label
+                        ><input type="checkbox" />Advanced Periodontitis</label
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="oat">
+              <div class="mark">
+                <div class="category">Occlusion</div>
+                <div class="periodontal">
+                  <p>
+                    <label><input type="checkbox" />Class (Molar)</label>
+                  </p>
+                  <p>
+                    <label><input type="checkbox" />Overjet</label>
+                  </p>
+                  <p>
+                    <label><input type="checkbox" />Cephalometric</label>
+                  </p>
+                  <p>
+                    <label><input type="checkbox" />Overbite</label>
+                  </p>
+                  <p>
+                    <label><input type="checkbox" />Midline Deviation</label>
+                  </p>
+                  <p>
+                    <label><input type="checkbox" />Crossbite</label>
+                  </p>
+                </div>
+              </div>
+              <div class="mark">
+                <div class="category">Appliances</div>
+                <div class="appliances">
+                  <p>
+                    <label><input type="checkbox" />Orthodontic</label>
+                  </p>
+                  <p>
+                    <label><input type="checkbox" />Stayplate</label>
+                  </p>
+                  <p class="others">
+                    <label><input type="checkbox" />Others: </label>
+                    <span>
+                      <input type="text" />
+                      <input type="text" /><input type="text"
+                    /></span>
+                  </p>
+                </div>
+              </div>
+              <div class="mark">
+                <div class="category">TMD</div>
+                <div class="tmd">
+                  <p>
+                    <label><input type="checkbox" />Clenching</label>
+                  </p>
+                  <p>
+                    <label><input type="checkbox" />Clicking</label>
+                  </p>
+                  <p>
+                    <label><input type="checkbox" />Trismus</label>
+                  </p>
+                  <p>
+                    <label><input type="checkbox" />Muscle Spasm</label>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="treatment-plan" class="treatment-plan tabContent">
+            <table class="table" id="treatment-plan-table">
+              <thead>
+                <tr>
+                  <th>Procedure</th>
+                  <th>Tooth Count</th>
+                  <th>Date & Time</th>
+                  <th>Payment Details</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-title="Procedure">
+                    <div class="procedure">
+                      <div class="result">SUCCESSFUL</div>
+                      <div class="serviceName">Regular Cleaning</div>
+                    </div>
+                  </td>
+                  <td data-title="Tooth Count">28</td>
+                  <td data-title="Date & Time">
+                    <div class="dateNTime">
+                      <div class="date">September 02, 2023</div>
+                      <div class="time">10:00 am</div>
+                    </div>
+                  </td>
+                  <td data-title="Payment Details">
+                    <div class="payment">
+                      <div class="labels">
+                        <div class="cost">TOTAL</div>
+                        <div class="deposit">PAYMENT</div>
+                        <div class="bal">BALANCE</div>
+                      </div>
+                      <div class="input">
+                        <div class="cost">P 30,000</div>
+                        <div class="deposit">P 10,000</div>
+                        <div class="bal">P 20,000</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <a href="view-plan.html"
+                      ><button>
+                        <iconify-icon icon="carbon:view-filled"></iconify-icon
+                        >View Plan
+                      </button></a
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td data-title="Procedure">
+                    <div class="procedure">
+                      <div class="result">SUCCESSFUL</div>
+                      <div class="serviceName">Tooth Extraction</div>
+                    </div>
+                  </td>
+                  <td data-title="Tooth Count">1</td>
+                  <td data-title="Date & Time">
+                    <div class="dateNTime">
+                      <div class="date">September 05, 2023</div>
+                      <div class="time">02:30 pm</div>
+                    </div>
+                  </td>
+                  <td data-title="Payment Details">
+                    <div class="payment">
+                      <div class="labels">
+                        <div class="cost">TOTAL</div>
+                        <div class="deposit">PAYMENT</div>
+                        <div class="bal">BALANCE</div>
+                      </div>
+                      <div class="input">
+                        <div class="cost">P 5,000</div>
+                        <div class="deposit">P 2,000</div>
+                        <div class="bal">P 3,000</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <a href="view-plan.html"
+                      ><button>
+                        <iconify-icon icon="carbon:view-filled"></iconify-icon
+                        >View Plan
+                      </button></a
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td data-title="Procedure">
+                    <div class="procedure">
+                      <div class="result">SUCCESSFUL</div>
+                      <div class="serviceName">Dental Checkup</div>
+                    </div>
+                  </td>
+                  <td data-title="Tooth Count">32</td>
+                  <td data-title="Date & Time">
+                    <div class="dateNTime">
+                      <div class="date">September 10, 2023</div>
+                      <div class="time">11:15 am</div>
+                    </div>
+                  </td>
+                  <td data-title="Payment Details">
+                    <div class="payment">
+                      <div class="labels">
+                        <div class="cost">TOTAL</div>
+                        <div class="deposit">PAYMENT</div>
+                        <div class="bal">BALANCE</div>
+                      </div>
+                      <div class="input">
+                        <div class="cost">P 2,500</div>
+                        <div class="deposit">P 2,500</div>
+                        <div class="bal">P 0</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <a href="view-plan.html"
+                      ><button>
+                        <iconify-icon icon="carbon:view-filled"></iconify-icon
+                        >View Plan
+                      </button></a
+                    >
+                  </td>
+                </tr>
+
+                <tr>
+                  <td data-title="Procedure">
+                    <div class="procedure">
+                      <div class="result">SUCCESSFUL</div>
+                      <div class="serviceName">Teeth Whitening</div>
+                    </div>
+                  </td>
+                  <td data-title="Tooth Count">28</td>
+                  <td data-title="Date & Time">
+                    <div class="dateNTime">
+                      <div class="date">September 15, 2023</div>
+                      <div class="time">03:45 pm</div>
+                    </div>
+                  </td>
+                  <td data-title="Payment Details">
+                    <div class="payment">
+                      <div class="labels">
+                        <div class="cost">TOTAL</div>
+                        <div class="deposit">PAYMENT</div>
+                        <div class="bal">BALANCE</div>
+                      </div>
+                      <div class="input">
+                        <div class="cost">P 8,000</div>
+                        <div class="deposit">P 4,000</div>
+                        <div class="bal">P 4,000</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <a href="view-plan.html"
+                      ><button>
+                        <iconify-icon icon="carbon:view-filled"></iconify-icon
+                        >View Plan
+                      </button></a
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td data-title="Procedure">
+                    <div class="procedure">
+                      <div class="result">SUCCESSFUL</div>
+                      <div class="serviceName">Cavity Filling</div>
+                    </div>
+                  </td>
+                  <td data-title="Tooth Count">4</td>
+                  <td data-title="Date & Time">
+                    <div class="dateNTime">
+                      <div class="date">September 20, 2023</div>
+                      <div class="time">09:30 am</div>
+                    </div>
+                  </td>
+                  <td data-title="Payment Details">
+                    <div class="payment">
+                      <div class="labels">
+                        <div class="cost">TOTAL</div>
+                        <div class="deposit">PAYMENT</div>
+                        <div class="bal">BALANCE</div>
+                      </div>
+                      <div class="input">
+                        <div class="cost">P 2,200</div>
+                        <div class="deposit">P 2,200</div>
+                        <div class="bal">P 0</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <a href="view-plan.html"
+                      ><button>
+                        <iconify-icon icon="carbon:view-filled"></iconify-icon
+                        >View Plan
+                      </button></a
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td data-title="Procedure">
+                    <div class="procedure">
+                      <div class="result">SUCCESSFUL</div>
+                      <div class="serviceName">Root Canal Treatment</div>
+                    </div>
+                  </td>
+                  <td data-title="Tooth Count">6</td>
+                  <td data-title="Date & Time">
+                    <div class="dateNTime">
+                      <div class="date">September 25, 2023</div>
+                      <div class="time">01:00 pm</div>
+                    </div>
+                  </td>
+                  <td data-title="Payment Details">
+                    <div class="payment">
+                      <div class="labels">
+                        <div class="cost">TOTAL</div>
+                        <div class="deposit">PAYMENT</div>
+                        <div class="bal">BALANCE</div>
+                      </div>
+                      <div class="input">
+                        <div class="cost">P 15,500</div>
+                        <div class="deposit">P 5,500</div>
+                        <div class="bal">P 10,000</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <a href="view-plan.html"
+                      ><button>
+                        <iconify-icon icon="carbon:view-filled"></iconify-icon
+                        >View Plan
+                      </button></a
+                    >
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
+  <script src="./js/sidebar.js"></script>
+  <script src="./js/recordsTabSelector.js"></script>
+  <script src="./js/dataTables.js"></script>
+  <!-- <script>
+    if (window.innerWidth <= 768 && sidebar.classList.contains("expanded")) {
+      sidebar.classList.remove("expanded");
+    }
+  </script> -->
+</html>

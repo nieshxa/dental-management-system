@@ -642,7 +642,7 @@
                   <p>
                     <label><input type="checkbox" />Stayplate</label>
                   </p>
-                  <p style="text-align: end">
+                  <p>
                     <label
                       ><input type="checkbox" />Others: <input type="text" />
                     </label>
@@ -918,4 +918,9 @@
   <script src="./js/sidebar.js"></script>
   <script src="./js/recordsTabSelector.js"></script>
   <script src="./js/dataTables.js"></script>
+  <script>
+    if (window.innerWidth <= 768 && sidebar.classList.contains("expanded")) {
+      sidebar.classList.remove("expanded");
+    }
+  </script>
 </html>
