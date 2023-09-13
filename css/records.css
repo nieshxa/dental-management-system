@@ -357,7 +357,6 @@ tr td:nth-last-of-type(1) button:hover {
     background-color: var(--white);
     border: 0.2vh solid #00000015;
     border-radius: 1vh;
-    margin-bottom: 1rem;
     width: 95%;
   }
 }
@@ -465,22 +464,6 @@ tr td:nth-last-of-type(1) button:hover {
     text-align: left;
   }
 }
-/* @media screen and (max-width: 900px) {
-  .form-boxes-1 .label,
-  .permanent,
-  .numbers {
-    font-size: 2vh;
-  }
-  .form-boxes-1 input,
-  .number {
-    width: 3.5vh;
-    height: 3.5vh;
-  }
-  .circle {
-    width: 3vh;
-    height: 3vh;
-  }
-} */
 @media screen and (min-width: 800px) {
   p.others span input,
   .preriapical input,
