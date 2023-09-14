@@ -1,42 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Leaflet Map Example</title>
-  <!-- Load Leaflet library from CDN -->
-  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
-  <!-- Link to Leaflet CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-  <style>
-    /* Set the map container size */
-    #map {
-      height: 400px;
-    }
-  </style>
-</head>
-<body>
-  <h1>Leaflet Map Example</h1>
-  <!-- Create a div to hold the map -->
-  <div id="map"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DataTables Pagination Exclusion</title>
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Include DataTables CSS and JS -->
+    <script
+      type="text/javascript"
+      charset="utf8"
+      src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"
+    ></script>
 
-  <script>
-    // Function to initialize the map
-    function initMap() {
-      // Create a map object and set the center and zoom level
-      var map = L.map('map').setView([51.505, -0.09], 13);
+    <style>
+      tr.exclude-row {
+        display: none;
+      }
+    </style>
+  </head>
 
-      // Add a tile layer to the map (using OpenStreetMap tiles)
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+  <body>
+    <table id="example" class="display" style="width: 100%">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>John</td>
+          <td>30</td>
+        </tr>
+        <tr class="exclude-row">
+          <td>Jane</td>
+          <td>25</td>
+        </tr>
+        <tr>
+          <td>Bob</td>
+          <td>40</td>
+        </tr>
+        <tr class="exclude-row">
+          <td>Alice</td>
+          <td>28</td>
+        </tr>
+        <!-- Add more rows as needed -->
+      </tbody>
+    </table>
 
-      // Add a marker to the map
-      L.marker([51.505, -0.09]).addTo(map)
-        .bindPopup('Hello! This is a Leaflet map.')
-        .openPopup();
-    }
+    <script>
+      $(document).ready(function () {
+        var table = $("#example").DataTable();
 
-    // Call the initialize function when the page has finished loading
-    document.addEventListener('DOMContentLoaded', initMap);
-  </script>
-</body>
+        table.on("draw.dt", function () {
+          var pageInfo = table.page.info();
+          var currentPage = pageInfo.page;
+          var rowsPerPage = pageInfo.length;
+
+          table.rows(".exclude-row").every(function (rowIdx) {
+            var rowPage = Math.floor(rowIdx / rowsPerPage);
+
+            if (rowPage !== currentPage) {
+              var row = this.node();
+              $(row).addClass("dtrg-hidden");
+            }
+          });
+        });
+      });
+    </script>
+  </body>
 </html>

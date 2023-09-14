@@ -132,6 +132,47 @@
             now</a
           >
           <div class="appointments-table">
+            <div class="filters">
+              <div class="filter-by-status">
+                <label for="appointment-status">Filter by Status:</label>
+
+                <select id="filterStatus">
+                  <option value="all">All</option>
+                  <option value="previous">Previous</option>
+                  <option value="confirmed">Confirmed</option>
+                  <option value="pending">Pending</option>
+                  <option value="cancelled">Cancelled</option>
+                </select>
+              </div>
+              <div class="filter-by-clinic">
+                <label for="appointment-status">Filter by Clinic:</label>
+                <select id="filterClinic">
+                  <option value="all">All</option>
+                  <option value="Pablo de Jesus Dental Clinic">
+                    Pablo de Jesus Dental Clinic
+                  </option>
+                  <option value="Healthy Smiles Dentistry">
+                    Healthy Smiles Dentistry
+                  </option>
+                  <option value="Gentle Dental Care">Gentle Dental Care</option>
+                  <option value="Perfect Align Orthodontics">
+                    Perfect Align Orthodontics
+                  </option>
+                  <option value="Pearl Dental Spa">Pearl Dental Spa</option>
+                  <option value="Implant Pro Dentistry">
+                    Implant Pro Dentistry
+                  </option>
+                  <option value="Advanced Endodontics">
+                    Advanced Endodontics
+                  </option>
+                  <option value="SmileAlign Orthodontics">
+                    SmileAlign Orthodontics
+                  </option>
+                  <option value="Dental Artistry">Dental Artistry</option>
+                </select>
+              </div>
+            </div>
+
             <table id="appointments" class="display">
               <thead>
                 <tr>
@@ -605,4 +646,5 @@
   <script src="./js/sidebar.js"></script>
   <script src="./js/viewAppt-appointments.js"></script>
   <script src="./js/dataTables.js"></script>
+  <script src="./js/appointment-class.js"></script>
 </html>

@@ -11,45 +11,42 @@ $(document).ready(function () {
       searchPlaceholder: "Search",
     },
   });
-
-  $("#appointments").DataTable({
+  var appointmentsTable = $("#appointments").DataTable({
     paging: true,
-    lengthChange: false, // Disable length change option
+    lengthChange: false,
     searching: true,
     ordering: false,
     info: true,
-    pageLength: 5, // Set the number of rows to 5
+    pageLength: 5,
     language: {
       search: "",
       searchPlaceholder: "Search",
     },
   });
-});
+  $("#filterClinic").on("change", function () {
+    // Get the selected clinic value
+    var selectedClinic = $(this).val();
 
-document.addEventListener("DOMContentLoaded", function () {
-  const tdTypeElements = document.querySelectorAll("td .type");
-
-  tdTypeElements.forEach(function (tdType) {
-    const type = tdType.textContent.trim(); // Get the text content and remove leading/trailing whitespace
-    const parentTD = tdType.parentElement;
-    switch (type) {
-      case "CONFIRMED":
-        parentTD.style.borderLeft = "1vh solid #6df38a";
-        break;
-      case "CANCELLED":
-        parentTD.style.borderLeft = "1vh solid #f57373";
-        break;
-      case "PREVIOUS":
-        parentTD.style.borderLeft = "1vh solid #818181";
-        break;
-      case "PENDING":
-        parentTD.style.borderLeft = "1vh solid #f5cd73";
-        break;
-      default:
-        // Handle other cases or leave it empty for no border
-        break;
+    // Check if the selected clinic is "all"
+    if (selectedClinic === "all") {
+      // Remove the filter on column 2 and redraw the DataTable
+      appointmentsTable.column(2).search("").draw();
+    } else {
+      // Apply a filter to column 2 based on the selected clinic and redraw the DataTable
+      appointmentsTable.column(2).search(selectedClinic).draw();
     }
-    // Add padding-left of 0.5rem to the parent TD
-    parentTD.style.paddingLeft = "0.5rem";
+  });
+  $("#filterStatus").on("change", function () {
+    // Get the selected clinic value
+    var selectedClinic = $(this).val();
+
+    // Check if the selected clinic is "all"
+    if (selectedClinic === "all") {
+      // Remove the filter on column 2 and redraw the DataTable
+      appointmentsTable.column(0).search("").draw();
+    } else {
+      // Apply a filter to column 2 based on the selected clinic and redraw the DataTable
+      appointmentsTable.column(0).search(selectedClinic).draw();
+    }
   });
 });
