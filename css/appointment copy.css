@@ -54,6 +54,7 @@ td:not(tr td:nth-child(1)) {
   box-shadow: 0 0.3vh 0.3vh 0 #00000025;
   background-color: var(--white);
   border: 0.2vh solid #00000015;
+  font-size: 2vh;
   border-radius: 1vh;
 }
 tr {
