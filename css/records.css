@@ -356,6 +356,9 @@ tr td:nth-last-of-type(1) button:hover {
 .no-bl {
   border-left: none !important;
 }
+.row input[type="text"] {
+  cursor: default;
+}
 @media screen and (min-width: 1200px) {
   .treatment-plan {
     padding: 1rem;
