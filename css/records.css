@@ -350,6 +350,12 @@ tr td:nth-last-of-type(1) button:hover {
   background: var(--white) !important;
   color: var(--blue) !important;
 }
+.no-br {
+  border-right: none !important;
+}
+.no-bl {
+  border-left: none !important;
+}
 @media screen and (min-width: 1200px) {
   .treatment-plan {
     padding: 1rem;
