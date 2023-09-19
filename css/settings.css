@@ -130,7 +130,7 @@ select {
   font-size: 2vh;
 }
 .upload-profile:hover,
-.save:hover {
+.form-footer button:hover {
   color: var(--blue);
   background-color: var(--white);
   transition: ease 0.3s;
@@ -142,7 +142,11 @@ select {
   margin-top: 1.5vh;
   font-size: 2vh;
 }
-.save {
+.form-footer {
+  display: flex;
+  gap: 1vh;
+}
+.form-footer button {
   background-color: var(--white);
   border: 0.2vh solid #00000015;
   font-size: 2.5vh;

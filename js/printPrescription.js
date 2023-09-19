@@ -34,12 +34,3 @@ function printRow(button) {
   const row = button.closest("tr");
   generatePDF(row);
 }
-// document.addEventListener("DOMContentLoaded", function () {
-//   const closeBtn = document.querySelector(".close");
-//   const printableView = document.querySelector(".printable-view");
-
-//   closeBtn.addEventListener("click", function () {
-//     // Add the 'hide' class to the printable view
-//     printableView.classList.add("hide");
-//   });
-// });

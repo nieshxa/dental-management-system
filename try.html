@@ -3,71 +3,43 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DataTables Pagination Exclusion</title>
-    <!-- Include jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- Include DataTables CSS and JS -->
-    <script
-      type="text/javascript"
-      charset="utf8"
-      src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"
-    ></script>
-
-    <style>
-      tr.exclude-row {
-        display: none;
-      }
-    </style>
+    <title>Print Div with Iconify Icons to PDF using html2pdf</title>
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   </head>
-
   <body>
-    <table id="example" class="display" style="width: 100%">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Age</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>John</td>
-          <td>30</td>
-        </tr>
-        <tr class="exclude-row">
-          <td>Jane</td>
-          <td>25</td>
-        </tr>
-        <tr>
-          <td>Bob</td>
-          <td>40</td>
-        </tr>
-        <tr class="exclude-row">
-          <td>Alice</td>
-          <td>28</td>
-        </tr>
-        <!-- Add more rows as needed -->
-      </tbody>
-    </table>
+    <div id="myDiv">
+      <i class="iconify" data-icon="mdi:heart"></i>
+      <i class="iconify" data-icon="mdi:star"></i>
+      <!-- Add more icons as needed -->
+    </div>
+
+    <button id="generatePDF">Generate PDF</button>
 
     <script>
-      $(document).ready(function () {
-        var table = $("#example").DataTable();
+      document
+        .getElementById("generatePDF")
+        .addEventListener("click", function () {
+          const divToPrint = document.getElementById("myDiv");
 
-        table.on("draw.dt", function () {
-          var pageInfo = table.page.info();
-          var currentPage = pageInfo.page;
-          var rowsPerPage = pageInfo.length;
+          // Configure html2pdf options
+          const pdfOptions = {
+            margin: 10,
+            filename: "myPDF.pdf",
+            image: { type: "jpeg", quality: 0.98 },
+            html2canvas: { scale: 2 },
+            jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+          };
 
-          table.rows(".exclude-row").every(function (rowIdx) {
-            var rowPage = Math.floor(rowIdx / rowsPerPage);
-
-            if (rowPage !== currentPage) {
-              var row = this.node();
-              $(row).addClass("dtrg-hidden");
-            }
-          });
+          // Generate PDF
+          html2pdf()
+            .from(divToPrint)
+            .set(pdfOptions)
+            .outputPdf(function (pdf) {
+              // Save or display the PDF
+              pdf.save();
+            });
         });
-      });
     </script>
   </body>
 </html>

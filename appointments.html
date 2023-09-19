@@ -5,6 +5,16 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- datatables -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script
+      type="text/javascript"
+      charset="utf8"
+      src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"
+    ></script>
+
+    <!-- bootstrap -->
+
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -88,7 +98,6 @@
         <!-- Add the necessary HTML code for the modal -->
         <div id="myModal" class="myModal">
           <div class="modal-content">
-            <!-- Content will be displayed here -->
             <div id="modal-content"></div>
             <div class="dr-note">
               <div class="note">Doctor's Note</div>
@@ -122,43 +131,76 @@
             ><iconify-icon icon="iconamoon:calendar-add"></iconify-icon>Book
             now</a
           >
-          <div class="changeTab">
-            <label for="divSelector">Choose Appointment Type</label>
-            <select id="divSelector">
-              <option value="1">All</option>
-              <option value="2">Confirmed</option>
-              <option value="3">Pending</option>
-              <option value="4">Previous</option>
-              <option value="5">Cancelled</option>
-            </select>
-          </div>
+          <div class="appointments-table">
+            <div class="filters">
+              <div class="filter-by-status">
+                <label for="appointment-status">Filter by Status:</label>
 
-          <!-- search  -->
-          <div class="search-appts">
-            <iconify-icon icon="mingcute:search-3-fill"></iconify-icon>
-            <input type="text" name="search-appt" id="search-appt" />
-            <button class="clear-search">Clear</button>
-          </div>
-          <!-- all schedules -->
-          <div class="appt-sched active" id="div1">
-            <table id="table1" class="table">
-              <thead class="table-dark">
+                <select id="filterStatus">
+                  <option value="all">All</option>
+                  <option value="previous">Previous</option>
+                  <option value="confirmed">Confirmed</option>
+                  <option value="pending">Pending</option>
+                  <option value="cancelled">Cancelled</option>
+                </select>
+              </div>
+              <div class="filter-by-clinic">
+                <label for="appointment-status">Filter by Clinic:</label>
+                <select id="filterClinic">
+                  <option value="all">All</option>
+                  <option value="Pablo de Jesus Dental Clinic">
+                    Pablo de Jesus Dental Clinic
+                  </option>
+                  <option value="Healthy Smiles Dentistry">
+                    Healthy Smiles Dentistry
+                  </option>
+                  <option value="Gentle Dental Care">Gentle Dental Care</option>
+                  <option value="Perfect Align Orthodontics">
+                    Perfect Align Orthodontics
+                  </option>
+                  <option value="Pearl Dental Spa">Pearl Dental Spa</option>
+                  <option value="Implant Pro Dentistry">
+                    Implant Pro Dentistry
+                  </option>
+                  <option value="Advanced Endodontics">
+                    Advanced Endodontics
+                  </option>
+                  <option value="SmileAlign Orthodontics">
+                    SmileAlign Orthodontics
+                  </option>
+                  <option value="Dental Artistry">Dental Artistry</option>
+                </select>
+              </div>
+            </div>
+
+            <table id="appointments" class="display">
+              <thead>
                 <tr>
                   <th>Service</th>
                   <th>Date & Time</th>
+                  <th>Clinic Name</th>
                   <th>Actions</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>
-                    <div class="service-status" value="previous">previous</div>
-                    <div class="service-name">Dental Examination</div>
-                    <div class="service-id">ID: 20230601-01</div>
+                  <td data-title="Service">
+                    <div class="td-group">
+                      <div class="type">PREVIOUS</div>
+                      <div class="name">Teeth Cleaning</div>
+                      <div class="id">20230913-01</div>
+                    </div>
                   </td>
-                  <td>
-                    <div class="service-date">2023-09-01</div>
-                    <div class="service-time">09:00 AM</div>
+                  <td data-title="Date & Time">
+                    <div class="td-group">
+                      <div class="date">September 9, 2023</div>
+                      <div class="time">10:00 am</div>
+                    </div>
+                  </td>
+                  <td data-title="Clinic Name">
+                    <div class="clinic td-group">
+                      Pablo de Jesus Dental Clinic
+                    </div>
                   </td>
                   <td>
                     <div class="dropdown">
@@ -193,16 +235,21 @@
                   </td>
                 </tr>
                 <tr>
-                  <td>
-                    <div class="service-status" value="confirmed">
-                      Confirmed
+                  <td data-title="Service">
+                    <div class="td-group">
+                      <div class="type">CONFIRMED</div>
+                      <div class="name">Dental Checkup</div>
+                      <div class="id">20230913-02</div>
                     </div>
-                    <div class="service-name">Dental Examination</div>
-                    <div class="service-id">ID: 20230601-01</div>
                   </td>
-                  <td>
-                    <div class="service-date">2023-09-01</div>
-                    <div class="service-time">09:00 AM</div>
+                  <td data-title="Date & Time">
+                    <div class="td-group">
+                      <div class="date">September 15, 2023</div>
+                      <div class="time">2:30 pm</div>
+                    </div>
+                  </td>
+                  <td data-title="Clinic Name">
+                    <div class="clinic td-group">Healthy Smiles Dentistry</div>
                   </td>
                   <td>
                     <div class="dropdown">
@@ -236,17 +283,23 @@
                     </div>
                   </td>
                 </tr>
+
                 <tr>
-                  <td>
-                    <div class="service-status" value="cancelled">
-                      cancelled
+                  <td data-title="Service">
+                    <div class="td-group">
+                      <div class="type">PENDING</div>
+                      <div class="name">Tooth Extraction</div>
+                      <div class="id">20230913-03</div>
                     </div>
-                    <div class="service-name">Dental Examination</div>
-                    <div class="service-id">ID: 20230601-01</div>
                   </td>
-                  <td>
-                    <div class="service-date">2023-09-01</div>
-                    <div class="service-time">09:00 AM</div>
+                  <td data-title="Date & Time">
+                    <div class="td-group">
+                      <div class="date">September 20, 2023</div>
+                      <div class="time">11:15 am</div>
+                    </div>
+                  </td>
+                  <td data-title="Clinic Name">
+                    <div class="clinic td-group">Gentle Dental Care</div>
                   </td>
                   <td>
                     <div class="dropdown">
@@ -280,15 +333,275 @@
                     </div>
                   </td>
                 </tr>
+
                 <tr>
-                  <td>
-                    <div class="service-status" value="pending">pending</div>
-                    <div class="service-name">Dental Cleanings</div>
-                    <div class="service-id">ID: 20230601-02</div>
+                  <td data-title="Service">
+                    <div class="td-group">
+                      <div class="type">CANCELLED</div>
+                      <div class="name">Orthodontic Consultation</div>
+                      <div class="id">20230913-04</div>
+                    </div>
+                  </td>
+                  <td data-title="Date & Time">
+                    <div class="td-group">
+                      <div class="date">September 22, 2023</div>
+                      <div class="time">3:45 pm</div>
+                    </div>
+                  </td>
+                  <td data-title="Clinic Name">
+                    <div class="clinic td-group">
+                      Perfect Align Orthodontics
+                    </div>
                   </td>
                   <td>
-                    <div class="service-date">2023-06-01</div>
-                    <div class="service-time">09:00 AM</div>
+                    <div class="dropdown">
+                      <button
+                        class="btn btn-secondary dropdown-toggle"
+                        type="button"
+                        id="dropdownMenuButton1"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        <iconify-icon icon="ic:round-more-horiz"></iconify-icon>
+                      </button>
+                      <ul
+                        class="dropdown-menu"
+                        aria-labelledby="dropdownMenuButton1"
+                      >
+                        <li>
+                          <a class="dropdown-item view-modal-appt" href="#"
+                            ><iconify-icon
+                              icon="carbon:view-filled"
+                            ></iconify-icon
+                            >View</a
+                          ><a class="dropdown-item" href="#"
+                            ><iconify-icon
+                              icon="basil:cancel-solid"
+                            ></iconify-icon
+                            >Cancel</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td data-title="Service">
+                    <div class="td-group">
+                      <div class="type">CONFIRMED</div>
+                      <div class="name">Teeth Whitening</div>
+                      <div class="id">20230913-05</div>
+                    </div>
+                  </td>
+                  <td data-title="Date & Time">
+                    <div class="td-group">
+                      <div class="date">September 25, 2023</div>
+                      <div class="time">9:00 am</div>
+                    </div>
+                  </td>
+                  <td data-title="Clinic Name">
+                    <div class="clinic td-group">Pearl Dental Spa</div>
+                  </td>
+                  <td>
+                    <div class="dropdown">
+                      <button
+                        class="btn btn-secondary dropdown-toggle"
+                        type="button"
+                        id="dropdownMenuButton1"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        <iconify-icon icon="ic:round-more-horiz"></iconify-icon>
+                      </button>
+                      <ul
+                        class="dropdown-menu"
+                        aria-labelledby="dropdownMenuButton1"
+                      >
+                        <li>
+                          <a class="dropdown-item view-modal-appt" href="#"
+                            ><iconify-icon
+                              icon="carbon:view-filled"
+                            ></iconify-icon
+                            >View</a
+                          ><a class="dropdown-item" href="#"
+                            ><iconify-icon
+                              icon="basil:cancel-solid"
+                            ></iconify-icon
+                            >Cancel</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td data-title="Service">
+                    <div class="td-group">
+                      <div class="type">PENDING</div>
+                      <div class="name">Dental Implant Consultation</div>
+                      <div class="id">20230913-06</div>
+                    </div>
+                  </td>
+                  <td data-title="Date & Time">
+                    <div class="td-group">
+                      <div class="date">September 28, 2023</div>
+                      <div class="time">4:30 pm</div>
+                    </div>
+                  </td>
+                  <td data-title="Clinic Name">
+                    <div class="clinic td-group">Implant Pro Dentistry</div>
+                  </td>
+                  <td>
+                    <div class="dropdown">
+                      <button
+                        class="btn btn-secondary dropdown-toggle"
+                        type="button"
+                        id="dropdownMenuButton1"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        <iconify-icon icon="ic:round-more-horiz"></iconify-icon>
+                      </button>
+                      <ul
+                        class="dropdown-menu"
+                        aria-labelledby="dropdownMenuButton1"
+                      >
+                        <li>
+                          <a class="dropdown-item view-modal-appt" href="#"
+                            ><iconify-icon
+                              icon="carbon:view-filled"
+                            ></iconify-icon
+                            >View</a
+                          ><a class="dropdown-item" href="#"
+                            ><iconify-icon
+                              icon="basil:cancel-solid"
+                            ></iconify-icon
+                            >Cancel</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td data-title="Service">
+                    <div class="td-group">
+                      <div class="type">PREVIOUS</div>
+                      <div class="name">Root Canal Therapy</div>
+                      <div class="id">20230913-07</div>
+                    </div>
+                  </td>
+                  <td data-title="Date & Time">
+                    <div class="td-group">
+                      <div class="date">September 3, 2023</div>
+                      <div class="time">1:00 pm</div>
+                    </div>
+                  </td>
+                  <td data-title="Clinic Name">
+                    <div class="clinic td-group">Advanced Endodontics</div>
+                  </td>
+                  <td>
+                    <div class="dropdown">
+                      <button
+                        class="btn btn-secondary dropdown-toggle"
+                        type="button"
+                        id="dropdownMenuButton1"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        <iconify-icon icon="ic:round-more-horiz"></iconify-icon>
+                      </button>
+                      <ul
+                        class="dropdown-menu"
+                        aria-labelledby="dropdownMenuButton1"
+                      >
+                        <li>
+                          <a class="dropdown-item view-modal-appt" href="#"
+                            ><iconify-icon
+                              icon="carbon:view-filled"
+                            ></iconify-icon
+                            >View</a
+                          ><a class="dropdown-item" href="#"
+                            ><iconify-icon
+                              icon="basil:cancel-solid"
+                            ></iconify-icon
+                            >Cancel</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td data-title="Service">
+                    <div class="td-group">
+                      <div class="type">PENDING</div>
+                      <div class="name">Braces Adjustment</div>
+                      <div class="id">20230913-08</div>
+                    </div>
+                  </td>
+                  <td data-title="Date & Time">
+                    <div class="td-group">
+                      <div class="date">September 30, 2023</div>
+                      <div class="time">2:15 pm</div>
+                    </div>
+                  </td>
+                  <td data-title="Clinic Name">
+                    <div class="clinic td-group">SmileAlign Orthodontics</div>
+                  </td>
+                  <td>
+                    <div class="dropdown">
+                      <button
+                        class="btn btn-secondary dropdown-toggle"
+                        type="button"
+                        id="dropdownMenuButton1"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        <iconify-icon icon="ic:round-more-horiz"></iconify-icon>
+                      </button>
+                      <ul
+                        class="dropdown-menu"
+                        aria-labelledby="dropdownMenuButton1"
+                      >
+                        <li>
+                          <a class="dropdown-item view-modal-appt" href="#"
+                            ><iconify-icon
+                              icon="carbon:view-filled"
+                            ></iconify-icon
+                            >View</a
+                          ><a class="dropdown-item" href="#"
+                            ><iconify-icon
+                              icon="basil:cancel-solid"
+                            ></iconify-icon
+                            >Cancel</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td data-title="Service">
+                    <div class="td-group">
+                      <div class="type">CONFIRMED</div>
+                      <div class="name">Cavity Filling</div>
+                      <div class="id">20230913-09</div>
+                    </div>
+                  </td>
+                  <td data-title="Date & Time">
+                    <div class="td-group">
+                      <div class="date">October 5, 2023</div>
+                      <div class="time">10:45 am</div>
+                    </div>
+                  </td>
+                  <td data-title="Clinic Name">
+                    <div class="clinic td-group">Dental Artistry</div>
                   </td>
                   <td>
                     <div class="dropdown">
@@ -324,269 +637,14 @@
                 </tr>
               </tbody>
             </table>
-            
-            <nav>
-              <ul id="pagination1" class="pagination"></ul>
-            </nav>
-          </div>
-          <!-- confirmed scheds -->
-          <div class="appt-sched" id="div2">
-            <table id="table2" class="table">
-              <thead class="table-dark">
-                <tr>
-                  <th>Service</th>
-                  <th>Date & Time</th>
-                  <th>Actions</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    <div class="service-status" value="confirmed">
-                      Confirmed
-                    </div>
-                    <div class="service-name">Dental Examination</div>
-                    <div class="service-id">ID: 20230601-01</div>
-                  </td>
-                  <td>
-                    <div class="service-date">2023-09-01</div>
-                    <div class="service-time">09:00 AM</div>
-                  </td>
-                  <td>
-                    <div class="dropdown">
-                      <button
-                        class="btn btn-secondary dropdown-toggle"
-                        type="button"
-                        id="dropdownMenuButton1"
-                        data-bs-toggle="dropdown"
-                        aria-expanded="false"
-                      >
-                        <iconify-icon icon="ic:round-more-horiz"></iconify-icon>
-                      </button>
-                      <ul
-                        class="dropdown-menu"
-                        aria-labelledby="dropdownMenuButton1"
-                      >
-                        <li>
-                          <a class="dropdown-item view-modal-appt" href="#"
-                            ><iconify-icon
-                              icon="carbon:view-filled"
-                            ></iconify-icon
-                            >View</a
-                          ><a class="dropdown-item" href="#"
-                            ><iconify-icon
-                              icon="basil:cancel-solid"
-                            ></iconify-icon
-                            >Cancel</a
-                          >
-                        </li>
-                      </ul>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-
-            <nav>
-              <ul id="pagination2" class="pagination"></ul>
-            </nav>
-          </div>
-
-          <!-- pending scheds -->
-          <div class="appt-sched" id="div3">
-            <table id="table3" class="table">
-              <thead class="table-dark">
-                <tr>
-                  <th>Service</th>
-                  <th>Date & Time</th>
-                  <th>Actions</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    <div class="service-status" value="pending">pending</div>
-                    <div class="service-name">Dental Cleanings</div>
-                    <div class="service-id">ID: 20230601-02</div>
-                  </td>
-                  <td>
-                    <div class="service-date">2023-06-01</div>
-                    <div class="service-time">09:00 AM</div>
-                  </td>
-                  <td>
-                    <div class="dropdown">
-                      <button
-                        class="btn btn-secondary dropdown-toggle"
-                        type="button"
-                        id="dropdownMenuButton1"
-                        data-bs-toggle="dropdown"
-                        aria-expanded="false"
-                      >
-                        <iconify-icon icon="ic:round-more-horiz"></iconify-icon>
-                      </button>
-                      <ul
-                        class="dropdown-menu"
-                        aria-labelledby="dropdownMenuButton1"
-                      >
-                        <li>
-                          <a class="dropdown-item view-modal-appt" href="#"
-                            ><iconify-icon
-                              icon="carbon:view-filled"
-                            ></iconify-icon
-                            >View</a
-                          ><a class="dropdown-item" href="#"
-                            ><iconify-icon
-                              icon="basil:cancel-solid"
-                            ></iconify-icon
-                            >Cancel</a
-                          >
-                        </li>
-                      </ul>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-
-            <nav>
-              <ul id="pagination3" class="pagination"></ul>
-            </nav>
-          </div>
-
-          <!-- previous scheds -->
-          <div class="appt-sched" id="div4">
-            <table id="table4" class="table">
-              <thead class="table-dark">
-                <tr>
-                  <th>Service</th>
-                  <th>Date & Time</th>
-                  <th>Actions</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    <div class="service-status" value="previous">previous</div>
-                    <div class="service-name">Dental Examination</div>
-                    <div class="service-id">ID: 20230601-01</div>
-                  </td>
-                  <td>
-                    <div class="service-date">2023-09-01</div>
-                    <div class="service-time">09:00 AM</div>
-                  </td>
-                  <td>
-                    <div class="dropdown">
-                      <button
-                        class="btn btn-secondary dropdown-toggle"
-                        type="button"
-                        id="dropdownMenuButton1"
-                        data-bs-toggle="dropdown"
-                        aria-expanded="false"
-                      >
-                        <iconify-icon icon="ic:round-more-horiz"></iconify-icon>
-                      </button>
-                      <ul
-                        class="dropdown-menu"
-                        aria-labelledby="dropdownMenuButton1"
-                      >
-                        <li>
-                          <a class="dropdown-item view-modal-appt" href="#"
-                            ><iconify-icon
-                              icon="carbon:view-filled"
-                            ></iconify-icon
-                            >View</a
-                          ><a class="dropdown-item" href="#"
-                            ><iconify-icon
-                              icon="basil:cancel-solid"
-                            ></iconify-icon
-                            >Cancel</a
-                          >
-                        </li>
-                      </ul>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-
-            <nav>
-              <ul id="pagination4" class="pagination"></ul>
-            </nav>
-          </div>
-
-          <!-- cancelled scheds -->
-          <div class="appt-sched" id="div5">
-            <table id="table5" class="table">
-              <thead class="table-dark">
-                <tr>
-                  <th>Service</th>
-                  <th>Date & Time</th>
-                  <th>Actions</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    <div class="service-status" value="cancelled">
-                      cancelled
-                    </div>
-                    <div class="service-name">Dental Examination</div>
-                    <div class="service-id">ID: 20230601-01</div>
-                  </td>
-                  <td>
-                    <div class="service-date">2023-09-01</div>
-                    <div class="service-time">09:00 AM</div>
-                  </td>
-                  <td>
-                    <div class="dropdown">
-                      <button
-                        class="btn btn-secondary dropdown-toggle"
-                        type="button"
-                        id="dropdownMenuButton1"
-                        data-bs-toggle="dropdown"
-                        aria-expanded="false"
-                      >
-                        <iconify-icon icon="ic:round-more-horiz"></iconify-icon>
-                      </button>
-                      <ul
-                        class="dropdown-menu"
-                        aria-labelledby="dropdownMenuButton1"
-                      >
-                        <li>
-                          <a class="dropdown-item view-modal-appt" href="#"
-                            ><iconify-icon
-                              icon="carbon:view-filled"
-                            ></iconify-icon
-                            >View</a
-                          ><a class="dropdown-item" href="#"
-                            ><iconify-icon
-                              icon="basil:cancel-solid"
-                            ></iconify-icon
-                            >Cancel</a
-                          >
-                        </li>
-                      </ul>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-
-            <nav>
-              <ul id="pagination5" class="pagination"></ul>
-            </nav>
           </div>
         </div>
       </div>
     </div>
-
-    <!-- Add the necessary JavaScript code -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   </body>
   <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
   <script src="./js/sidebar.js"></script>
-  <script src="./js/chooseTab-appointments.js"></script>
-  <script src="./js/searchTable-appointments.js"></script>
   <script src="./js/viewAppt-appointments.js"></script>
-  <script src="./js/pagination.js"></script>
+  <script src="./js/dataTables.js"></script>
+  <script src="./js/appointment-class.js"></script>
 </html>
