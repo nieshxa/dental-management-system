@@ -11,6 +11,18 @@ $(document).ready(function () {
       searchPlaceholder: "Search",
     },
   });
+  $("#prescription-table").DataTable({
+    paging: true,
+    lengthMenu: [[5], [5]],
+    lengthChange: false,
+    ordering: false,
+    searching: true,
+    info: false,
+    language: {
+      search: "",
+      searchPlaceholder: "Search",
+    },
+  });
   var appointmentsTable = $("#appointments").DataTable({
     paging: true,
     lengthChange: false,

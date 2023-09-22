@@ -28,7 +28,7 @@ body {
 .sidebar {
   background-color: var(--blue);
   height: 100vh;
-  width: 5rem;
+  width: 6vw;
   transition: width 0.3s ease;
   display: flex;
   flex-direction: column;
@@ -38,20 +38,20 @@ body {
   z-index: 5;
 }
 .sidebar.expanded {
-  width: 15rem;
+  width:  18vw;
   transition: width 0.3s ease;
 }
 .content {
   height: 100%;
   background-color: #fff;
-  width: calc(100% - 5rem);
+  width: calc(100% - 6vw);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
 }
 .sidebar.expanded ~ .content {
-  width: calc(100% - 15rem);
+  width: calc(100% -  18vw);
   transition: width 0.3s ease;
 }
 .header,

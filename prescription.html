@@ -4,13 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link
+    <!-- <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
       crossorigin="anonymous"
-    />
+    /> -->
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script
+      type="text/javascript"
+      charset="utf8"
+      src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"
+    ></script>
     <title>DMS</title>
     <link rel="stylesheet" href="./css/all.css" />
     <link rel="stylesheet" href="./css/prescription.css" />
@@ -163,7 +169,7 @@
 
         <div class="tab-content">
           <div class="table-container">
-            <table class="table">
+            <table class="table" id="prescription-table">
               <thead>
                 <tr>
                   <th>Medication Name</th>
@@ -175,6 +181,22 @@
                 </tr>
               </thead>
               <tbody>
+                <tr>
+                  <td data-title="Medication">
+                    Atorvastatin <span>Lipitor</span>
+                  </td>
+                  <td data-title="Form">Tablet</td>
+                  <td data-title="Dosage">20mg</td>
+                  <td data-title="Quantity">90pcs</td>
+                  <td>
+                    <button class="btn" onclick="printRow(this)">
+                      <iconify-icon
+                        icon="fa6-solid:file-prescription"
+                      ></iconify-icon>
+                      <span>Click here to print</span>
+                    </button>
+                  </td>
+                </tr>
                 <tr>
                   <td data-title="Medication">
                     Atorvastatin <span>Lipitor</span>
@@ -266,4 +288,5 @@
   <script src="./js/sidebar.js"></script>
   <script src="./js/printPrescription.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script src="./js/dataTables.js"></script>
 </html>
