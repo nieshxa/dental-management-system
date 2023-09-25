@@ -450,6 +450,10 @@ input[type="date"] {
 input[type="radio"] {
   display: none;
 }
+.health-history input,
+.health-history select {
+  outline: none;
+}
 @media screen and (max-width: 1200px) {
   .dental-visit {
     display: block;
