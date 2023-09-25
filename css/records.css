@@ -5,13 +5,14 @@
 }
 .tab-content {
   overflow-y: auto;
-  font-size: 2vh;
+  font-size: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   /* overflow-x: hidden; */
-  padding: 0.5rem;
+  padding: 0.5rem 1.5rem;
   min-width: fit-content;
+  padding-bottom: 2rem;
 }
 .ddown {
   font-size: 2.3vh;
@@ -32,6 +33,7 @@
   background-color: var(--white);
   border: none;
   padding: 0.5rem 1.5rem;
+  outline: none;
   font-size: 2.1vh;
   border: #0000000e solid 1px;
 }
@@ -240,9 +242,11 @@ tr td {
 tr td:nth-of-type(3),
 tr th:nth-of-type(3),
 tr td:nth-of-type(1),
-tr th:nth-of-type(1),
-tr th:nth-of-type(4) {
+tr th:nth-of-type(1) {
   text-align: left;
+}
+tr th:nth-last-of-type(1) {
+  text-align: center;
 }
 tr td:nth-last-of-type(1) a {
   display: flex;
@@ -364,6 +368,96 @@ tr td:nth-last-of-type(1) button:hover {
 input[type="text"] {
   cursor: default;
 }
+/* health history */
+
+.health-history {
+  background-color: #fff;
+  width: 100%;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  margin: 0 auto;
+  top: 10%;
+  border: #00000025 solid 1px;
+  box-shadow: #00000025 0 4px 4px 0;
+}
+.form-footer {
+  display: flex;
+  justify-content: end;
+}
+.form-footer button iconify-icon{
+  font-size: 1.5rem;
+}
+.form-footer button {
+  font-size: 1rem;
+  outline: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  border: none;
+
+  background-color: var(--white);
+  border: 0.1rem solid #00000015;
+  box-shadow: 0 0.3rem 0.3rem 0 #00000025;
+  color: var(--black);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+}
+.form-footer button:hover {
+  color: var(--blue);
+  transition: all ease-in-out 0.3s;
+}
+.dental-visit {
+  display: flex;
+  gap: 0.5rem;
+}
+.dental-visit .when,
+.dental-visit .where {
+  width: 50%;
+}
+.health-history input {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: 0.25rem;
+  border: 1px #2d2d2d solid;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+input[type="date"] {
+  box-shadow: inset 0 1px 1px 0 #00000025;
+  text-align: center;
+}
+.radiobutton-questions iconify-icon {
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+.radiobutton-questions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.radiobutton-questions p {
+  width: 70%;
+}
+.radiobutton-questions label {
+  width: 15%;
+}
+input[type="radio"] {
+  display: none;
+}
+@media screen and (max-width: 1200px) {
+  .dental-visit {
+    display: block;
+  }
+  .dental-visit .when,
+  .dental-visit .where {
+    width: 100%;
+  }
+}
 @media screen and (min-width: 1200px) {
   .treatment-plan {
     padding: 1rem;
@@ -413,7 +507,7 @@ input[type="text"] {
     font-weight: bold;
     margin-top: 1rem;
   }
-  tbody td:not(:nth-child(4))::before {
+  tbody td:not(:nth-child(3))::before {
     content: attr(data-title);
     font-weight: bold;
     display: block;

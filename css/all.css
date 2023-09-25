@@ -28,7 +28,7 @@ body {
 .sidebar {
   background-color: var(--blue);
   height: 100vh;
-  width: 6vw;
+  width: 6rem;
   transition: width 0.3s ease;
   display: flex;
   flex-direction: column;
@@ -38,20 +38,20 @@ body {
   z-index: 5;
 }
 .sidebar.expanded {
-  width:  18vw;
+  width: 16rem;
   transition: width 0.3s ease;
 }
 .content {
   height: 100%;
   background-color: #fff;
-  width: calc(100% - 6vw);
+  width: calc(100% - 6rem);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
 }
 .sidebar.expanded ~ .content {
-  width: calc(100% -  18vw);
+  width: calc(100% - 16rem);
   transition: width 0.3s ease;
 }
 .header,
@@ -154,7 +154,7 @@ body {
   } */
   .sidebar {
     /* display: none; */
-    margin-left: -5rem;
+    margin-left: -6rem;
     transition: margin-left 0.3s ease;
   }
   .content {

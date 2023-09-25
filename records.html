@@ -100,6 +100,7 @@
             <select id="tab-selector" onchange="showTab()">
               <option value="dental-condition">Dental Chart</option>
               <option value="treatment-plan">Treatment Plan</option>
+              <option value="health-history">Health History</option>
             </select>
           </div>
           <div id="dental-condition" class="dental-condition tabContent">
@@ -576,7 +577,6 @@
               <thead>
                 <tr>
                   <th>Procedure</th>
-                  <th>Tooth Count</th>
                   <th>Date & Time</th>
                   <th>Payment Details</th>
                   <th>Actions</th>
@@ -586,11 +586,9 @@
                 <tr>
                   <td data-title="Procedure">
                     <div class="procedure">
-                      <div class="result">SUCCESSFUL</div>
                       <div class="serviceName">Regular Cleaning</div>
                     </div>
                   </td>
-                  <td data-title="Tooth Count">28</td>
                   <td data-title="Date & Time">
                     <div class="dateNTime">
                       <div class="date">September 02, 2023</div>
@@ -623,11 +621,9 @@
                 <tr>
                   <td data-title="Procedure">
                     <div class="procedure">
-                      <div class="result">SUCCESSFUL</div>
                       <div class="serviceName">Tooth Extraction</div>
                     </div>
                   </td>
-                  <td data-title="Tooth Count">1</td>
                   <td data-title="Date & Time">
                     <div class="dateNTime">
                       <div class="date">September 05, 2023</div>
@@ -660,11 +656,9 @@
                 <tr>
                   <td data-title="Procedure">
                     <div class="procedure">
-                      <div class="result">SUCCESSFUL</div>
                       <div class="serviceName">Dental Checkup</div>
                     </div>
                   </td>
-                  <td data-title="Tooth Count">32</td>
                   <td data-title="Date & Time">
                     <div class="dateNTime">
                       <div class="date">September 10, 2023</div>
@@ -698,11 +692,9 @@
                 <tr>
                   <td data-title="Procedure">
                     <div class="procedure">
-                      <div class="result">SUCCESSFUL</div>
                       <div class="serviceName">Teeth Whitening</div>
                     </div>
                   </td>
-                  <td data-title="Tooth Count">28</td>
                   <td data-title="Date & Time">
                     <div class="dateNTime">
                       <div class="date">September 15, 2023</div>
@@ -735,11 +727,9 @@
                 <tr>
                   <td data-title="Procedure">
                     <div class="procedure">
-                      <div class="result">SUCCESSFUL</div>
                       <div class="serviceName">Cavity Filling</div>
                     </div>
                   </td>
-                  <td data-title="Tooth Count">4</td>
                   <td data-title="Date & Time">
                     <div class="dateNTime">
                       <div class="date">September 20, 2023</div>
@@ -772,11 +762,9 @@
                 <tr>
                   <td data-title="Procedure">
                     <div class="procedure">
-                      <div class="result">SUCCESSFUL</div>
                       <div class="serviceName">Root Canal Treatment</div>
                     </div>
                   </td>
-                  <td data-title="Tooth Count">6</td>
                   <td data-title="Date & Time">
                     <div class="dateNTime">
                       <div class="date">September 25, 2023</div>
@@ -809,6 +797,242 @@
               </tbody>
             </table>
           </div>
+          <div id="health-history" class="tabContent health-history">
+            <form action="" class="healthHistory">
+              <div class="form-header">
+                <h5><b>HEALTH HISTORY</b></h5>
+              </div>
+              <div class="form-body">
+                <div class="dental-visit">
+                  <div class="when">
+                    <label for="when">When was your last dental visit?</label>
+                    <div><input type="date" name="when" id="when" /></div>
+                  </div>
+                  <div class="where">
+                    <label for="where">Where was your last dental visit?</label>
+                    <div><input type="text" name="where" id="where" /></div>
+                  </div>
+                </div>
+                <label for="what"
+                  >What was the name of your previous dentist?</label
+                >
+                <div><input type="text" name="what" id="what" /></div>
+                <label for="medications"
+                  >Are you taking any medications? If yes, please
+                  specify.</label
+                >
+                <div>
+                  <input type="text" name="medications" id="medications" />
+                </div>
+
+                <div class="radiobutton-questions">
+                  <p>Do you have asthma?</p>
+                  <label>
+                    <input
+                      type="radio"
+                      name="asthma"
+                      value="yes"
+                      onchange="changeColor('asthma')"
+                    />
+                    <span id="asthmaYes"
+                      ><iconify-icon
+                        icon="icon-park-outline:check-one"
+                      ></iconify-icon
+                    ></span>
+                  </label>
+                  <label>
+                    <input
+                      type="radio"
+                      name="asthma"
+                      value="no"
+                      onchange="changeColor('asthma')"
+                    />
+                    <span id="asthmaNo"
+                      ><iconify-icon icon="charm:circle-cross"></iconify-icon
+                    ></span>
+                  </label>
+                </div>
+                <div class="radiobutton-questions">
+                  <p>Do you have a history of any cardiac disease?</p>
+
+                  <label>
+                    <input
+                      type="radio"
+                      name="cardiac"
+                      value="yes"
+                      onchange="changeColor('cardiac')"
+                    />
+                    <span id="cardiacYes"
+                      ><iconify-icon
+                        icon="icon-park-outline:check-one"
+                      ></iconify-icon
+                    ></span>
+                  </label>
+                  <label>
+                    <input
+                      type="radio"
+                      name="cardiac"
+                      value="no"
+                      onchange="changeColor('cardiac')"
+                    />
+                    <span id="cardiacNo"
+                      ><iconify-icon icon="charm:circle-cross"></iconify-icon
+                    ></span>
+                  </label>
+                </div>
+                <div class="radiobutton-questions">
+                  <p>Do you have hypertension?</p>
+
+                  <label>
+                    <input
+                      type="radio"
+                      name="hypertension"
+                      value="yes"
+                      onchange="changeColor('hypertension')"
+                    />
+                    <span id="hypertensionYes"
+                      ><iconify-icon
+                        icon="icon-park-outline:check-one"
+                      ></iconify-icon
+                    ></span>
+                  </label>
+                  <label>
+                    <input
+                      type="radio"
+                      name="hypertension"
+                      value="no"
+                      onchange="changeColor('hypertension')"
+                    />
+                    <span id="hypertensionNo"
+                      ><iconify-icon icon="charm:circle-cross"></iconify-icon
+                    ></span>
+                  </label>
+                </div>
+                <div class="radiobutton-questions">
+                  <p>Do you have epilepsy?</p>
+
+                  <label>
+                    <input
+                      type="radio"
+                      name="epilepsy"
+                      value="yes"
+                      onchange="changeColor('epilepsy')"
+                    />
+                    <span id="epilepsyYes"
+                      ><iconify-icon
+                        icon="icon-park-outline:check-one"
+                      ></iconify-icon
+                    ></span>
+                  </label>
+                  <label>
+                    <input
+                      type="radio"
+                      name="epilepsy"
+                      value="no"
+                      onchange="changeColor('epilepsy')"
+                    />
+                    <span id="epilepsyNo"
+                      ><iconify-icon icon="charm:circle-cross"></iconify-icon
+                    ></span>
+                  </label>
+                </div>
+                <div class="radiobutton-questions">
+                  <p>Do you have cancer?</p>
+
+                  <label>
+                    <input
+                      type="radio"
+                      name="cancer"
+                      value="yes"
+                      onchange="changeColor('cancer')"
+                    />
+                    <span id="cancerYes"
+                      ><iconify-icon
+                        icon="icon-park-outline:check-one"
+                      ></iconify-icon
+                    ></span>
+                  </label>
+                  <label>
+                    <input
+                      type="radio"
+                      name="cancer"
+                      value="no"
+                      onchange="changeColor('cancer')"
+                    />
+                    <span id="cancerNo"
+                      ><iconify-icon icon="charm:circle-cross"></iconify-icon
+                    ></span>
+                  </label>
+                </div>
+                <div class="radiobutton-questions">
+                  <p>Do you have diabetes?</p>
+
+                  <label>
+                    <input
+                      type="radio"
+                      name="diabetes"
+                      value="yes"
+                      onchange="changeColor('diabetes')"
+                    />
+                    <span id="diabetesYes"
+                      ><iconify-icon
+                        icon="icon-park-outline:check-one"
+                      ></iconify-icon
+                    ></span>
+                  </label>
+                  <label>
+                    <input
+                      type="radio"
+                      name="diabetes"
+                      value="no"
+                      onchange="changeColor('diabetes')"
+                    />
+                    <span id="diabetesNo"
+                      ><iconify-icon icon="charm:circle-cross"></iconify-icon
+                    ></span>
+                  </label>
+                </div>
+                <div class="radiobutton-questions">
+                  <p>Are you suffering from a psychiatric disorder?</p>
+
+                  <label>
+                    <input
+                      type="radio"
+                      name="psychiatric"
+                      value="yes"
+                      onchange="changeColor('psychiatric')"
+                    />
+                    <span id="psychiatricYes"
+                      ><iconify-icon
+                        icon="icon-park-outline:check-one"
+                      ></iconify-icon
+                    ></span>
+                  </label>
+                  <label>
+                    <input
+                      type="radio"
+                      name="psychiatric"
+                      value="no"
+                      onchange="changeColor('psychiatric')"
+                    />
+                    <span id="psychiatricNo"
+                      ><iconify-icon icon="charm:circle-cross"></iconify-icon
+                    ></span>
+                  </label>
+                </div>
+              </div>
+              <label for="others">Others, please specify.</label>
+              <div>
+                <input type="text" name="others" id="others" />
+              </div>
+
+              <div class="form-footer">
+                <button class="submit">
+                  <iconify-icon icon="basil:save-outline"></iconify-icon>Submit
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>
@@ -817,9 +1041,5 @@
   <script src="./js/sidebar.js"></script>
   <script src="./js/recordsTabSelector.js"></script>
   <script src="./js/dataTables.js"></script>
-  <!-- <script>
-    if (window.innerWidth <= 768 && sidebar.classList.contains("expanded")) {
-      sidebar.classList.remove("expanded");
-    }
-  </script> -->
+  <script src="./js/healthHistoryRadio.js"></script>
 </html>

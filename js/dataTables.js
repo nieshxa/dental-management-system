@@ -23,6 +23,18 @@ $(document).ready(function () {
       searchPlaceholder: "Search",
     },
   });
+  $("#view-plan").DataTable({
+    paging: true,
+    lengthMenu: [[10], [10]],
+    lengthChange: false,
+    order: [[0, "asc"]],
+    searching: true,
+    info: false,
+    language: {
+      search: "",
+      searchPlaceholder: "Search",
+    },
+  });
   var appointmentsTable = $("#appointments").DataTable({
     paging: true,
     lengthChange: false,
