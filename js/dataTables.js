@@ -35,6 +35,18 @@ $(document).ready(function () {
       searchPlaceholder: "Search",
     },
   });
+  $("#clinic").DataTable({
+    paging: false,
+    lengthMenu: [[5], [5]],
+    lengthChange: false,
+    order: [[0, "asc"]],
+    searching: true,
+    info: false,
+    language: {
+      search: "",
+      searchPlaceholder: "Search",
+    },
+  });
   var appointmentsTable = $("#appointments").DataTable({
     paging: true,
     lengthChange: false,

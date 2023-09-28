@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css"
@@ -10,7 +14,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
+
     <title>DMS</title>
+    <link rel="website icon" type="png " href="/images/pdj logo wbg.png" />
     <link rel="stylesheet" href="./css/all.css" />
     <link rel="stylesheet" href="./css/dashboard.css" />
   </head>
@@ -31,6 +37,10 @@
               class="icon"
             ></iconify-icon>
             <span class="page-title">Services</span></a
+          >
+          <a href="./clinics.html" class="tab">
+            <iconify-icon icon="vaadin:dental-chair"></iconify-icon>
+            <span class="page-title">Clinics</span></a
           >
           <a href="./staffs.html" class="tab">
             <iconify-icon
@@ -98,7 +108,17 @@
             <div class="welcome">
               <div class="motto">Making you smile.</div>
             </div>
-            <div class="goto-appt">
+
+            <!-- <div class="graph">
+              <div class="canvas"><canvas id="appt-chart"></canvas></div>
+              <div class="canvas"><canvas id="services-chart"></canvas></div>
+            </div> -->
+            <div class="graph">
+              <div class="canvas"><canvas id="appt-chart"></canvas></div>
+              <div class="canvas"><canvas id="services-chart"></canvas></div>
+            </div>
+
+            <!-- <div class="goto-appt">
               <div class="my-appt">
                 <div>
                   <iconify-icon
@@ -123,6 +143,21 @@
                   <small><i>Book an appointment</i></small>
                 </div>
               </div>
+            </div> -->
+            <div class="clinic-details">
+              <img src="./images/pdj logo wbg.png" alt="" />
+              <div class="right">
+                <div class="clinic-name">Pablo de Jesus Dental Clinic</div>
+                <div class="clinic-loc">
+                  Address: <span>Baliwag, Bulacan</span>
+                </div>
+                <div class="clinic-num">
+                  Contact number: <span>0950 123 4569</span>
+                </div>
+                <div class="clinic-email">
+                  Email address: <span>dentalclinic@tooth.com</span>
+                </div>
+              </div>
             </div>
           </div>
           <div class="right">
@@ -141,4 +176,5 @@
   <script src="./js/sidebar.js"></script>
   <script src="./js/eventCalendar.js"></script>
   <script src="./js/go-to-appt.js"></script>
+  <script src="./js/chart.js"></script>
 </html>

@@ -114,6 +114,41 @@
   justify-content: center;
   align-items: center;
 }
+.clinic-details {
+  background-color: var(--white);
+  height: 29%;
+  box-shadow: 0 0.6vh 0.6vh 0 #00000025;
+  border: 0.2vh solid #00000015;
+  border-radius: 1vh;
+  padding: 1rem;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.clinic-details .right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: fit-content;
+  height: 100%;
+}
+.clinic-name {
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+.clinic-details .right:not(.clinic-name) {
+  font-weight: 500;
+}
+.clinic-details .right div span {
+  font-weight: normal;
+  border-bottom: solid 0.1rem var(--black);
+}
+.clinic-details img {
+  height: 75%;
+  border-radius: 50%;
+  border: solid var(--black) 0.25rem;
+}
 @media screen and (max-width: 1200px) {
   .tab-content {
     display: block;
@@ -135,6 +170,9 @@
   .event-details {
     margin-bottom: 0.5rem;
   }
+  .right {
+    margin-top: 0.5rem;
+  }
 
   .fc .fc-toolbar > * > :first-child,
   .fc-icon,
@@ -146,6 +184,16 @@
   }
   .header {
     height: auto;
+  }
+  .clinic-details img {
+    height: 8rem;
+    width: 8rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .right div:not(.clinic-name) span::before {
+    content: "\A";
+    white-space: pre;
   }
 }
 @media screen and (max-width: 865px) {

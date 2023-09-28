@@ -1,8 +1,0 @@
-REMOVED:
-Region // settings
-
-ADDED: 
-Birthday // settings
-
-MODIFICATIONS:
-@media query // settings
