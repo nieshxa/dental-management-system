@@ -221,7 +221,7 @@ select {
   }
   .sidebar {
     /* display: none; */
-    margin-left: -6rem;
+    margin-left: -7rem;
     transition: margin-left 0.3s ease;
   }
   .content {
