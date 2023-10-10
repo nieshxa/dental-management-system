@@ -281,6 +281,11 @@ tr td:nth-last-of-type(1) {
 tbody tr {
   height: 13.5vh;
 }
+.dataTables_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 @media screen and (max-width: 900px) {
   th {
     display: none;
