@@ -182,7 +182,7 @@ select {
     width: 100%;
   }
 }
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 950px) {
   .patient-name,
   .contact,
   .address-1,
@@ -221,7 +221,7 @@ select {
   }
   .sidebar {
     /* display: none; */
-    margin-left: -5rem;
+    margin-left: -6rem;
     transition: margin-left 0.3s ease;
   }
   .content {

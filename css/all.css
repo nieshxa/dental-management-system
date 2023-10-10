@@ -61,12 +61,21 @@ body {
   background-color: var(--black);
   color: var(--white);
 }
+.greet {
+  text-align: end;
+}
 .header {
   display: flex;
   justify-content: space-between;
-  height: 3.5rem;
+  height: 4rem;
   padding: 0.5rem 1rem;
   box-shadow: 0 4px 4px 0 #00000025;
+}
+.tabSpecific {
+  display: flex;
+}
+.tabSpecific .tab:hover {
+  color: var(--blue);
 }
 .my-img {
   width: 2.5rem;
@@ -147,6 +156,20 @@ body {
 .hamburger {
   display: flex;
   align-items: center;
+}
+.dataTables_filter input {
+  font-size: 1.2rem;
+}
+.head1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+@media screen and (max-width: 900px) {
+  .greet div {
+    display: none;
+  }
 }
 @media screen and (max-width: 600px) {
   /* .header {

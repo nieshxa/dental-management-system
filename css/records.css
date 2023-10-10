@@ -5,18 +5,18 @@
 }
 .tab-content {
   overflow-y: auto;
-  font-size: 1rem;
+  font-size: 1.2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   /* overflow-x: hidden; */
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1.2rem;
   min-width: fit-content;
   padding-bottom: 2rem;
 }
 .ddown {
-  font-size: 1rem;
-  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  margin-bottom: 1.2rem;
   margin-top: 0.5rem;
   /* font-weight: 600; */
   /* text-align: right; */
@@ -27,7 +27,7 @@
   align-items: center;
 }
 .ddown select {
-  font-size: 1rem;
+  font-size: 1.2rem;
   cursor: pointer;
   border-radius: 1vh;
   box-shadow: 0 0.6vh 0.6vh 0 #00000025;
@@ -38,7 +38,10 @@
   font-size: 2.1vh;
   border: #0000000e solid 1px;
 }
-
+.treatment-plan td:nth-of-type(2),
+.treatment-plan th:nth-of-type(2) {
+  width: 15%;
+}
 /* dental chart ------------------------------------------------------------*/
 .dental-condition {
   width: 98%;
@@ -312,7 +315,7 @@ tr td:nth-last-of-type(1) button:hover {
   width: 50vh;
   box-shadow: 0 0.3vh 0.3vh 0 #00000025;
   background-color: var(--white);
-  border: 0.1rem solid #00000015;
+  border: 0.1.2rem solid #00000015;
   width: fit-content;
   border-radius: 1vh;
 }
@@ -331,7 +334,7 @@ tr td:nth-last-of-type(1) button:hover {
 .paginate_button {
   box-shadow: 0 0.3vh 0.3vh 0 #00000025;
   background-color: var(--white);
-  border: 0.1rem solid #00000015;
+  border: 0.1.2rem solid #00000015;
   border-radius: 1vh;
   padding: 1vh 2vh;
   cursor: pointer;
@@ -375,7 +378,7 @@ input[type="text"] {
   background-color: #fff;
   width: 100%;
   padding: 1.5rem;
-  border-radius: 1rem;
+  border-radius: 1.2rem;
   margin: 0 auto;
   top: 10%;
   border: #00000025 solid 1px;
@@ -389,15 +392,15 @@ input[type="text"] {
   font-size: 1.5rem;
 }
 .form-footer button {
-  font-size: 1rem;
+  font-size: 1.2rem;
   outline: none;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1.2rem;
   border-radius: 0.5rem;
   cursor: pointer;
   border: none;
 
   background-color: var(--white);
-  border: 0.1rem solid #00000015;
+  border: 0.1.2rem solid #00000015;
   box-shadow: 0 0.3rem 0.3rem 0 #00000025;
   color: var(--black);
 
@@ -420,7 +423,7 @@ input[type="text"] {
 }
 .health-history input {
   font-family: "Poppins", sans-serif;
-  font-size: 1rem;
+  font-size: 1.2rem;
   padding: 0.45rem 0.9rem;
   border-radius: 0.25rem;
   border: 1px #2d2d2d solid;
@@ -470,10 +473,10 @@ input[type="radio"] {
 }
 @media screen and (min-width: 1200px) {
   .treatment-plan {
-    padding: 1rem;
+    padding: 1.2rem;
     box-shadow: 0 0.6vh 0.6vh 0 #00000025;
     background-color: var(--white);
-    border: 0.1rem solid #00000015;
+    border: 0.1.2rem solid #00000015;
     border-radius: 1vh;
     width: 95%;
   }
@@ -492,7 +495,7 @@ input[type="radio"] {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
+    gap: 1.2rem;
     flex-wrap: wrap;
   }
   tr {
@@ -501,7 +504,7 @@ input[type="radio"] {
     background-color: var(--white);
     border: #00000025 solid 1px !important;
     border-radius: 1vh;
-    padding: 1rem;
+    padding: 1.2rem;
     /* transition: 0.3s ease scale; */
   }
   /* tr:hover {
@@ -518,9 +521,17 @@ input[type="radio"] {
   td:nth-child(1) {
     background-color: lightgray;
     font-weight: bold;
-    margin-top: 1rem;
+    margin-top: 1.2rem;
   }
-  tbody td:not(:nth-child(3))::before {
+  tbody td:not(:nth-child(4))::before {
+    content: attr(data-title);
+    font-weight: bold;
+    display: block;
+    width: 40%;
+    text-align: left;
+    margin-right: 0.5rem;
+  }
+  tbody td:nth-child(2)::before {
     content: attr(data-title);
     font-weight: bold;
     display: block;
@@ -562,6 +573,15 @@ input[type="radio"] {
     overflow: hidden; 
     text-overflow: ellipsis;
   } */
+
+  .treatment-plan td:nth-of-type(2),
+  .treatment-plan th:nth-of-type(2) {
+    width: 100%;
+  }
+  .clinic-name {
+    width: 60%;
+    text-align: left;
+  }
 }
 @media screen and (max-width: 1120px) {
   .dental-condition .patient {
@@ -569,7 +589,7 @@ input[type="radio"] {
   }
   .patient-details .label {
     width: 150px;
-    margin-right: 1rem;
+    margin-right: 1.2rem;
     text-align: right;
   }
   .dental-condition .patient .name {
