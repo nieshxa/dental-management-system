@@ -24,18 +24,6 @@
   </head>
   <body>
     <form action="" id="account-info">
-      <div class="change-pic">
-        <img src="./images/unnamed.jpg" id="userImg" />
-        <div class="choose-img">
-          <h3>Change Profile</h3>
-          <label class="upload-profile">
-            <input type="file" name="pic" id="pic" accept="image/*" />
-            <iconify-icon icon="fluent:image-sparkle-16-regular"></iconify-icon
-            >Upload picture</label
-          >
-          <!-- <div id="fileNameDisplay" style="display: none"></div> -->
-        </div>
-      </div>
       <div class="personal-info">
         <h3>personal information</h3>
         <div class="patient-name">
@@ -50,15 +38,29 @@
           </div>
         </div>
         <div class="contact">
-          <div class="group">
-            <label>Email address<input type="email" /></label>
-          </div>
-          <div class="group">
-            <label>Phone number<input type="phone" id="phone" /></label>
-          </div>
           <div class="group bday">
             <label>Birthday<input type="date" /></label>
           </div>
+          <div class="group gender">
+            <label>Gender</label>
+            <div class="options">
+              <label class="forRadio">
+                <input type="radio" name="gender" id="male" />Male</label
+              >
+              <label class="forRadio">
+                <input type="radio" name="gender" id="female" />Female</label
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-group">
+        <h3>Contact Information</h3>
+        <div class="group">
+          <label>Email address<input type="email" /></label>
+        </div>
+        <div class="group">
+          <label>Phone number<input type="phone" id="phone" /></label>
         </div>
       </div>
       <div class="address">
@@ -71,24 +73,18 @@
                   ></label> -->
             <label
               >Province
-              <select name="province" id="province"></select
-            ></label>
-            <label
-              >City/Municipality
-              <select name="city" id="city"></select
-            ></label>
+              <input type="text" />
+            </label>
+            <label>City/Municipality <input type="text" /></label>
           </div>
           <div class="group address-2">
-            <label
-              >Barangay
-              <select name="barangay" id="barangay"></select
-            ></label>
+            <label>Barangay <input type="text" /></label>
             <label>Street <input type="text" /></label>
             <label>House # <input type="text" /></label>
           </div>
         </div>
       </div>
-      <div class="change-pass">
+      <!-- <div class="change-pass">
         <h3>CHANGE PASSWORD</h3>
         <div class="pass-fields">
           <div class="group current-pass">
@@ -105,7 +101,7 @@
             /></label>
           </div>
         </div>
-      </div>
+      </div> -->
       <div class="my-profile-title">
         <!-- <h2>My Profile</h2> -->
         <div>
