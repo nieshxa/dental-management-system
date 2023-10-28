@@ -243,8 +243,6 @@ p.others span input,
 tr td {
   vertical-align: middle;
 }
-tr td:nth-of-type(3),
-tr th:nth-of-type(3),
 tr td:nth-of-type(1),
 tr th:nth-of-type(1) {
   text-align: left;
@@ -481,7 +479,7 @@ input[type="radio"] {
     width: 95%;
   }
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1600px) {
   /* table {
     font-size: 14px;
   } */
@@ -523,7 +521,7 @@ input[type="radio"] {
     font-weight: bold;
     margin-top: 1.2rem;
   }
-  tbody td:not(:nth-child(4))::before {
+  tbody td:not(:nth-child(5))::before {
     content: attr(data-title);
     font-weight: bold;
     display: block;
@@ -614,9 +612,6 @@ input[type="radio"] {
   }
 }
 @media screen and (max-width: 800px) {
-  tr {
-    width: calc(95vw - 15rem);
-  }
   td,
   td div {
     text-align: left;
