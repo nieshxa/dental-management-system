@@ -1,45 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Print Div with Iconify Icons to PDF using html2pdf</title>
-    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-  </head>
-  <body>
-    <div id="myDiv">
-      <i class="iconify" data-icon="mdi:heart"></i>
-      <i class="iconify" data-icon="mdi:star"></i>
-      <!-- Add more icons as needed -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    #hs-condition-input {
+      display: block; /* Initially, set to block or inline-block based on your design */
+    }
+
+    #hs-condition:checked + #hs-condition-input {
+      display: none;
+    }
+  </style>
+  <title>Checkbox Hide Example</title>
+</head>
+<body>
+
+  <div class="answer hs">
+    <div>
+      <input
+        type="checkbox"
+        name="hs-condition"
+        id="hs-condition"
+      />
+      <label for="hs-condition">Yes</label>
     </div>
+    <input
+      type="text"
+      id="hs-condition-input"
+      class="hs-condition-input"
+      placeholder="Please specify..."
+    />
+  </div>
 
-    <button id="generatePDF">Generate PDF</button>
-
-    <script>
-      document
-        .getElementById("generatePDF")
-        .addEventListener("click", function () {
-          const divToPrint = document.getElementById("myDiv");
-
-          // Configure html2pdf options
-          const pdfOptions = {
-            margin: 10,
-            filename: "myPDF.pdf",
-            image: { type: "jpeg", quality: 0.98 },
-            html2canvas: { scale: 2 },
-            jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
-          };
-
-          // Generate PDF
-          html2pdf()
-            .from(divToPrint)
-            .set(pdfOptions)
-            .outputPdf(function (pdf) {
-              // Save or display the PDF
-              pdf.save();
-            });
-        });
-    </script>
-  </body>
+</body>
 </html>

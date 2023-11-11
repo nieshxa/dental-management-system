@@ -448,9 +448,10 @@ input[type="date"] {
 .radiobutton-questions label {
   width: 15%;
 }
-input[type="radio"] {
+.health-history input[type="radio"] {
   display: none;
 }
+
 .health-history input,
 .health-history select {
   outline: none;
@@ -459,6 +460,120 @@ input[type="radio"] {
   width: 98% !important;
   border-radius: 0.5rem;
   border: #00000025 solid 1px !important;
+  padding: 1.2rem;
+  box-shadow: 0 0.6vh 0.6vh 0 #00000025;
+  background-color: var(--white);
+  border: 0.1.2rem solid #00000015;
+  border-radius: 1vh;
+  width: 95%;
+}
+.travel-history h4:not(.travel-history h4:nth-of-type(1)) {
+  text-transform: uppercase;
+  margin-top: 1rem;
+}
+.health-protocol input[type="checkbox"] {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+.health-protocol label {
+  cursor: pointer;
+}
+.row-question {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+.question {
+  width: 80%;
+}
+.answer {
+  width: 20%;
+}
+.row-question .answer:not(.sf) {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+.row-question .hs {
+  display: block;
+  text-align: center;
+}
+.hs input[type="checkbox"] {
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+}
+#safety-protocols {
+  width: 1rem;
+  height: 1rem;
+  cursor: pointer;
+}
+.hs-condition-input {
+  outline: none;
+  border: none;
+  border-bottom: solid 1px var(--black);
+  visibility: hidden;
+  font-size: 1.2rem;
+  width: 90%;
+  padding: 0 0.3rem;
+}
+.answer.temp input {
+  outline: none;
+  border: none;
+  border-bottom: solid 1px var(--black);
+  font-size: 1.2rem;
+  padding: 0 0.3rem;
+  width: 25%;
+  text-align: center;
+  cursor: text;
+}
+.answer.temp {
+  gap: 0.25rem;
+}
+.hs {
+  flex-direction: column;
+  align-items: center;
+}
+#hs-condition:checked + .hs-condition-input {
+  visibility: visible;
+}
+.sf {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+}
+/* .checkboxes {
+  display: flex;
+  justify-content: end;
+} */
+.flex {
+  display: flex;
+  gap: 0.5rem;
+  font-weight: 600;
+}
+.flex input {
+  outline: none;
+  border: none;
+  border-bottom: solid 1px var(--black);
+  flex-grow: 1;
+  max-width: 500px;
+  padding: 0 0.3rem;
+  font-size: 1.2rem;
+}
+.form-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5rem;
+  border-top: var(--black) solid 1px;
+  padding-top: 1rem;
+}
+.buttons {
+  padding: 0 1rem;
+}
+.buttons button {
+  border: #0000000e solid 2px;
 }
 @media screen and (max-width: 1200px) {
   .dental-visit {

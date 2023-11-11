@@ -105,6 +105,7 @@
               <option value="dental-condition">Dental Chart</option>
               <option value="treatment-plan">Treatment Plan</option>
               <option value="health-history">Health History</option>
+              <option value="health-protocol">Health Protocol</option>
             </select>
           </div>
           <div id="dental-condition" class="dental-condition tabContent">
@@ -1058,6 +1059,145 @@
                 </button>
               </div>
             </form>
+          </div>
+          <div id="health-protocol" class="health-protocol tabContent">
+            <div class="travel-history">
+              <h4>Recent Travel History</h4>
+              <div class="row-question travel">
+                <div class="question">
+                  <p>
+                    In the last 14 days, have you traveled internationally or to
+                    areas with a high incidence of infectious diseases?
+                  </p>
+                </div>
+                <div class="answer">
+                  <label>
+                    <input type="radio" name="travel" value="no" /> No
+                  </label>
+                  <label>
+                    <input type="radio" name="travel" value="yes" /> Yes
+                  </label>
+                </div>
+              </div>
+
+              <h4>COVID-19 Symptoms</h4>
+              <p>
+                Have you ever experienced any of the following symptoms in the
+                last 14 days?
+              </p>
+
+              <div class="checkboxes">
+                <div>
+                  <input type="checkbox" name="symptoms" id="fever" />
+                  <label for="fever">Fever</label>
+                  <br />
+
+                  <input type="checkbox" name="symptoms" id="cough" />
+                  <label for="cough">Cough</label>
+                  <br />
+
+                  <input type="checkbox" name="symptoms" id="short-breath" />
+                  <label for="short-breath">Shortness of breath</label>
+                  <br />
+
+                  <input type="checkbox" name="symptoms" id="taste-smell" />
+                  <label for="taste-smell">Loss of taste or smell</label>
+                  <br />
+
+                  <input type="checkbox" name="symptoms" id="sore-throat" />
+                  <label for="sore-throat">Sore throat</label>
+                  <br />
+
+                  <!-- <input type="checkbox" name="symptoms" id="none" />
+              <label for="none">None</label>
+              <br /> -->
+                </div>
+              </div>
+
+              <h4>Exposure to COVID-19</h4>
+              <div class="row-question">
+                <div class="question">
+                  <p>
+                    Have you been in contact with someone diagnosed with
+                    COVID-19 in the last 14 days?
+                  </p>
+                </div>
+                <div class="answer">
+                  <label>
+                    <input type="radio" name="travel" value="no" /> No
+                  </label>
+                  <label>
+                    <input type="radio" name="travel" value="yes" /> Yes
+                  </label>
+                </div>
+              </div>
+
+              <h4>Health Status</h4>
+              <div class="row-question">
+                <div class="question">
+                  <p>
+                    Do you have any existing health conditions that may affect
+                    your ability to receive dental treatment safely?
+                  </p>
+                </div>
+                <div class="answer hs">
+                  <input type="checkbox" id="hs-condition" />
+                  <input
+                    type="text"
+                    class="hs-condition-input"
+                    placeholder="Please specify..."
+                  />
+                </div>
+              </div>
+
+              <h4>Temperature Check</h4>
+              <div class="row-question">
+                <div class="question">
+                  Please provide your current body temperature in Celsius.
+                </div>
+                <div class="answer temp"><input type="text" />&deg;C</div>
+              </div>
+
+              <h4>Consent to follow safety Protocols</h4>
+              <div class="row-question">
+                <div class="question">
+                  Will you comply with safety protocols implemented by the
+                  dental clinic, such as wearing a mask, using hand sanitizer,
+                  and maintaining social distancing?
+                </div>
+                <div class="answer sf">
+                  <input
+                    type="checkbox"
+                    name="safety-protocols"
+                    id="safety-protocols"
+                  />
+                  <label for="safety-protocols">Yes</label>
+                </div>
+              </div>
+
+              <h4>Emergency contact</h4>
+              <div class="flex">Name: <input type="text" /></div>
+              <div class="flex">Relationship: <input type="text" /></div>
+              <div class="flex">Phone Number: <input type="tel" /></div>
+
+              <br />
+
+              <div class="form-footer">
+                <small
+                  >By submitting this form, you confirm that the information
+                  provided is accurate and truthful. Booking an appointment is
+                  conditional and will depend on whether you meet the health and
+                  safety protocols of the dental clinic you are booking with.
+                  Please ensure that all details are correct before submitting.
+                </small>
+                <div class="buttons">
+                  <button>
+                    <iconify-icon icon="fluent:save-16-regular"></iconify-icon
+                    >Submit
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

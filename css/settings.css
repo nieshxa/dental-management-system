@@ -164,9 +164,17 @@ select {
 }
 .my-profile-title {
   display: flex;
-  justify-content: end;
+  justify-content: space-between;
   margin-bottom: 2vh;
   margin-top: 2vh;
+}
+.deact a {
+  color: #4596d2;
+  transition: ease-in-out all 0.3s;
+}
+.deact a:hover {
+  color: var(--black);
+  transition: ease-in-out all 0.3s;
 }
 .hidden {
   display: none;
