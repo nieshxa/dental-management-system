@@ -1061,7 +1061,7 @@
             </form>
           </div>
           <div id="health-protocol" class="health-protocol tabContent">
-            <div class="travel-history">
+            <form>
               <h4>Recent Travel History</h4>
               <div class="row-question travel">
                 <div class="question">
@@ -1124,10 +1124,10 @@
                 </div>
                 <div class="answer">
                   <label>
-                    <input type="radio" name="travel" value="no" /> No
+                    <input type="radio" name="covid" value="no" /> No
                   </label>
                   <label>
-                    <input type="radio" name="travel" value="yes" /> Yes
+                    <input type="radio" name="covid" value="yes" /> Yes
                   </label>
                 </div>
               </div>
@@ -1155,7 +1155,12 @@
                 <div class="question">
                   Please provide your current body temperature in Celsius.
                 </div>
-                <div class="answer temp"><input type="text" />&deg;C</div>
+                <div class="answer temp">
+                  <input
+                    type="number"
+                    onKeyPress="if(this.value.length==2) return false;"
+                  />&deg;C
+                </div>
               </div>
 
               <h4>Consent to follow safety Protocols</h4>
@@ -1176,9 +1181,15 @@
               </div>
 
               <h4>Emergency contact</h4>
-              <div class="flex">Name: <input type="text" /></div>
-              <div class="flex">Relationship: <input type="text" /></div>
-              <div class="flex">Phone Number: <input type="tel" /></div>
+              <div class="flex">
+                Name: <input type="text" id="name-of-ec" />
+              </div>
+              <div class="flex">
+                Relationship: <input type="text" id="relationship-of-ec" />
+              </div>
+              <div class="flex">
+                Phone Number: <input type="tel" id="phone-of-ec" />
+              </div>
 
               <br />
 
@@ -1191,13 +1202,23 @@
                   Please ensure that all details are correct before submitting.
                 </small>
                 <div class="buttons">
-                  <button>
+                  <div id="submit-health-protocols">
                     <iconify-icon icon="fluent:save-16-regular"></iconify-icon
                     >Submit
-                  </button>
+                  </div>
                 </div>
               </div>
-            </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal">
+        <div class="modal-content">
+          <p class="note"><b>NOTE: </b></p>
+          <div class="warning-content"></div>
+          <div class="modal-footer">
+            <button id="modal-close">OK</button>
           </div>
         </div>
       </div>
@@ -1208,4 +1229,5 @@
   <script src="./js/recordsTabSelector.js"></script>
   <script src="./js/dataTables.js"></script>
   <script src="./js/healthHistoryRadio.js"></script>
+  <script src="./js/health-protocol-form-validation.js"></script>
 </html>

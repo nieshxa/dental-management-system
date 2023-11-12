@@ -69,17 +69,17 @@ select option:disabled {
   padding: 1rem 0;
 }
 .fc-unthemed td.fc-today {
-  background: none;
+  background: #c8e8ff;
 }
 .fc-future {
   cursor: pointer;
 }
-.fc-past,
-.fc-today {
+.fc-past {
   opacity: 0.3;
 }
-.fc-day.active {
-  background-color: var(--blue);
+.fc-day.active,
+.fc-unthemed td.fc-today.active {
+  background-color: var(--blue) !important;
 }
 .fc-day-header {
   font-size: 2vh;

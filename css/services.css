@@ -51,7 +51,6 @@
 }
 .sidebar.expanded ~ .modal {
   width: calc(100% - 15rem);
-
 }
 .modal-content {
   background-color: #fff;

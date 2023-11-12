@@ -11,7 +11,6 @@
   align-items: center;
   /* overflow-x: hidden; */
   padding: 0.5rem 1.2rem;
-  min-width: fit-content;
   padding-bottom: 2rem;
 }
 .ddown {
@@ -386,10 +385,10 @@ input[type="text"] {
   display: flex;
   justify-content: end;
 }
-.form-footer button iconify-icon {
+.form-footer #submit-health-protocols iconify-icon {
   font-size: 1.5rem;
 }
-.form-footer button {
+.form-footer #submit-health-protocols {
   font-size: 1.2rem;
   outline: none;
   padding: 0.5rem 1.2rem;
@@ -407,7 +406,7 @@ input[type="text"] {
   justify-content: center;
   gap: 0.25rem;
 }
-.form-footer button:hover {
+.form-footer #submit-health-protocols:hover {
   color: var(--blue);
   transition: all ease-in-out 0.3s;
 }
@@ -526,9 +525,14 @@ input[type="date"] {
   width: 25%;
   text-align: center;
   cursor: text;
+  -moz-appearance: textfield; /* firefox */
 }
 .answer.temp {
   gap: 0.25rem;
+}
+.answer.temp input::-webkit-outer-spin-button,
+.answer.temp input::-webkit-inner-spin-button {
+  display: none;
 }
 .hs {
   flex-direction: column;
@@ -566,14 +570,69 @@ input[type="date"] {
   justify-content: space-between;
   align-items: center;
   gap: 5rem;
-  border-top: var(--black) solid 1px;
+  border-top: #cfcfcf solid 1px;
   padding-top: 1rem;
 }
-.buttons {
+#submit-health-protocols {
   padding: 0 1rem;
 }
-.buttons button {
+.buttons #submit-health-protocols {
   border: #0000000e solid 2px;
+}
+.modal {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  height: calc(100vh - 4rem);
+  background-color: rgba(0, 0, 0, 0.5);
+  width: calc(100% - 5rem);
+  position: absolute;
+  right: 0;
+  top: 4rem;
+}
+
+.sidebar.expanded ~ .modal {
+  width: calc(100% - 16rem);
+}
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  max-width: 600px;
+  min-width: 300px;
+  overflow: auto;
+  border-radius: 0.5rem;
+  box-shadow: #00000025 2px 4px 4px 4px;
+  /* min-height: 25%; */
+}
+.modal-footer {
+  display: flex;
+  justify-content: center;
+}
+#modal-close {
+  background-color: var(--blue);
+  color: var(--white);
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  outline: none;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: all ease-in-out 0.3s;
+  box-shadow: 0 0.3rem 0.3rem 0 #00000025;
+  padding: 0.25rem 2rem;
+}
+#modal-close:hover {
+  background: var(--white);
+  color: var(--blue);
+  transition: all ease-in-out 0.3s;
+}
+/* .modal .note {
+  border-bottom: solid 1px #686868;
+  margin-bottom: 1rem;
+} */
+.warning-content {
+  font-size: 1rem;
 }
 @media screen and (max-width: 1200px) {
   .dental-visit {
@@ -694,6 +753,31 @@ input[type="date"] {
   .clinic-name {
     width: 60%;
     text-align: left;
+  }
+}
+@media screen and (max-width: 1550px) {
+  .row-question {
+    display: block;
+  }
+  .health-protocol h4:not(.health-protocol h4:nth-of-type(1)) {
+    margin-top: 1rem;
+  }
+  .question,
+  .answer {
+    width: 100%;
+  }
+  .flex input {
+    max-width: none;
+  }
+  .form-footer {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .form-footer .buttons {
+    align-self: flex-end;
+  }
+  .form-footer #submit-health-protocols {
+    width: fit-content;
   }
 }
 @media screen and (max-width: 1120px) {
