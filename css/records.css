@@ -634,6 +634,31 @@ input[type="date"] {
 .warning-content {
   font-size: 1rem;
 }
+.form-footer {
+  display: flex;
+  justify-content: end;
+}
+.form-footer .submit {
+  background-color: var(--white);
+  border: 0.2vh solid #00000015;
+  box-shadow: 0 0.6vh 0.6vh 0 #00000025;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  border-radius: 0.5rem;
+  transition: all ease-in-out 0.3s;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+.form-footer .submit iconify-icon {
+  font-size: 1.5rem;
+}
+.form-footer .submit:hover {
+  color: var(--blue);
+  transition: all ease-in-out 0.3s;
+}
 @media screen and (max-width: 1200px) {
   .dental-visit {
     display: block;
